@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!-- <!ENTITY unidExtension						"0xE31400FF"> -->
+
+	<!ENTITY rsSistersTransport						"0xE3140660">
+	<!ENTITY rsSistersTransportL						"0xE3140661">
+	<!ENTITY snLightCannon							"0xE3140662">
+	
+	<!-- <!ENTITY stCoalitionOutpost						"0xE3146520"> -->
+	<!ENTITY scSistersTransport						"0xE3146560">
+	<!ENTITY scSistersTransportL						"0xE3146561">
+	
+	<!ENTITY itDarkFireCannon						"0xE3141560">
+
+]>
+<TranscendenceModule> <!--  UNID="0xE31400FF" version="1.0" -->
+
+	<Image UNID="&rsSistersTransport;"		bitmap="resources/images/sisterstransport.jpg" bitmask="resources/images/sisterstransportMask.bmp"   loadOnUse="true"/>
+	<Sound UNID="&snLightCannon;"				filename="resources\sounds\lightpacket.wav"/>
+	
+	<ItemType UNID="&itDarkFireCannon;"
+			name=				"dark fire cannon"
+			level=				"5"
+			value=				"11000"
+			mass=				"1000"
+			frequency=			"veryrare"
+			modifiers=			"Alien; MajorItem; SistersOfDomina; NotForSale; EnergyWeapon"
+
+			description=		"Very little is known about these exotic, dark-matter weapons. The Sisters of Domina use these weapons in their ships."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"darkFire:1d4; WMD1"
+				fireRate=			"10"
+				missileSpeed=		"100"
+				interaction=		"0"
+				passthrough=		"25"
+				lifetime=			"25"
+				powerUse=			"250"
+				sound=				"&snLightCannon;"
+				>
+			<Effect>
+
+
+				
+
+				<Shape
+						directional=		"true"
+						scaleLength=		"64" 
+						scaleWidth=			"3"
+
+						color=				"0xf0, 0xa0, 0x80"
+						opacity=			"255"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-25"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-25"	y="-50"/>
+				</Shape>
+				
+				<Shape
+						directional=		"true"
+						scaleLength=		"72" 
+						scaleWidth=			"6"
+
+						color=				"0xd8, 0x70, 0x40"
+						opacity=			"140"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-35"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-35"	y="-50"/>
+				</Shape>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	
+	<ShipClass UNID="&scSistersTransport;"
+			manufacturer=		"Sisters of Domina"
+			class=				"Missionary"
+			type=				"transport"
+			score=				"300"
+
+			mass=				"400"
+			cargoSpace=			"100"
+			thrust=				"350"
+			maneuver=			"3"
+			maxSpeed=			"18"
+			rotationCount=		"40"
+			leavesWreck=		"85"
+
+			attributes=			"sistersOfDomina,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itLightBlastPlate;"/>
+			<ArmorSection start="225" span="90" armorID="&itLightBlastPlate;"/>
+			<ArmorSection start="135" span="90" armorID="&itLightBlastPlate;"/>
+			<ArmorSection start="45"  span="90" armorID="&itLightBlastPlate;"/>
+		</Armor>
+
+		<Events>
+			<OnDestroy>
+				(block Nil
+					(objAddOverlay gSource &sfSustain; 180)
+					(shpCancelOrders gSource)
+					Nil
+				)
+			</OnDestroy>
+		</Events>
+		
+		<Devices>
+			<Device deviceID="&itDarkFireCannon;" omnidirectional="true"/>
+			<Device deviceID="&itYoroiS100;"/>
+		</Devices>
+
+		<Image imageID="&rsSistersTransport;" imageX="0" imageY="0" imageWidth="80" imageHeight="80" rotationOffset="0" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			perception=			"4"
+			/>
+
+		<!--
+		<DriveImages>
+			<NozzleImage imageID="&rsDriveExhaust;" imageX="48" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+			<NozzlePos x="-38" y="-3"/>
+			<NozzlePos x="-38" y="0"/>
+			<NozzlePos x="-38" y="3"/>
+		</DriveImages>
+		-->
+
+	</ShipClass>
+
+	<StationType UNID="&stSistersOfDomina;"
+			name=				"Sisters of Domina"
+			sovereign=			"&svCommonwealth;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itPlasteelPlate;"
+			maxHitPoints=		"150"
+			hitPoints=			"150"
+			repairRate=			"3"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"religious, friendly, envAir, envAvoidsFire, populated, sistersOfDomina"
+			levelFrequency=		"ruccc ur--- ----- ----- -----"
+			locationCriteria=	"+planetary,-InnerSystem"
+
+			definiteArticle=	"true"
+			>
+
+		<Image			imageID="&rsStations1;" imageX="384" imageY="512" imageWidth="128" imageHeight="128"/>
+
+		<Ships>
+			<Lookup count="1d2" table="&tbCommDefenders;"/>
+			<Lookup count="1d3" table="&tbCommPrivateCrafts;"/>
+			<Ship			count="1d2"	class="&scSistersTransport;"			orders="trade"/>
+			<Ship			count="1d2-1"	class="&scSistersTransport;"			orders="guard"/>
+		</Ships>
+
+		<Events>
+		</Events>
+		
+		<Items>
+			<Table count="1d6">
+				<Lookup chance="25" count="1d3" table="&trConsumables2;"/>
+				<Lookup chance="25" count="1"	table="&trConsumables3;"/>
+				<Lookup chance="25" count="1"	table="&trMinorItem2;"/>
+				<Lookup chance="15" count="1"	table="&trMinorItem3;"/>
+				<Lookup chance="10" count="1"	table="&trMajorItem2;"/>
+			</Table>
+		</Items>
+
+		<Trade currency="credit" creditConversion="100" max="50000" replenish="2500">
+			<Buy	criteria="*"					priceAdj="100" actualPrice="true"/>
+		</Trade>
+
+		<StaticData>
+			<DonationTable>
+				; attd =	If -1, gain 1 attitude per item donated
+				;			If 0, gain no attitude
+				;			If greater than 0, this is the credit value to gain 1 attitude
+				;
+				; rel =		Points of relationship gained per item
+
+				(	; pattern				attd		rel		text
+					(&itCarvedPrayerStone;			0		50		"We thank you for your offering. These beautiful stones are a fitting tribute to Domina's grace and power.")
+					(&itJewelOfContemplation; 		0		100		"We thank you for your offering. These beautiful jewels are a fitting tribute to Domina's grace and power.")
+					(&itHierolithCrystal;			-1		150		"We thank you for your offering. These beautiful crystals are a fitting tribute to Domina's grace and power.")
+					(&itDeathCube;				-1		200		"The souls in these receptacles deserve to rejoin Domina. The flesh will perish, but the eternal soul returns to its maker.")
+					(&itAbbasidThanogram;			0		100		"The souls in these receptacles deserve to rejoin Domina. The flesh will perish, but the eternal soul returns to its maker.")
+					(&itCDMArchive;				-1		200		"The souls in these receptacles deserve to rejoin Domina. The flesh will perish, but the eternal soul returns to its maker.")
+					(&itOpticalKnowledgeArray; 		0		20		"We thank you for your offering. These intricate devices will help us with our communion.")
+					(&itSlaveCoffin;			-1		100		"We will take care of these lost children and teach them the way of Domina. Trust your fate to Domina.")
+					(&itCashCardGold;			500		0		"We thank you for your sacrifice. Seek us when you are in need of sustenance.")
+					(&itCashCardPlatinum;			500		0		"We thank you for your sacrifice. Seek us when you are in need of sustenance.")
+					("*+HaloGem;"				-1		200		"We thank you for your offering. These beautiful gems are a fitting tribute to Domina's grace and power.")
+					("*+Meds;"				500		0		"We thank you for your sacrifice. Seek us when you are in need of healing.")
+					("*+Illegal;"				0		0		"We shall dispose of this poison so that it may do no harm. Cleanse yourself of its influence.")
+					("*+Lux;"				1500		0		"We thank you for your sacrifice. Seek us when you are in need of peace.")
+					("*+Food;"				400		0		"We thank you for your sacrifice. Seek us when you are in need of sustenance.")
+					("f"					750		0		"We thank you for your sacrifice. Seek us when you are in need of sustenance.")
+					(Nil					0		0		"We thank you for your donation and your good intentions. Go in peace.")
+					)
+			</DonationTable>
+		</StaticData>
+
+		<DockScreens>
+			<Main
+				backgroundID=	"&rsSistersShrineBkgnd;"
+				>
+				<Panes>
+					<Default>
+
+						<OnPaneInit>
+							(block Nil
+								(if (not (objGetData gPlayerShip "sistersAttitude"))
+									(objSetData gPlayerShip "sistersAttitude" 0)
+									)
+
+								(if (objGetData gSource "freeSanctum")
+									(scrSetDesc gScreen "You are docked at an abbey of the Sisters of Domina. A woman wearing a flowing red robe is before you.\n\n\"Take your ease here before you go, or seek guidance at our Sanctum. May the blessings of Domina protect you.\"")
+									(scrSetDesc gScreen "You are docked at an abbey of the Sisters of Domina. A woman wearing a flowing red robe approaches you,\n\n\"How may I help you, child?\"")
+									)
+								)
+						</OnPaneInit>
+
+						<Actions>
+							<Action name="Tithe" default="1" key="T">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "Default")
+									(scrShowScreen gScreen "&dsDominaTithe;")
+									)
+							</Action>
+
+							<Action name="Sanctum" key="S">
+								(scrShowPane gScreen "Sanctum")
+							</Action>
+
+							<Action name="Pilgrim's Aid" key="P">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "Default")
+									(scrShowScreen gScreen "&dsSistersDockServices;")
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+
+					<Sanctum
+							desc="You are in the sanctum of the Sisters of Domina. The plasteel walls that surround you are micro-engraved with the revelation of Domina. You see before you a holographic display of indescribable beauty and you feel immersed in the energies of a vast cosmic fountain.">
+
+						<Actions>
+							<Action name="Offer item" key="O">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "Default")
+									(scrShowScreen gScreen "&dsDominaDonateItem;")
+									)
+							</Action>
+
+							<Action name="Contemplate" default="1" key="C">
+								(if (and (leq (objGetData gPlayerShip "sistersAttitude") 0)
+										(not (objGetData gSource "freeSanctum"))
+										)
+									(scrShowPane gScreen "SanctumBlocked")
+
+									(block Nil
+										(setq gPrevScreen "Main")
+										(setq gPrevPane "Default")
+										(setq gBonus 0)
+										(scrShowScreen gScreen "&dsContemplateDomina;")
+										)
+									)
+							</Action>
+
+							<Action name="Leave" cancel="1" key="L">
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+
+					</Sanctum>
+
+					<SanctumBlocked
+							desc="&quot;You are not yet ready to commune with Domina. The burden of the material world weighs heavily on you.&quot;">
+
+						<Actions>
+							<Action name="Continue" default="1" key="C" cancel="1">
+								<ShowPane pane="Sanctum"/>
+							</Action>
+						</Actions>
+
+					</SanctumBlocked>
+
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="90" />
+			<Port x="0"		y="-90" />
+			<Port x="60"	y="60" />
+			<Port x="60"	y="-60" />
+			<Port x="90"	y="0" />
+			<Port x="-90"	y="0" />
+			<Port x="-60"	y="60" />
+			<Port x="-60"	y="-60" />
+		</DockingPorts>
+
+	</StationType>
+	
+	
+</TranscendenceModule>

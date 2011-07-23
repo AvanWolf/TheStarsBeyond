@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+
+
+
+]>
+<TranscendenceModule>
+
+<!-- Plasma Cannon -->
+
+	<ItemType UNID="&itPlasmaCannon;"
+			name=				"plasma cannon"
+			level=				"10"
+			value=				"400000"
+			mass=				"2000"
+			frequency=			"rare"
+			attributes=			"EI; MajorItem; Military"
+
+			description=		"This weapon emits a powerful plasma burst that can incinerate an unprotected ship."
+			>
+
+		<Image imageID="&rsItemsEI3;" imageX="288" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				fireRate=			"20"
+
+				type=				"missile"
+
+				lifetime=			"48"
+				hitPoints=			"10"
+				damage=				"plasma:8d12; WMD4"
+				powerUse=			"3000"
+
+				missileSpeed=		"50"
+				sound=				"&snLaserCannon;"
+				>
+
+			<Effect>
+				<MoltenBolt
+						width=				"16"
+						growth=				"24"
+						primaryColor=		"0xfe, 0xff, 0xce"
+						secondaryColor=		"0xff, 0xeb, 0x26"
+						/>
+			</Effect>
+
+			<HitEffect
+					sound="&snArmorHit1;"
+					>
+				<Image imageID="&rsMediumExplosions;" 
+						imageX="0" 
+						imageY="0" 
+						imageWidth="64" 
+						imageHeight="64"
+						imageFrameCount="16"
+						imageTicksPerFrame="2"/>
+			</HitEffect>
+		</Weapon>
+
+	</ItemType>
+
+</TranscendenceModule>

@@ -1,0 +1,1403 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!ENTITY unidExtension						"0xE3140002">
+
+<!-- IMAGES -->
+
+	<!ENTITY rsAutonCanis							"0xE314010F">
+	<!ENTITY rsAutonEIMining1						"0xE3140102">
+	<!ENTITY rsAutonEIMining2						"0xE3140103">
+	<!ENTITY rsAutonCharonLoot1						"0xE3140104">
+	<!ENTITY rsDUMMY3							"0xE3140105">
+	<!ENTITY rsDUMMY2							"0xE3140106">
+	<!ENTITY rsAutonHeavy1							"0xE3140107">
+	<!ENTITY rsAutonHeavy2							"0xE3140108">
+	<!ENTITY rsAutonTherrusian						"0xE3140109">
+	<!ENTITY rsAutonCWMilitary						"0xE314010A">
+	<!ENTITY rsAutonMedium1							"0xE314010B">
+	<!ENTITY rsAutonLuminousPod						"0xE314010C">
+
+	<!ENTITY rsAutonLuminousProbe						"0xE314010D">
+	<!ENTITY rsDUMMY4							"0xE314010E">
+
+<!-- ITEMS -->
+
+	<!ENTITY itAutonCanis							"0xE314100F">
+	<!ENTITY itAutonEIMining1						"0xE3141002">
+	<!ENTITY itAutonEIMining2						"0xE3141003">
+	<!ENTITY itAutonCharonLoot1						"0xE3141004">
+	<!ENTITY itAutonCharonLoot2						"0xE3141005">
+	<!ENTITY itK3aShield							"0xE3141006">
+	<!ENTITY itAutonHeavy1							"0xE3141007">
+	<!ENTITY itAutonHeavy2							"0xE3141008">
+	<!ENTITY itAutonTherrusian						"0xE3141009">
+	<!ENTITY itAutonCWMilitary						"0xE314100A">
+	<!ENTITY itAutonMedium1							"0xE314100B">
+	<!ENTITY itAutonLuminousPod						"0xE314100C">
+
+	<!ENTITY itUnkownAuton2							"0xE314100D">
+
+	<!ENTITY itK6aShield							"0xE314100E">
+
+<!-- SHIPS -->
+
+	<!ENTITY scAutonCanis							"0xE314600F">
+	<!ENTITY scAutonEIMining1						"0xE3146002">
+	<!ENTITY scAutonEIMining2						"0xE3146003">
+	<!ENTITY scAutonCharonLoot1						"0xE3146004">
+	<!ENTITY scAutonCharonLoot2						"0xE3146005">
+	<!ENTITY scAutonCharonLoot3						"0xE3146006">
+	<!ENTITY scAutonHeavy1							"0xE3146007">
+	<!ENTITY scAutonHeavy2							"0xE3146008">
+	<!ENTITY scAutonTherrusian						"0xE3146009">
+	<!ENTITY scAutonCWMilitary						"0xE314600A">
+	<!ENTITY scAutonMedium1							"0xE314600B">
+	<!ENTITY scAutonLuminousPod						"0xE314600C">
+
+	<!ENTITY scDefectiveAuton						"0xE314600D">
+
+	<!ENTITY scAutonLuminousProbe						"0xE314600E">
+
+]>
+
+<TranscendenceModule> <!--  UNID="0xE3140002" version="1.0" -->
+
+<!-- NEW STUFF -->
+
+	<Image UNID="&rsAutonCanis;"		bitmap="resources/images/canisauton.jpg" bitmask="resources/images/canisauton_mask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsAutonEIMining1;"	bitmap="resources/images/EI50cargoauton.jpg" bitmask="resources/images/EI50cargoauton_mask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsAutonEIMining2;"	bitmap="resources/images/ei75cargoauton.jpg" bitmask="resources/images/ei75cargoauton_mask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsAutonCharonLoot1;"	bitmap="resources/images/charonlooter.jpg" bitmask="resources/images/charonlootermask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsAutonLuminousProbe;"	bitmap="resources/images/luminousprobe.jpg" bitmask="resources/images/luminousprobemask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsDUMMY2;"		bitmap="resources/images/centauriraidernew.jpg" bitmask="resources/images/centauriraidernewmask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsAutonHeavy1;"		bitmap="resources/images/heavyauton3.jpg" bitmask="resources/images/heavyauton3_mask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsAutonHeavy2;"		bitmap="resources/images/heavyauton2.jpg" bitmask="resources/images/heavyauton2_mask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsAutonTherrusian;"	bitmap="resources/images/therr_auton.jpg" bitmask="resources/images/therr_autonmask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsAutonCWMilitary;"	bitmap="resources/images/CWauton.jpg" bitmask="resources/images/CWAuton_mask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsAutonMedium1;"		bitmap="resources/images/mediumauton1.jpg" bitmask="resources/images/mediumauton1_mask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsAutonLuminousPod;"	bitmap="resources/images/luminouspod.jpg" bitmask="resources/images/luminouspodmask.bmp" loadOnUse="true"/>
+
+	<ItemType UNID="&itK3aShield;"
+			name=				"K3 Shield Generator"
+			level=				"5"
+			value=				"9000"
+			mass=				"3000"
+			frequency=			"notrandom"
+			modifiers=			"MajorItem; Specialty; Canis"
+
+			description=		"The K3 is an older, weaker shield in their K-series of shield generators."
+
+			sortName=			"K3"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"60"
+				regenTime=		"10"
+				regenHP=		"6"
+				depletionDelay=	"100"
+				powerUse=		"200"
+				/>
+
+	</ItemType>
+
+	<ItemType UNID="&itK6aShield;"
+			name=				"K5 Shield Generator"
+			level=				"6"
+			value=				"14000"
+			mass=				"4000"
+			frequency=			"notrandom"
+			modifiers=			"MajorItem; Specialty; Canis"
+
+			description=		"The K5 is Canis Industries' last-generation shield generator. While not as tough as the K7 or K9 generators, it's great regeneration keeps it a popular choice."
+
+			sortName=			"K3"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"100"
+				regenTime=		"10"
+				regenHP=		"10"
+				depletionDelay=	"100"
+				powerUse=		"400"
+				/>
+
+	</ItemType>
+
+	<ShipClass UNID="&scAutonCanis;"
+			manufacturer=		""
+			class=				"C-10B0 auton"
+			type=				""
+			score=				"800"
+
+			mass=				"4"
+			cargoSpace=			"0"
+			thrust=				"30"
+			maneuver=			"1"
+			maxSpeed=			"25"
+
+			rotationCount=			"40"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itHexaCarbideArmor;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itIonBlaster;"/>
+			<Device deviceID="&itK3aShield;"/>
+		</Devices>
+
+		<Image imageID="&rsAutonCanis;" imageX="0" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	<ShipClass UNID="&scAutonEIMining1;"
+			manufacturer=		""
+			class=				"EI50 Cargo Auton"
+			type=				""
+			score=				"220"
+
+			mass=				"10"
+			cargoSpace=			"50"
+			thrust=				"65"
+			maneuver=			"3"
+			maxSpeed=			"20"
+
+			rotationCount=			"40"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itLightBlastPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itClass2Deflector;"/>
+		</Devices>
+
+		<Image imageID="&rsAutonEIMining1;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	<ShipClass UNID="&scAutonEIMining2;"
+			manufacturer=		""
+			class=				"EI75 Cargo Auton"
+			type=				""
+			score=				"320"
+
+			mass=				"20"
+			cargoSpace=			"75"
+			thrust=				"100"
+			maneuver=			"4"
+			maxSpeed=			"20"
+
+			rotationCount=			"40"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itHeavyBlastPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itClass3Deflector;"/>
+			<Device deviceID="&itOmniLaserCannon;"/>
+		</Devices>
+
+		<Image imageID="&rsAutonEIMining2;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	<ShipClass UNID="&scAutonCharonLoot1;"
+			manufacturer=		""
+			class=				"Dubloon-I"
+			type=				""
+			score=				"320"
+
+			mass=				"4"
+			cargoSpace=			"25"
+			thrust=				"30"
+			maneuver=			"3"
+			maxSpeed=			"25"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itLightBlastPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itLaserCannon;"/>
+			<Device deviceID="&itClass1Deflector;"/>
+		</Devices>
+
+		<Image imageID="&rsAutonCharonLoot1;" imageX="0" imageY="0" imageWidth="80" imageHeight="80" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	<ShipClass UNID="&scAutonCharonLoot2;"
+			manufacturer=		""
+			class=				"Dubloon-II"
+			type=				""
+			score=				"420"
+
+			mass=				"4"
+			cargoSpace=			"50"
+			thrust=				"30"
+			maneuver=			"4"
+			maxSpeed=			"25"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itLightBlastPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itTurbolaserCannon;"/>
+			<Device deviceID="&itClass3Deflector;"/>
+		</Devices>
+
+		<Image imageID="&rsAutonCharonLoot1;" imageX="0" imageY="0" imageWidth="80" imageHeight="80" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	<ShipClass UNID="&scAutonCharonLoot3;"
+			manufacturer=		""
+			class=				"1M/i battle auton"
+			type=				""
+			score=				"420"
+
+			mass=				"4"
+			cargoSpace=			"0"
+			thrust=				"30"
+			maneuver=			"3"
+			maxSpeed=			"25"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itLightBlastPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itIonCannon;"/>
+			<Device deviceID="&itMonopoleDeflector;"/>
+		</Devices>
+
+		<Image imageID="&rsSmallShips1;" imageX="320" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	<ShipClass UNID="&scAutonHeavy1;"
+			manufacturer=		""
+			class=				"9100A Heavy Combat Auton"
+			type=				""
+			score=				"720"
+
+			mass=				"4"
+			cargoSpace=			"0"
+			thrust=				"30"
+			maneuver=			"1"
+			maxSpeed=			"25"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itHeavyCeralloyArmor;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itStarCannon;"/>
+			<Device deviceID="&itYoroiS100;"/>
+		</Devices>
+
+		<Image imageID="&rsAutonHeavy1;" imageX="0" imageY="0" imageWidth="36" imageHeight="36" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	<ShipClass UNID="&scAutonHeavy2;"
+			manufacturer=		""
+			class=				"C-10UP Battle Auton"
+			type=				""
+			score=				"1220"
+
+			mass=				"4"
+			cargoSpace=			"0"
+			thrust=				"30"
+			maneuver=			"2"
+			maxSpeed=			"25"
+
+			leavesWreck=		"0"
+
+			rotationCount=			"40"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itHexaCarbideArmor;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itHeavyIonBlaster;"/>
+			<Device deviceID="&itK6aShield;"/>
+		</Devices>
+
+		<Image imageID="&rsAutonHeavy2;" imageX="0" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	<ShipClass UNID="&scAutonCWMilitary;"
+			manufacturer=		""
+			class=				"Phalanx"
+			type=				""
+			score=				"620"
+
+			mass=				"10"
+			cargoSpace=			"0"
+			thrust=				"30"
+			maneuver=			"2"
+			maxSpeed=			"24"
+
+			rotationCount=			"40"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itAdvancedPlasteelPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itTev9Blaster;"/>
+			<Device deviceID="&itR1Deflector;"/>
+		</Devices>
+
+		<Image imageID="&rsAutonCWMilitary;" imageX="0" imageY="0" imageWidth="36" imageHeight="36" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	<ShipClass UNID="&scAutonMedium1;"
+			manufacturer=		""
+			class=				"1500R Siege Auton"
+			type=				""
+			score=				"420"
+
+			mass=				"10"
+			cargoSpace=			"0"
+			thrust=				"30"
+			maneuver=			"2"
+			maxSpeed=			"25"
+			rotationCount=			"40"
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itBlastPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itMarkIHowitzer;"/>
+			<Device deviceID="&itClass3Deflector;"/>
+		</Devices>
+
+		<Image imageID="&rsAutonMedium1;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	<ShipClass UNID="&scAutonLuminousPod;"
+			manufacturer=		"Luminous AI"
+			class=				"Luminous Pod"
+			type=				""
+			score=				"500"
+
+			mass=				"4"
+			cargoSpace=			"0"
+			thrust=				"30"
+			maneuver=			"2"
+			maxSpeed=			"25"
+
+			leavesWreck=		"0"
+
+			rotationCount=			"40"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itLuminousArmature;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itIonBlaster;" posAngle="180" minFireArc="180" maxFireArc="180"/>
+		</Devices>
+
+		<Image imageID="&rsAutonLuminousPod;" imageX="0" imageY="0" imageWidth="56" imageHeight="56" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	<ShipClass UNID="&scAutonLuminousProbe;"
+			manufacturer=		"Luminous AI"
+			class=				"Luminous Probe"
+			type=				""
+			score=				"150"
+
+			mass=				"4"
+			cargoSpace=			"0"
+			thrust=				"30"
+			maneuver=			"1"
+			maxSpeed=			"25"
+
+			leavesWreck=		"0"
+			rotationCount=			"40"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itLuminousArmature;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itTev9Blaster;" posAngle="180" minFireArc="180" maxFireArc="180"/>
+		</Devices>
+
+		<Image imageID="&rsAutonLuminousProbe;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"40"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+
+
+
+	<ShipClass UNID="&scDefectiveAuton;"
+			manufacturer=		""
+			class=				"200A defender auton"
+			type=				""
+			score=				"240"
+
+			mass=				"2"
+			cargoSpace=			"0"
+			thrust=				"30"
+			maneuver=			"2"
+			maxSpeed=			"25"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itPlasteelPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itTurbolaserCannon;"/>
+		</Devices>
+
+		<Image imageID="&rsSmallShips1;" imageX="288" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"80"
+			perception=			"4"
+			/>
+			
+		<Events>
+			<OrderAttackSelf>
+				(block Nil
+					; Malfunction causes auton to attack player
+					(shpSetController gSource Nil)
+					(objSetSovereign gSource &svDefectiveAuton;)
+					(shpCancelOrders gSource)
+					(shpOrder gSource 'attack gSender)
+					
+					(objSendMessage gSender gSource "200A: AI.error.safety_module_failure")					
+					)
+			</OrderAttackSelf>
+		</Events>
+	</ShipClass>
+
+<!-- OVERWRITE -->
+
+<!-- BASE CLASS AND BEHAVIORS -->
+
+	<!-- Auton Base Class -->
+
+	<ShipClass UNID="&baStdAutonBase;"
+			class=				"(auton base class)"
+			virtual=			"true"
+
+			attributes=			"baseClass"
+			>
+
+		<Communications>
+			<Message name="Attack target" key="A">
+				<OnShow>
+					(and (objGetTarget gSender)
+						(not (eq (objGetTarget gSender) (objGetTaret gSource)))
+						(objGetItems gSource "wI")
+						)
+				</OnShow>
+				
+				<Invoke>
+					(switch
+						; If ordered to attack ourselves, hilarity ensues
+						(eq (objGetTarget gSender) gSource)
+							(objFireEvent gSource "OrderAttackSelf")
+
+						; Attack the target
+						(objGetTarget gSender)
+							(block Nil
+								(objCommunicate gSource gSender 1 (objGetTarget gSender))
+								(objSendMessage gSender gSource "Auton order acknowledged")
+								)
+
+						(objSendMessage gSender gSource "Unable to comply")
+						)
+				</Invoke>
+			</Message>
+
+			<Message name="Form up" key="F">
+				<OnShow>
+					(objCommunicate gSource gSender 15)
+				</OnShow>
+
+				<Invoke>
+					(block Nil
+						(objCommunicate gSource gSender 13)
+						(objSendMessage gSender gSource "Auton order acknowledged")
+						)
+				</Invoke>
+			</Message>
+
+			<Message name="Wait" key="W">
+				<OnShow>
+					(not (objCommunicate gSource gSender 15))
+				</OnShow>
+
+				<Invoke>
+					(block Nil
+						(objCommunicate gSource gSender 14)
+						(objSendMessage gSender gSource "Auton order acknowledged")
+						)
+				</Invoke>
+			</Message>
+		</Communications>
+		
+		<Events>
+			<OrderAttackSelf>
+				(objSendMessage gSender gSource "Unable to comply")
+			</OrderAttackSelf>
+		</Events>
+	</ShipClass>
+
+<!-- SHIP CLASSES -->
+
+	<!-- Auton, AutoSentinel -->
+
+	<ShipClass UNID="&scAutoSentinel;"
+			manufacturer=		""
+			class=				"AutoSentinel&#xae;"
+			type=				""
+			score=				"115"
+
+			mass=				"1"
+			cargoSpace=			"0"
+			thrust=				"10"
+			maneuver=			"2"
+			maxSpeed=			"25"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itHeavyCeramicPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itLaserCannon;"/>
+		</Devices>
+
+		<Image imageID="&rsSmallShips1;" imageX="256" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"15"
+			fireAccuracy=		"70"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+
+	<!-- Auton, 300D Defender Auton -->
+
+	<ShipClass UNID="&sc300DDefenderAuton;"
+			manufacturer=		""
+			class=				"300D defender auton"
+			type=				""
+			score=				"240"
+
+			mass=				"2"
+			cargoSpace=			"0"
+			thrust=				"30"
+			maneuver=			"2"
+			maxSpeed=			"25"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itPlasteelPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itTurbolaserCannon;"/>
+			<Device deviceID="&itHullPlateIonizer;"/>
+		</Devices>
+
+		<Image imageID="&rsSmallShips1;" imageX="288" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"80"
+			perception=			"4"
+			/>
+			
+		<Events>
+			<onCreate>
+				(if (leq (Random 1 100) 3)
+				(block Nil
+					; Malfunction causes auton to attack player
+					(shpSetController gSource Nil)
+					(objSetSovereign gSource &svDefectiveAuton;)
+					(shpCancelOrders gSource)
+					(shpOrder gSource 'attack gSender)
+					
+					(objSendMessage gSender gSource "300D: AI.error.safety_module_failure")					
+					)
+				)
+			</onCreate>
+			<OrderAttackSelf>
+				(block Nil
+					; Malfunction causes auton to attack player
+					(shpSetController gSource Nil)
+					(objSetSovereign gSource &svDefectiveAuton;)
+					(shpCancelOrders gSource)
+					(shpOrder gSource 'attack gSender)
+					
+					(objSendMessage gSender gSource "300D: AI.error.safety_module_failure")					
+					)
+			</OrderAttackSelf>
+		</Events>
+	</ShipClass>
+
+	<!-- Auton, 310A Aegis Auton -->
+
+	<ShipClass UNID="&sc310AAegisAuton;"
+			manufacturer=		""
+			class=				"310A aegis auton"
+			type=				""
+			score=				"390"
+
+			mass=				"2"
+			cargoSpace=			"0"
+			thrust=				"30"
+			maneuver=			"2"
+			maxSpeed=			"25"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itPlasteelPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itLaserCannon;"/>
+			<Device deviceID="&itLongreachIAutocannon;"/>
+			<Device deviceID="&itHullPlateIonizer;"/>
+		</Devices>
+
+		<Image imageID="&rsSmallShips1;" imageX="288" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"80"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+
+	<!-- Auton, Mule Auton -->
+
+	<ShipClass UNID="&scMuleAuton;"
+			manufacturer=		""
+			class=				"330M mule auton"
+			type=				""
+			score=				"80"
+
+			mass=				"2"
+			cargoSpace=			"75"
+			thrust=				"30"
+			maneuver=			"12"
+			maxSpeed=			"20"
+
+			dockScreen=			"Main"
+
+			leavesWreck=		"95"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="270" span="180" armorID="&itPlasteelPlate;" areaSet="0,2,3,7" />
+			<ArmorSection start="90"  span="180" armorID="&itPlasteelPlate;" areaSet="1,4" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itHullPlateIonizer;"/>
+		</Devices>
+
+		<Image imageID="&rsMediumShips1;" imageX="672" imageY="0" imageWidth="48" imageHeight="48"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"80"
+			perception=			"4"
+			nonCombatant=		"true"
+			/>
+
+		<DockScreens>
+			<Main
+				name=			"330M mule auton"
+				>
+
+				<Panes>
+					<Default
+							desc="You are docked with a 330M mule auton.">
+
+						<Actions>
+							<Action name="Loot" key="L" default="1" >
+								(block Nil
+									(setq gPrevScreen "Main")
+									(scrShowScreen gScreen "&dsLoot;")
+									)
+							</Action>
+
+							<Action name="Jettison" key="J">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(scrShowScreen gScreen "&dsJettison;")
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+						</Actions>
+					</Default>
+				</Panes>
+
+			</Main>
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="40" />
+			<Port x="0"		y="-40" />
+			<Port x="40"	y="0" />
+			<Port x="-40"	y="0" />
+		</DockingPorts>
+
+	</ShipClass>
+
+	<!-- Auton, 1M battle auton -->
+
+	<ShipClass UNID="&sc1MBattleAuton;"
+			manufacturer=		""
+			class=				"1M battle auton"
+			type=				""
+			score=				"385"
+
+			mass=				"4"
+			cargoSpace=			"0"
+			thrust=				"30"
+			maneuver=			"3"
+			maxSpeed=			"25"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itLightBlastPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itParticleBeamWeapon;"/>
+			<Device deviceID="&itMonopoleDeflector;"/>
+		</Devices>
+
+		<Image imageID="&rsSmallShips1;" imageX="320" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+		<Events>
+			<OrderAttackSelf>
+				(block Nil
+					(objCommunicate gSource gSender 14)
+					(objSendMessage gSender gSource "1M self-destruct activated")
+					(sysAddObjTimerEvent 90 gSource "OrderSelfDestruct")
+					)
+			</OrderAttackSelf>
+			
+			<OrderSelfDestruct>
+				(block Nil
+					(sysCreateWeaponFire 
+						&vtBlastExplosion4; 
+						(list Nil 'explosion Nil "self-destructing 1M battle auton" 0x00)
+						(objGetPos gSource) 
+						0
+						0
+						Nil
+						'detonateNow
+						)
+
+					(objDestroy gSource)
+					)
+			</OrderSelfDestruct>
+		</Events>
+	</ShipClass>
+
+	<!-- Auton, 1M/i battle auton -->
+
+	<ShipClass UNID="&sc1MiBattleAuton;"
+			manufacturer=		""
+			class=				"1M/i battle auton"
+			type=				""
+			score=				"420"
+
+			mass=				"4"
+			cargoSpace=			"0"
+			thrust=				"30"
+			maneuver=			"3"
+			maxSpeed=			"25"
+
+			leavesWreck=		"0"
+
+			attributes=			"auton,genericClass"
+			
+			inherit=			"&baStdAutonBase;"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itLightBlastPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itIonCannon;"/>
+			<Device deviceID="&itMonopoleDeflector;"/>
+		</Devices>
+
+		<Image imageID="&rsSmallShips1;" imageX="320" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	
+<!-- ITEMS -->
+
+	<!-- Auton, AutoSentinel -->
+
+	<ItemType UNID="&itAutoSentinel;"
+			name=				"AutoSentinel&#xae;| AutoSentinels&#xae;"
+			level=				"3"
+			value=				"490"
+			mass=				"1000"
+			frequency=			"common"
+			unknownType=		"&itUnknownAuton;"
+			modifiers=			"Auton; MinorItem"
+
+			description=		"For around 500 credits, OmniDefense Systems' AutoSentinel keeps you and your loved ones safe from harm. NOTE: For professional security needs, order the 1M battle auton."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="288" imageWidth="96" imageHeight="96"/>
+
+		<Invoke key="A">
+			(block (auton)
+				; Create the auton
+				(setq auton
+					(sysCreateShip 
+						&scAutoSentinel;
+						(objGetPos gSource)
+						&svFriendlyAuton;
+						"auton"
+						)
+					)
+
+				; Escort ship
+				(shpOrderEscort auton gSource)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Welcome message
+				(objSendMessage gSource Nil "AutoSentinel&#xae; v2.01 online")
+
+				; Remove the item from the player's list
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+
+	</ItemType>
+
+	<!-- Auton, 300D Defender -->
+
+	<ItemType UNID="&it300DDefenderAuton;"
+			name=				"300D defender auton"
+			level=				"4"
+			value=				"2000"
+			mass=				"1000"
+			frequency=			"rare"
+			unknownType=		"&itUnknownAuton;"
+			modifiers=			"Auton; MinorItem"
+
+			description=		"This is a commercial auton primarily used for defending small stations. NOTE: For professional security needs, order the 1M battle auton."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="288" imageWidth="96" imageHeight="96"/>
+
+		<Invoke key="A">
+			(block (auton)
+				; Create the auton
+				(setq auton
+					(sysCreateShip 
+						&sc300DDefenderAuton;
+						(objGetPos gSource)
+						&svFriendlyAuton;
+						"auton"
+						)
+					)
+
+				; Escort ship
+				(shpOrderEscort auton gSource)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Welcome message
+				(objSendMessage gSource Nil "300D Defender online [v2.1d]")
+
+				; Remove the item from the player's list
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+
+	</ItemType>
+
+	<!-- Auton, 310A Aegis -->
+
+	<ItemType UNID="&it310AAegisAuton;"
+			name=				"310A aegis auton"
+			level=				"4"
+			value=				"2500"
+			mass=				"1000"
+			frequency=			"rare"
+			unknownType=		"&itUnknownAuton;"
+			modifiers=			"Auton; MinorItem"
+
+			description=		"This variant of the 300D is equipped with an anti-missile defense system."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="288" imageWidth="96" imageHeight="96"/>
+
+		<Invoke key="A">
+			(block (auton)
+				; Create the auton
+				(setq auton
+					(sysCreateShip 
+						&sc310AAegisAuton;
+						(objGetPos gSource)
+						&svFriendlyAuton;
+						"auton"
+						)
+					)
+
+				; Escort ship
+				(shpOrderEscort auton gSource)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Welcome message
+				(objSendMessage gSource Nil "310A Aegis online [v1.0f]")
+
+				; Remove the item from the player's list
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+
+	</ItemType>
+
+	<!-- Auton, 330M Mule -->
+
+	<ItemType UNID="&itMuleAuton;"
+			name=				"330M mule auton"
+			level=				"4"
+			value=				"2500"
+			mass=				"5000"
+			frequency=			"rare"
+			unknownType=		"&itUnknownAuton;"
+			modifiers=			"Auton; MinorItem"
+
+			description=		"Dock with this auton to store supplies on its cargo platform. This auton has space for 75 tons of cargo. "
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="288" imageWidth="96" imageHeight="96"/>
+
+		<Invoke key="A">
+			(block (auton)
+				; Create the auton
+				(setq auton
+					(sysCreateShip 
+						&scMuleAuton;
+						(objGetPos gSource)
+						&svFriendlyAuton;
+						"auton"
+						)
+					)
+
+				; Escort ship
+				(shpOrderEscort auton gSource)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Welcome message
+				(objSendMessage gSource Nil "330M Mule online [v2.2a]")
+
+				; Remove the item from the player's list
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+
+	</ItemType>
+
+	<!-- Auton, Defective -->
+
+	<ItemType UNID="&itDefectiveAuton;"
+			name=				"defective auton"
+			level=				"4"
+			value=				"200"
+			mass=				"2000"
+			frequency=			"uncommon"
+			unknownType=		"&itUnknownAuton;"
+			modifiers=			"Auton; MinorItem"
+
+			description=		"The 200A series was recalled several years ago because of an unstable AI."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="288" imageWidth="96" imageHeight="96"/>
+
+		<Invoke key="A">
+			(block (auton)
+				; Create the auton
+				(setq auton
+					(sysCreateShip 
+						&scDefectiveAuton;
+						(objGetPos gSource)
+						&svDefectiveAuton;
+						)
+					)
+
+				; Escort ship
+				(shpOrderAttack auton gSource)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Welcome message
+				(objSendMessage gSource Nil "200A: AI.error.safety_module_failure")
+
+				; Remove the item from the player's list
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+
+	</ItemType>
+
+	<!-- Auton, 1M Battle -->
+
+	<ItemType UNID="&it1MBattleAuton;"
+			name=				"1M battle auton"
+			level=				"5"
+			value=				"5000"
+			mass=				"5000"
+			frequency=			"rare"
+			unknownType=		"&itUnknownAuton;"
+			modifiers=			"Auton; MinorItem"
+
+			description=		"The 1M battle auton is the most powerful autonomous defense bot manufactured by the OmniDefense Systems corporation."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="288" imageWidth="96" imageHeight="96"/>
+
+		<Invoke key="A">
+			(block (auton)
+				; Create the auton
+				(setq auton
+					(sysCreateShip 
+						&sc1MBattleAuton;
+						(objGetPos gSource)
+						&svFriendlyAuton;
+						"auton"
+						)
+					)
+
+				; Escort ship
+				(shpOrderEscort auton gSource)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Welcome message
+				(objSendMessage gSource Nil "Auton series 1M online")
+
+				; Remove the item from the player's list
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+
+	</ItemType>
+
+	<!-- Auton, 1M/i Battle -->
+
+	<ItemType UNID="&it1MiBattleAuton;"
+			name=				"1M/i battle auton"
+			level=				"6"
+			value=				"7500"
+			mass=				"5000"
+			frequency=			"rare"
+			unknownType=		"&itUnknownAuton;"
+			modifiers=			"Auton; MinorItem"
+
+			description=		"This is a variant of OmniDefense Systems' 1M battle auton. Instead of a particle beam, it is equipped with an EMP cannon."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="288" imageWidth="96" imageHeight="96"/>
+
+		<Invoke key="A">
+			(block (auton)
+				; Create the auton
+				(setq auton
+					(sysCreateShip 
+						&sc1MiBattleAuton;
+						(objGetPos gSource)
+						&svFriendlyAuton;
+						"auton"
+						)
+					)
+
+				; Escort ship
+				(shpOrderEscort auton gSource)
+
+				; Identify the item
+				(itmSetKnown gItem)
+
+				; Welcome message
+				(objSendMessage gSource Nil "Auton series 1M/i online")
+
+				; Remove the item from the player's list
+				(objRemoveItem gSource gItem 1)
+				)
+		</Invoke>
+
+	</ItemType>
+	
+	<!-- Unknown Auton -->
+
+	<ItemType UNID="&itUnknownAuton;"
+			name=				"unknown auton"
+			virtual=			"true"
+			level=				"3"
+			value=				"2500"
+			modifiers=			"unknown"
+
+			description=		"This is an autonomous defense bot of some kind. Unfortunately, you cannot tell anything about its nature until you use it."
+			>
+
+		<Names>auton(s) with strange markings; auton(s) with yellow markings;
+			auton(s) with red markings; auton(s) with engraved marking;
+			auton(s) with blue markings; auton(s) with no markings;
+			auton(s) with green markings; auton(s) with raised markings;
+			auton(s) with numeral markings; auton(s) with geometric markings;
+			auton(s) with small markings; auton(s) with large markings;
+			auton(s) with stenciled markings; auton(s) with laser-etched markings;
+			auton(s) with white markings; auton(s) with alpha-numeric markings;
+			auton(s) with alphabetic markings; auton(s) with 8-bit markings;
+			auton(s) with cyan markings; auton(s) with magenta markings;
+			auton(s) with black markings; auton(s) with written markings;
+			auton(s) with painted markings; auton(s) with anodized markings;
+			auton(s) with barcode markings; auton(s) with simple markings;
+			auton(s) with invisible markings
+		</Names>
+	</ItemType>
+
+</TranscendenceModule>

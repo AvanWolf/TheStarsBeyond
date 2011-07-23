@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!ENTITY unidExtension						"0xE314000C">
+
+<!-- IMAGES -->
+
+	<!ENTITY rsTwilightTurret							"0xE31403f0">
+	<!ENTITY rsTwilightDestroyer							"0xE31403f1">
+	<!ENTITY rsTwilightFighter							"0xE31403f2">
+
+<!-- DEVICES -->
+
+	<!ENTITY itNightfallBeam						"0xE31412f0">
+	<!ENTITY itHorizonBeam							"0xE31412f1">
+	<!ENTITY itShadowBeam							"0xE31412f2">
+
+<!-- SHIPS -->
+
+	<!ENTITY scTwilightTurret							"0xE31462f0">
+	<!ENTITY scTwilightDestroyer							"0xE31462f1">
+	<!ENTITY scTwilightFighter							"0xE31462f2">
+
+
+]>
+<TranscendenceModule> <!-- UNID="0xE314000#" version="1.0" -->
+
+	<Image UNID="&rsTwilightTurret;"		bitmap="resources/images/twilightturret.jpg" bitmask="resources/images/twilightturretmask.bmp"   loadOnUse="true"/>
+	<Image UNID="&rsTwilightDestroyer;"		bitmap="resources/images/twilightdestroyer.jpg" bitmask="resources/images/twilightdestroyermask.bmp"   loadOnUse="true"/>
+	<Image UNID="&rsTwilightFighter;"		bitmap="resources/images/twilightfighter.jpg" bitmask="resources/images/twilightfightermask.bmp"   loadOnUse="true"/>
+
+
+
+
+</TranscendenceModule>

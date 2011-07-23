@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceExtension
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!ENTITY unidExtension						"0xE314FFFF">
+
+
+
+]>
+<TranscendenceExtension UNID="0xE314FFFF" version="1.0"> <!--  UNID="0xF3140000" version="1.0"-->
+	<Modules>
+		<Module filename="TSB_Ansabi.xml"/>
+		<Module filename="TSB_Ares.xml"/>
+		<Module filename="TSB_Autons.xml"/>
+		<Module filename="TSB_Canis.xml"/>
+		<Module filename="TSB_Centauri.xml"/>
+		<Module filename="TSB_Coalition.xml"/>
+		<Module filename="TSB_Collective.xml"/>
+		<Module filename="TSB_CommonwealthFleet.xml"/>
+		<Module filename="TSB_Domain.xml"/>
+		<Module filename="TSB_FreeZoanthropes.xml"/>
+		<Module filename="TSB_Hauri.xml"/>
+		<Module filename="TSB_Kaidan.xml"/>
+		<Module filename="TSB_Luminous.xml"/>
+
+		<!-- <Module filename="TSB_RanxEmpire.xml"/> Omitted until completion of ranx adv. ext -->
+		<Module filename="TSB_RanxResistance.xml"/>
+		<Module filename="TSB_Rasiermesser.xml"/>
+		<Module filename="TSB_Shields.xml"/>
+		<Module filename="TSB_SistersOfDomina.xml"/>
+		<Module filename="TSB_Sung.xml"/>
+		<Module filename="TSB_Teratons.xml"/>
+		<Module filename="TSB_Twilight.xml"/>
+		<Module filename="TSB_Template.xml"/>
+		<Module filename="TSB_Weapons.xml"/>
+	</Modules>
+</TranscendenceExtension>

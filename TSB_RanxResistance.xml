@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+
+	<!ENTITY rsRanxResHeavyCruiser						"0xE3140130">
+	<!ENTITY rsRanxResDestroyer						"0xE3140131">
+	<!ENTITY snRanxFusionCannon						"0xE3140132">
+	<!ENTITY snGiantCannon							"0xE3140133">
+	<!ENTITY snVulcanCannon							"0xE3140134">
+	<!ENTITY rsPlasmaShockwave						"0xE3140135">
+
+	<!ENTITY itKilotonHammer						"0xE3141030">
+	<!ENTITY itRanxDragonHowitzer						"0xE3141031">
+	<!ENTITY itRanxArmorLght						"0xE3141032">
+	<!ENTITY itRanxArmorNorm						"0xE3141033">
+	<!ENTITY itRanxArmorHeav						"0xE3141034">
+	<!ENTITY itRanxArmorMass						"0xE3141035">
+	<!ENTITY itRanxArmorDrgn						"0xE3141036">
+	<!ENTITY itRanxAShields							"0xE3141037">
+	<!ENTITY itRanxBShields							"0xE3141038">
+	<!ENTITY itRanxCShields							"0xE3141039">
+	<!ENTITY itRanxDShields							"0xE314103A">
+	<!ENTITY itRanxEShields							"0xE314103B">
+	<!ENTITY itRanxFShields							"0xE314103C">
+	<!ENTITY itRanxFireSpear						"0xE314103D">
+	<!ENTITY itRanxBombard							"0xE314103E">
+	<!ENTITY itRanxRailgun1							"0xE314103F">
+	<!ENTITY itRanxRailgun2							"0xE3141040">
+	<!ENTITY itRanxRailgun3							"0xE3141041">
+	<!ENTITY itRanxVulcan1							"0xE3141042">
+	<!ENTITY itRanxVulcan2							"0xE3141043">
+
+	<!ENTITY scRanxResHeavyCruiser						"0xE3146030">
+	<!ENTITY scRanxResDestroyer						"0xE3146031">
+
+]>
+<TranscendenceModule> <!-- UNID="0xE314000#" version="1.0" -->
+
+	<Image UNID="&rsPlasmaShockwave;"		bitmap="resources/images/plasmashockwave.jpg"		bitmask="resources/images/plasmashockwavemask.bmp" />
+
+	<Sound UNID="&snRanxFusionCannon;"			filename="resources/sounds/plasma.wav"/>
+	<Sound UNID="&snGiantCannon;"				filename="resources/sounds/giantcannon.wav"/>
+	<Sound UNID="&snVulcanCannon;"				filename="resources/sounds/chemgun.wav"/>
+
+	<Image UNID="&rsRanxResHeavyCruiser;"	bitmap="resources/images/ranxresheavycruiser.jpg" 		bitmask="resources/images/ranxresheavycruiserMask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsRanxResDestroyer;"	bitmap="resources/images/ranxresdestroyer.jpg" 		bitmask="resources/images/ranxresdestroyerMask.bmp" loadOnUse="true"/>
+
+	<ShipClass UNID="&scRanxResHeavyCruiser;"
+			manufacturer=		"Rasiermesser"
+			class=				"Broadsword"
+			type=				"Battlecruiser"
+			score=				"2300"
+			techOrder=			"mech"
+			
+			mass=				"25000"
+			cargoSpace=			"15000"
+			thrust=				"15000"
+			maneuver=			"10"
+			maxSpeed=			"10"
+			rotationCount=			"40"	
+			cyberDefenseLevel=	"10"
+
+			explosionType=		"&vtThermoExplosion1;"
+			leavesWreck=		"100"
+
+			attributes=			"genericClass,rasiermesser,corporate"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="300" span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="285" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="30"  span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="15"  span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itTransuranicPlate;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itKilotonCannon;" minFireArc="357" maxFireArc="3" posAngle="10" posRadius="60"/>
+			<Device deviceID="&itKilotonCannon;" minFireArc="357" maxFireArc="3" posAngle="350" posRadius="60"/>
+			<Device deviceID="&itAkan600Turret;"  omnidirectional="true" secondaryWeapon="true" posAngle="0" posRadius="50"/>
+			<Device deviceID="&itAkan600Turret;"  omnidirectional="true" secondaryWeapon="true" posAngle="180" posRadius="50"/>
+			<Device deviceID="&itSmartCannon;"  secondaryWeapon="true" posAngle="155" posRadius="64" minFireArc="177" maxFireArc="183"/>
+			<Device deviceID="&itSmartCannon;"  secondaryWeapon="true" posAngle="205" posRadius="64" minFireArc="177" maxFireArc="183"/>
+			<Device deviceID="&itSmartCannon;"  secondaryWeapon="true" posAngle="130" posRadius="45" minFireArc="357" maxFireArc="3"/>
+			<Device deviceID="&itSmartCannon;"  secondaryWeapon="true" posAngle="220" posRadius="45" minFireArc="357" maxFireArc="3"/>
+			<Device deviceID="&itPatchSpider;"/>
+			<Device deviceID="&itPatchSpider;"/>
+			<Device deviceID="&itPatchSpider;"/>
+		</Devices>
+
+		<Items>
+			<Item				count="2d12"	item="&itPteracniumFuelRod;"/>
+			<Item				count="1000d5"	item="&itAkan30CannonShell;"/>
+			<Item				count="500d10"	item="&itKilotonCannonShell;"/>
+			<Item				count="2000d5"	item="&itSmartCannonShell;"/>
+			<Lookup		count="1"		table="&trMajorItem8;"/>
+			<Table>
+				<Lookup	chance="40"	count="1d4"		table="&trConsumables8;"/>
+				<Lookup	chance="30"	count="1d2"		table="&trMinorItem8;"/>
+				<Lookup	chance="30"	count="1"		table="&trMajorItem7;"/>
+			</Table>
+		</Items>
+
+		<Image imageID="&rsRanxResHeavyCruiser;" imageX="0" imageY="0" imageWidth="208" imageHeight="208" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"0"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scRanxResDestroyer;"
+			manufacturer=		"Rasiermesser"
+			class=				"Shortsword"
+			type=				"Destroyer"
+			score=				"1700"
+			techOrder=			"mech"
+			
+			mass=				"8000"
+			cargoSpace=			"2000"
+			thrust=				"12500"
+			maneuver=			"5"
+			maxSpeed=			"16"
+			rotationCount=			"40"	
+			cyberDefenseLevel=	"10"
+
+			explosionType=		"&vtThermoExplosion1;"
+			leavesWreck=		"100"
+
+			attributes=			"genericClass,rasiermesser,corporate"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="300" span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="285" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="30"  span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="15"  span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itTransuranicPlate;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itKilotonHammer;" secondaryWeapon="true" posAngle="50" posRadius="36"/>
+			<Device deviceID="&itKilotonHammer;" posAngle="0" posRadius="60"/>
+			<Device deviceID="&itKilotonHammer;" secondaryWeapon="true" posAngle="310" posRadius="36"/>
+			<Device deviceID="&itPatchSpider;"/>
+			<Device deviceID="&itPatchSpider;"/>
+		</Devices>
+
+		<Items>
+			<Item				count="2d12"	item="&itPteracniumFuelRod;"/>
+			<Item				count="500d20"	item="&itKilotonCannonShell;"/>
+			<Lookup		count="1"		table="&trMajorItem8;"/>
+			<Table>
+				<Lookup	chance="40"	count="1d4"		table="&trConsumables8;"/>
+				<Lookup	chance="30"	count="1d2"		table="&trMinorItem8;"/>
+				<Lookup	chance="30"	count="1"		table="&trMajorItem7;"/>
+			</Table>
+		</Items>
+
+		<Image imageID="&rsRanxResDestroyer;" imageX="0" imageY="0" imageWidth="152" imageHeight="152" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	<ItemType UNID="&itKilotonHammer;"
+			name=				"Kilohammer cannon"
+			level=				"7"
+			value=				"45000"
+			mass=				"15000"
+			frequency=			"veryrare"
+			attributes=			"RanxResistance; MajorItem; Military; Specialty"
+
+			description=		"The Ranx Resistance devised this devastating weapon from the Ranx Empire's atomic lance, but it detonates the entire kiloton shell instead, giving it more power and range, at the cost of mass"
+			>
+
+		<Image imageID="&rsItemsEI3;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+		<Weapon
+				fireRate=			"20"
+				powerUse=			"50"
+				
+				type=			"beam"
+						damage=			"thermo:8d1+1; WMD4"
+						repeating=		"5"
+						lifetime=		"13"
+						missileSpeed=			"1d50+50"
+						hitPoints=		"15"
+						sound=			"&snShipExplosion1;"
+						beamType=			"heavyblaster"
+						primaryColor=		"0xe6, 0xff, 0x6f"
+						secondaryColor=		"0xff, 0x8c, 0x00"
+						intensity=			"10"
+				
+				>
+				<Configuration>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							
+							<!--<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>
+							<Shot Angle="1d13-7"/>-->
+				</Configuration>
+			
+
+		</Weapon>
+
+	</ItemType>
+	
+	<!--
+	<ItemType UNID="&itRanxFusionCannon;"
+			name=				"Ranx fusion cannon"
+			level=				"6"
+			value=				"15000"
+			mass=				"5000"
+			frequency=			"rare"
+			numberAppearing=	"1"
+			modifiers=			"EnergyWeapon; MajorItem; Military; RanxEmpire"
+
+			description=		"Ranx fusion cannons fire small tracking shells."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"thermo:5d3"
+				fireRate=			"30"
+				missileSpeed=			"50"
+				lifetime=			"70"
+				hitPoints=			"10"
+				powerUse=			"3000"
+				maneuverability=		"3"
+				autoAquireTarget=		"true"
+				sound=				"&snRanxFusionCannon;"
+				vaporTrailLength="5"
+				vaporTrailWidth="300"
+				vaporTrailWidthInc="-5"
+				vaporTrailColor="0xd0, 0x90, 0x00"
+				>
+			<Configuration aimTolerance="180">
+				<Shot posAngle="0" posRadius="0" />
+			</Configuration>
+			<Effect>
+						
+				<Starburst
+						style=			"morningStar"
+						spikeCount=		"2d6+10"
+						spikeLength=	"3d2"
+						primaryColor=		"0xff, 0xe0, 0x20"
+						secondaryColor=		"0xd0, 0x90, 0x00"
+						/>
+			</Effect>
+
+
+		</Weapon>
+
+	</ItemType>
+
+	<ItemType UNID="&itRanxFireSpear;"
+			name=				"Ranx plasma spear"
+			level=				"10"
+			value=				"350000"
+			mass=				"2500"
+			frequency=			"rare"
+			modifiers=			"EnergyWeapon; Military; MajorItem; RanxEmpire"
+
+			description=		"This Ranx weapon lets loose a stream of plasma over a long distance."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				configuration=			"dual"
+				repeating=			"4"
+				damage=				"plasma:4d2; WMD1"
+				fireRate=			"30"
+				missileSpeed=		"80"
+				lifetime=			"50"
+				interaction=		"0"
+				powerUse=			"3500"
+
+				sound=				"&snLaserCannon;"
+				>
+
+			<Effect>
+				<Shape
+						directional=		"true"
+						scaleLength=		"72" 
+						scaleWidth=			"6"
+
+						scaleLengthInc=		"3" 
+
+						color=				"0xff, 0xd0, 0x00"
+						opacity=			"140"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-35"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-35"	y="-50"/>
+				</Shape>
+
+				<Shape
+						directional=		"true"
+						scaleLength=		"72" 
+						scaleWidth=			"4"
+
+						scaleLengthInc=		"3" 
+
+						color=				"0xff, 0xf0, 0x00"
+						opacity=			"255"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-35"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-35"	y="-50"/>
+				</Shape>
+
+				<Shape
+						directional=		"true"
+						scaleLength=		"64" 
+						scaleWidth=			"3"
+
+						scaleLengthInc=		"3" 
+
+						color=				"0xff, 0xff, 0xe0"
+						opacity=			"255"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-25"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-25"	y="-50"/>
+				</Shape>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+
+	<ItemType UNID="&itRanxVulcan1;"
+			name=				"Ranx vulcan cannon"
+			level=				"8"
+			value=				"80000"
+			mass=				"4000"
+			frequency=			"rare"
+			modifiers=			"EnergyWeapon; Military; MajorItem; RanxEmpire"
+
+			description=		"This Ranx weapon was inspired by the Bushido Shuriken, using a pair of fusion weapons."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				configuration=		"alternating"
+				damage=				"thermo:8d3; WMD3"
+				fireRate=			"10"
+				missileSpeed=		"90"
+				lifetime=			"50"
+				interaction=		"0"
+				hitPoints=			"8"
+				powerUse=			"1000"
+
+				sound=				"&snVulcanCannon;"
+				>
+
+			<Effect>
+				<Shape
+						directional=		"true"
+						scaleLength=		"36" 
+						scaleWidth=			"6"
+
+						scaleLengthInc=		"2" 
+
+						color=				"0xe0, 0xd0, 0x00"
+						opacity=			"140"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-17"	y="25"/>
+					<Point x="-75"	y="0"/>
+					<Point x="-17"	y="-25"/>
+				</Shape>
+
+				<Shape
+						directional=		"true"
+						scaleLength=		"36" 
+						scaleWidth=			"4"
+
+						scaleLengthInc=		"2" 
+
+						color=				"0xff, 0xe0, 0x20"
+						opacity=			"255"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-17"	y="25"/>
+					<Point x="-50"	y="0"/>
+					<Point x="-17"	y="-25"/>
+				</Shape>
+
+				<Shape
+						directional=		"true"
+						scaleLength=		"32" 
+						scaleWidth=			"3"
+
+						scaleLengthInc=		"1" 
+
+						color=				"0xff, 0xf0, 0x80"
+						opacity=			"255"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-17"	y="25"/>
+					<Point x="-50"	y="0"/>
+					<Point x="-17"	y="-25"/>
+				</Shape>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+
+	<ItemType UNID="&itRanxDragonHowitzer;"
+			name=				"Ranx Dragonfire Howitzer"
+			level=				"11"
+			value=				"700000"
+			mass=				"10000"
+			frequency=			"veryrare"
+			modifiers=			"MajorItem; NotForSale; RanxEmpire; EnergyWeapon"
+			showReference=		"true"
+
+			description=		"The product of a joint Commonwealth-Empire collaboration which produced the similar Lamplighter, this arguably the most powerful human weapon to date."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"antimatter:25d5; momentum5; WMD7"
+				fireRate=			"50"
+				missileSpeed=		"75"
+				interaction=		"15"
+				lifetime=			"110"
+				powerUse=			"1500"
+						fragmentCount=	"1"
+				sound=				"&snGiantCannon;"
+				>
+			<Effect>
+				<ParticleComet
+						particleCount=	"300"
+						secondaryColor=	"0xdd, 0xdd, 0x00"
+						
+						width=			"18"
+						length=			"300"
+						/>
+				<ParticleComet
+						particleCount=	"200"
+						primaryColor=	"0xee, 0xee, 0x00"
+						
+						width=			"12"
+						length=			"150"
+						/>
+				<ParticleComet
+						particleCount=	"150"
+						primaryColor=	"0xff, 0xff, 0x00"
+						
+						width=			"8"
+						length=			"100"
+						/>
+				<Starburst
+						spikeCount=		"2d4+2"
+						spikeLength=	"20d5"
+						primaryColor=	"0xff, 0xff, 0x80"
+						secondaryColor=	"0xff, 0xff, 0x00"
+						/>
+				<Starburst
+						style=			"morningStar"
+						spikeCount=		"10d3"
+						spikeLength=	"4d4+5"
+						primaryColor=	"0xff, 0xff, 0x00"
+						secondaryColor=	"0xee, 0xee, 0x00"
+						/>
+				<Starburst
+						style=			"morningStar"
+						spikeCount=		"3d5+3"
+						spikeLength=	"5d2"
+						primaryColor=	"0xff, 0xff, 0xff"
+						secondaryColor=	"0xff, 0xff, 0x00"
+						/>
+
+			</Effect>
+
+					<Fragment 
+							type=			"area"
+
+							damage=			"antimatter:3d10; WMD3"
+							expansionSpeed=	"35"
+							missileSpeed=	"0"
+							lifetime=		"24"
+							>
+
+						<Effect>
+							<Shockwave
+									fadeStart=	"70"
+									>
+								<Image imageID=				"&rsPlasmaShockwave;"
+										imageX=				"0" 
+										imageY=				"0" 
+										imageWidth=			"512" 
+										imageHeight=		"256"
+										imageFrameCount=	"1"
+										imageTicksPerFrame=	"1"/>
+							</Shockwave>
+						</Effect>
+					</Fragment>
+
+		</Weapon>
+
+	</ItemType>
+
+	<ItemType UNID="&itRanxAShields;"
+			name=				"Ranx class A shield generator"
+			level=				"5"
+			value=				"4500"
+			mass=				"2000"
+			frequency=			"veryrare"
+			modifiers=			"MajorItem; NotForSale; RanxEmpire"
+
+			description=		"The lightest of all Ranx-produced shields, the class A is used to protect civilian vessels against kinectic and blast damage."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"90"
+				hpBonus=		" -0,+80, -0,+70, -0,+5,-0,+0"
+				absorbAdj=		" 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100"
+				regenTime=		"30"
+				regenHP=		"5"
+				depletionDelay=	"30"
+				powerUse=		"100"
+				/>
+
+	</ItemType>
+
+	<ItemType UNID="&itRanxBShields;"
+			name=				"Ranx class B shield generator"
+			level=				"6"
+			value=				"9000"
+			mass=				"5000"
+			frequency=			"veryrare"
+			modifiers=			"MajorItem; NotForSale; RanxEmpire"
+
+			description=		"This light Ranx shield is used on civilian vessels. It is resistant to blast damage."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"130"
+				hpBonus=		" -0,+40, -0,+100, -5,+20,-5,+5"
+				absorbAdj=		" 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100"
+				regenTime=		"30"
+				regenHP=		"5"
+				depletionDelay=	"30"
+				powerUse=		"200"
+				/>
+
+	</ItemType>
+
+	<ItemType UNID="&itRanxCShields;"
+			name=				"Ranx class C shield generator"
+			level=				"7"
+			value=				"15000"
+			mass=				"9000"
+			frequency=			"veryrare"
+			modifiers=			"MajorItem; NotForSale; RanxEmpire"
+
+			description=		"A mid-range Ranx shield, it is used on civilian and light military vessels to defend against blast and thermonuclear damage."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"200"
+				hpBonus=		" -0,+30, -5,+60, -15,+50,-10,+5"
+				absorbAdj=		" 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100"
+				regenTime=		"30"
+				regenHP=		"5"
+				depletionDelay=	"30"
+				powerUse=		"500"
+				/>
+
+	</ItemType>
+
+	<ItemType UNID="&itRanxDShields;"
+			name=				"Ranx class D shield generator"
+			level=				"8"
+			value=				"32000"
+			mass=				"12000"
+			frequency=			"veryrare"
+			modifiers=			"MajorItem; NotForSale; RanxEmpire"
+
+			description=		"A heavy Ranx shield, it is used on their small and middle-sized capital ships, providing resistance to blast and thermonuclear attacks."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"300"
+				hpBonus=		" -0,+40, -5,+50, -15,+70,-20,+15"
+				absorbAdj=		" 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100"
+				regenTime=		"30"
+				regenHP=		"5"
+				depletionDelay=	"30"
+				powerUse=		"800"
+				/>
+
+	</ItemType>
+
+	<ItemType UNID="&itRanxEShields;"
+			name=				"Ranx class E shield generator"
+			level=				"9"
+			value=				"70000"
+			mass=				"16000"
+			frequency=			"veryrare"
+			modifiers=			"MajorItem; NotForSale; RanxEmpire"
+
+			description=		"The largest of the mass produced Ranx Shields, this unit is often used on the Imperial Dreadnoughts and Battleships."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"500"
+				hpBonus=		" -5,+50, -10,+50, -20,+100,-20,+20"
+				absorbAdj=		" 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100"
+				regenTime=		"30"
+				regenHP=		"5"
+				depletionDelay=	"30"
+				powerUse=		"1000"
+				/>
+
+	</ItemType>
+
+	<ItemType UNID="&itRanxFShields;"
+			name=				"Ranx class F shield generator"
+			level=				"10"
+			value=				"170000"
+			mass=				"20000"
+			frequency=			"notrandom"
+			modifiers=			"MajorItem; NotForSale; RanxEmpire"
+
+			description=		"A gargantuan shield produced specifically for the massive Imperial Dragons, this shields is designed to highly resistant to matter-based attacks."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"800"
+				hpBonus=		" -10,+150, -30,+150, -40,+300,-50,+40"
+				absorbAdj=		" 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100"
+				regenTime=		"30"
+				regenHP=		"5"
+				depletionDelay=	"30"
+				powerUse=		"2500"
+				/>
+
+	</ItemType>
+
+	<ItemType UNID="&itRanxArmorHeav;"
+			name=				"segment of heavy Ranx armor"
+			level=				"8"
+			value=				"10000"
+			mass=				"8000"
+			modifiers=			"MinorItem; NotForSale; Ranx;"
+			frequency=			"veryrare"
+
+
+			description=		"This is the heavy armor used on the Ranx Imperial Dragon line of dreadnoughts. It is designed to excell in combat against the Sung and Ares."
+
+			firstPlural=		"true"
+			sortName=			"Tharsis plate, light, segment of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=	"350"
+				damageAdj=	" 2, 6, 5,35, 20,100,40,120, 80,120,100,100, 125,125,200,200"
+				repairTech=	"8"
+				repairCost=	"6"
+				installCost="200"
+
+				composition="carbide"
+				/>
+
+	</ItemType>
+
+	<ShipClass UNID="&scRanxIBattleship;"
+			manufacturer=		"Ranx Imperial Shipyards"
+			class=				"Broadsword"
+			type=				"Battleship"
+			score=				"2300"
+			techOrder=			"mech"
+			
+			mass=				"20000"
+			cargoSpace=			"15000"
+			thrust=				"15000"
+			maneuver=			"10"
+			maxSpeed=			"10"
+			rotationCount=			"40"	
+			cyberDefenseLevel=	"10"
+
+			explosionType=		"&vtThermoExplosion4;"
+			leavesWreck=		"100"
+
+			attributes=			"genericClass,ranx"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itRanxArmorHeav;" />
+			<ArmorSection start="330" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itRanxArmorHeav;" />
+			<ArmorSection start="300" span="15" armorID="&itRanxArmorHeav;" />
+			<ArmorSection start="285" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itRanxArmorHeav;" />
+			<ArmorSection start="30"  span="15" armorID="&itRanxArmorHeav;" />
+			<ArmorSection start="15"  span="15" armorID="&itRanxArmorHeav;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itRanxArmorHeav;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itRanxFireSpear;" posAngle="0" posRadius="100"/>
+			<Device deviceID="&itRanxVulcan1;"  omnidirectional="true" secondaryWeapon="true" posAngle="0" posRadius="50"/>
+			<Device deviceID="&itRanxVulcan1;"  omnidirectional="true" secondaryWeapon="true" posAngle="180" posRadius="50"/>
+			<Device deviceID="&itRanxFusionCannon;"  secondaryWeapon="true" posAngle="155" posRadius="64" minFireArc="179" maxFireArc="181" aimTolerance="180"/>
+			<Device deviceID="&itRanxFusionCannon;"  secondaryWeapon="true" posAngle="205" posRadius="64" minFireArc="179" maxFireArc="181" aimTolerance="180"/>
+			<Device deviceID="&itRanxFusionCannon;"  secondaryWeapon="true" posAngle="130" posRadius="45" minFireArc="359" maxFireArc="1" aimTolerance="180"/>
+			<Device deviceID="&itRanxFusionCannon;"  secondaryWeapon="true" posAngle="220" posRadius="45" minFireArc="359" maxFireArc="1" aimTolerance="180"/>
+			<Device deviceID="&itRanxEShields;"/>
+		</Devices>
+
+		<Items>
+			<Item				count="2d12"	item="&itPteracniumFuelRod;"/>
+			<Lookup		count="1"		table="&trMajorItem8;"/>
+			<Table>
+				<Lookup	chance="40"	count="1d4"		table="&trConsumables8;"/>
+				<Lookup	chance="30"	count="1d2"		table="&trMinorItem8;"/>
+				<Lookup	chance="30"	count="1"		table="&trMajorItem7;"/>
+			</Table>
+		</Items>
+
+		<Image imageID="&rsRanxIBattleship;" imageX="0" imageY="0" imageWidth="208" imageHeight="208" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"6"
+			combatStyle=		"standOff"
+			/>
+
+	</ShipClass>
+
+	-->
+	
+<!--
+fighter:dagger
+gunship:shortsword
+destroyer:longsword
+battleship:broadsword
+missileboat:arrow
+missilebarge:ballista
+dreadnought:claymore
+dragon
+-->
+
+<!-- Ranx Empire -->
+
+<!-- Ranx Warlords ======================================================== -->
+
+	<!-- Segment of Depleted Uranium Armor -->
+
+	<ItemType UNID="&itDepletedUraniumArmor;"
+			name=				"[segment(s) of ]depleted uranium armor"
+			level=				"4"
+			value=				"600"
+			frequency=			"rare"
+			numberAppearing=	"1d4"
+			mass=				"5000"
+			attributes=			"MinorItem; NotForSale"
+
+			description=		"Though dense and extremely strong, depleted uranium is difficult to repair."
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=	"75"
+				hpBonus=	"  +0,  +0, +25, +25, +25, +25"
+
+				repairTech=	"6"
+				installCostAdj="150"
+				/>
+	</ItemType>
+
+	<!-- Ranx Gunship -->
+
+	<ShipClass UNID="&scRanxGunship;"
+			manufacturer=		"Ranx"
+			class=				""
+			type=				"gunship"
+			score=				"490"
+
+			mass=				"100"
+			cargoSpace=			"10"
+			thrust=				"700"
+			maneuver=			"3"
+			maxSpeed=			"18"
+
+			leavesWreck=		"30"
+
+			attributes=			"genericClass,ranx"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itDepletedUraniumArmor;"/>
+			<ArmorSection start="225" span="90" armorID="&itDepletedUraniumArmor;"/>
+			<ArmorSection start="135" span="90" armorID="&itDepletedUraniumArmor;"/>
+			<ArmorSection start="45"  span="90" armorID="&itDepletedUraniumArmor;"/>
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itAkan30Cannon;"/>
+			<Device deviceID="&itMonopoleDeflector;"/>
+		</Devices>
+
+		<Items>
+			<Item count="20d20"	item="&itAkan30CannonShell;" />
+			<Table>
+				<Item chance="60" count="2d6" item="&itHeliumAssembly;"/>
+				<Item chance="30" count="1d2" item="&itLightArmorRepair;"/>
+				<Item chance="10" count="1" item="&itMediumArmorRepair;"/>
+			</Table>
+		</Items>
+
+		<Image imageID="&rsMediumShips1;" imageX="624" imageY="0" imageWidth="48" imageHeight="48"/>
+
+		<AISettings
+			fireRateAdj=		"25"
+			fireRangeAdj=		"60"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+		<DriveImages>
+			<NozzleImage imageID="&rsDriveExhaust;" imageX="48" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+			<NozzlePos x="-32" y="10"/>
+			<NozzlePos x="-32" y="-10"/>
+		</DriveImages>
+	</ShipClass>
+
+	<!-- Ranx Dreadnought -->
+
+	<ShipClass UNID="&scRanxDreadnought;"
+			manufacturer=		"Ranx"
+			class=				""
+			type=				"dreadnought"
+			score=				"1350"
+
+			mass=				"25000"
+			cargoSpace=			"15000"
+			thrust=				"10000"
+			maneuver=			"16"
+			maxSpeed=			"8"
+
+			cyberDefenseLevel=	"6"
+
+			explosionType=		"&vtThermoExplosion2;"
+			leavesWreck=		"100"
+
+			attributes=			"genericClass,ranx"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="330" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="300" span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="285" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="30"  span="15" armorID="&itTransuranicPlate;" />
+			<ArmorSection start="15"  span="15" armorID="&itTransuranicPlate;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itTransuranicPlate;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itKilotonCannon;" omnidirectional="true" posAngle="0" posRadius="24"/>
+			<Device deviceID="&itKilotonCannon;" omnidirectional="true" posAngle="0" posRadius="-10"/>
+			<Device deviceID="&itKilotonCannon;" omnidirectional="true" posAngle="0" posRadius="-50"/>
+			<Device deviceID="&itKilotonCannon;" omnidirectional="true" posAngle="160" posRadius="40"/>
+			<Device deviceID="&itKilotonCannon;" omnidirectional="true" posAngle="200" posRadius="40"/>
+			<Device deviceID="&itPatchSpider;"/>
+			<Device deviceID="&itPatchSpider;"/>
+		</Devices>
+
+		<Items>
+			<Item				count="1"		item="&itKilotonCannon;"/>
+			<Item				count="12d20"	item="&itKilotonCannonShell;"/>
+			<Item				count="2d12"	item="&itPteracniumFuelRod;"/>
+			<Table>
+				<Lookup	chance="40"	count="1d4"		table="&trConsumables8;"/>
+				<Lookup	chance="30"	count="1d2"		table="&trMinorItem8;"/>
+				<Lookup	chance="30"	count="1"		table="&trMajorItem7;"/>
+			</Table>
+		</Items>
+
+		<Image imageID="&rsLargeShips1;" imageX="960" imageY="0" imageWidth="192" imageHeight="192" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			aggressor=			"true"
+			fireRateAdj=		"105"
+			fireAccuracy=		"90"
+			perception=			"6"
+			combatStyle=		"standOff"
+			/>
+
+	</ShipClass>
+
+	<!-- Ranx Outpost -->
+
+	<StationType UNID="&stRanxOutpost;"
+			name=				"Ranx outpost"
+			sovereign=			"&svDestructiveOrder;"
+			dockScreen=			"&dsAbandonedStation;"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itLightOrthoSteel;"
+			maxHitPoints=		"300"
+			hitPoints=			"300"
+			explosionType=		"&vtThermoExplosion1;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"ranx,enemy,envEarth,envAvoidsAir,populated"
+			levelFrequency=		"----- ucur- ----- ----- -----"
+			locationCriteria=	"+planetary,-OuterSystem"
+			enemyExclusionRadius="60"
+			>
+
+		<Image			imageID="&rsStations7;" imageX="0" imageY="256" imageWidth="192" imageHeight="192"/>
+
+		<Devices>
+		</Devices>
+
+		<Items>
+			<Item count="10d100"	item="&itAkan30CannonShell;" />
+			<Table>
+				<Lookup chance="40" count="1" table="&trConsumables8;"/>
+				<Lookup chance="40" count="1" table="&trMinorItem8;"/>
+				<Lookup chance="20" count="1" table="&trMajorItem8;"/>
+			</Table>
+		</Items>
+
+		<Ships>
+			<Ship			count="1d4"	class="&scRanxGunship;"	orders="patrol" patrolDist="5"/>
+			<Ship			count="1d4"	class="&scRanxGunship;"	orders="guard" />
+		</Ships>
+
+		<Reinforcements minShips="4">
+			<Ship		count="1d4"		class="&scRanxGunship;" orders="patrol" patrolDist="5"/>
+		</Reinforcements>
+
+		<Encounters frequency="uncommon">
+			<Lookup table="&tbRanxEncounters;"/>
+		</Encounters>
+
+	</StationType>
+
+	<!-- Ranx Fortress -->
+
+	<StationType UNID="&stRanxFortress;"
+			name=				"Ranx fortress"
+			sovereign=			"&svDestructiveOrder;"
+			dockScreen=			"&dsAbandonedStation;"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itOrthoSteel;"
+			maxHitPoints=		"1000"
+			hitPoints=			"1000"
+			explosionType=		"&vtThermoExplosion3;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"ranx,enemy,envEarth,envAvoidsAir,populated"
+			levelFrequency=		"----- -rcr- ----- ----- -----"
+			locationCriteria=	"+planetary,-OuterSystem"
+			enemyExclusionRadius="100"
+			>
+
+		<Image			imageID="&rsStations8;" imageX="0" imageY="192" imageWidth="256" imageHeight="256"/>
+
+		<Devices>
+		</Devices>
+
+		<Items>
+			<Item count="10d100"	item="&itAkan30CannonShell;" />
+			<Item count="4d20"		item="&itKilotonCannonShell;" />
+			<Table>
+				<Lookup chance="40" count="1" table="&trConsumables9;"/>
+				<Lookup chance="40" count="1" table="&trMinorItem9;"/>
+				<Lookup chance="20" count="1" table="&trMajorItem9;"/>
+			</Table>
+		</Items>
+
+		<Ships>
+			<Ship			count="1d6"	class="&scRanxGunship;"	orders="patrol" patrolDist="5"/>
+			<Ship			count="1d6"	class="&scRanxGunship;"	orders="guard" />
+			<Ship					count="1"	class="&scRanxDreadnought;"	orders="patrol" patrolDist="150">
+				<Escorts>
+					<Ship			count="1d4"	class="&scRanxGunship;"	orders="escort"/>
+				</Escorts>
+			</Ship>
+		</Ships>
+
+		<Reinforcements minShips="5">
+			<Table>
+				<Ship chance="75"  count="1d4"	class="&scRanxGunship;" orders="patrol" patrolDist="5"/>
+				<Ship chance="25"  count="1"	class="&scRanxDreadnought;"	orders="patrol" patrolDist="25">
+					<Escorts>
+						<Ship			count="1d4"	class="&scRanxGunship;"	orders="escort"/>
+					</Escorts>
+				</Ship>
+			</Table>
+		</Reinforcements>
+
+		<Encounters frequency="common">
+			<Lookup table="&tbRanxEncounters;"/>
+		</Encounters>
+	</StationType>
+	
+	<!-- Ranx Encounter Table -->
+	
+	<ShipTable unid="&tbRanxEncounters;">
+		<LevelTable>
+			<Ship levelFrequency="----- ccurr" count="1"	class="&scRanxGunship;" eventHandler="&evStdPatrolEncounterBehavior;">
+				<Escorts>
+					<Ship					   count="1d3"	class="&scRanxGunship;" orders="escort"/>
+				</Escorts>
+			</Ship>
+
+			<Ship levelFrequency="----- -ucur" count="1"	class="&scRanxGunship;" eventHandler="&evStdPatrolEncounterBehavior;">
+				<Escorts>
+					<Ship					   count="1d6"	class="&scRanxGunship;" orders="escort"/>
+				</Escorts>
+			</Ship>
+			
+			<Ship levelFrequency="----- -rrrr" count="1"	class="&scRanxDreadnought;"	orders="wander"	maxShips="4">
+				<Escorts>
+					<Ship					   count="1d4"	class="&scRanxGunship;"	orders="escort"/>
+				</Escorts>
+			</Ship>
+		</LevelTable>
+	</ShipTable>
+
+</TranscendenceModule>

@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!ENTITY unidExtension							"0xE314000E">
+
+<!-- ext 3cX or 2cX for non res -->
+
+	<!ENTITY svCoalition							"0xE3140640">
+	<!ENTITY rsCoalitionWhiptail						"0xE3140641">
+	<!ENTITY rsCoalitionViper						"0xE3140642">
+	<!ENTITY rsCoalitionCobra						"0xE3140643">
+	<!ENTITY rsCoalitionPerentie						"0xE3140644">
+	<!ENTITY rsCoalitionKomodo						"0xE3140645">
+	<!ENTITY snIonImpactCannon						"0xE3140650">
+	<!ENTITY snIonImpactCannonBig						"0xE3140651">
+	<!ENTITY snIonImpactCannonSmall						"0xE3140652">
+	
+	<!-- <!ENTITY stCoalitionOutpost						"0xE3146520"> -->
+	<!ENTITY scCoalitionWhiptail						"0xE3146541">
+	<!ENTITY scCoalitionViper						"0xE3146542">
+	<!ENTITY scCoalitionCobra						"0xE3146543">
+	<!ENTITY scCoalitionPerentie						"0xE3146544">
+	<!ENTITY scCoalitionKomodo						"0xE3146545">
+	
+	<!ENTITY itIonImpactCannon						"0xE3141540">
+	<!ENTITY itIonImpactCannonD						"0xE3141541">
+	<!ENTITY itIonImpactCannonT						"0xE3141542">
+	<!ENTITY itIonImpactCannonL						"0xE3141543">
+	<!ENTITY itIonImpactCannonLD						"0xE3141544">
+	<!ENTITY itIonImpactCannonH						"0xE3141545">
+	<!ENTITY itIonImpactCannonHD						"0xE3141546">
+	<!ENTITY itIonImpactCannonHT						"0xE3141547">
+	<!ENTITY itIsophase1000							"0xE3141548">
+	<!ENTITY itIsophase750							"0xE3141549">
+	<!ENTITY itIsophase500							"0xE314154A">
+	<!ENTITY itIsophase250							"0xE314154B">
+	<!ENTITY itIsophase100							"0xE314154C">
+	<!ENTITY itIonImpactHowitzer						"0xE314154D">
+	<!ENTITY itMicroLaserTurret						"0xE314154E">
+	<!ENTITY vtMicroLaserCannon						"0xE314154F">
+
+]>
+<TranscendenceModule> <!-- UNID="0xE314000#" version="1.0" -->
+
+	<!-- Ships -->
+	<Image UNID="&rsCoalitionWhiptail;"		bitmap="resources/images/coalitionfighterdrone.jpg" bitmask="resources/images/coalitionfighterdroneMask.bmp"   loadOnUse="true"/>
+	<Image UNID="&rsCoalitionViper;"		bitmap="resources/images/coalitionlightgunship.jpg" bitmask="resources/images/coalitionlightgunshipMask.bmp"   loadOnUse="true"/>
+	<Image UNID="&rsCoalitionCobra;"		bitmap="resources/images/coalitiongunship.jpg" bitmask="resources/images/coalitiongunshipMask.bmp"   		loadOnUse="true"/>
+	<Image UNID="&rsCoalitionPerentie;"		bitmap="resources/images/coalitionfrigate.jpg" bitmask="resources/images/coalitionfrigateMask.bmp"   		loadOnUse="true"/>
+	<Image UNID="&rsCoalitionKomodo;"		bitmap="resources/images/coalitionbattleship.jpg" bitmask="resources/images/coalitionbattleshipMask.bmp"   loadOnUse="true"/>
+	
+
+	<Sound UNID="&snIonImpactCannon;"				filename="resources/sounds/plasmafire.wav"/>
+	<Sound UNID="&snIonImpactCannonBig;"				filename="resources/sounds/plasmafirebig.wav"/>
+	<Sound UNID="&snIonImpactCannonSmall;"				filename="resources/sounds/plasmafiresmall.wav"/>
+
+	<Sovereign UNID="&svCoalition;"
+			name="Coalition"
+			alignment="constructive chaos"
+			>
+		<Relationships>
+			<Relationship sovereign="&svAres;" disposition="enemy" mutual="true"/>
+			<Relationship sovereign="&svRingers;" disposition="neutral" mutual="true"/>
+			<Relationship sovereign="&svCommonwealth;" disposition="neutral" mutual="true"/>
+		</Relationships>
+	</Sovereign>
+	
+	<ItemType UNID="&itMicroLaserTurret;"
+			name=				"Micro-Laser point defense turret"
+			level=				"5"
+			value=				"9000"
+			mass=				"4000"
+			frequency=			"rare"
+			attributes=			"MajorItem; Canis"
+
+			description=		"This turret automatically locates and targets nearby missiles ships and stations."
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="192" imageWidth="96" imageHeight="96"/>
+
+		<AutoDefenseDevice
+				targetCriteria=		"msE N:20;"
+				weapon=			"&vtMicroLaserCannon;"
+				fireRate=		"6"
+				/>
+	</ItemType>
+	
+	<ItemType UNID="&vtMicroLaserCannon;"
+			name=				"laser cannon"
+			level=				"1"
+			virtual=			"true" 
+			>
+
+		
+		<Weapon
+				type=				"missile"
+
+				damage=				"laser:2d3"
+				fireRate=			"6"
+				missileSpeed=		"100"
+				interaction=		"0"
+				lifetime=			"30"
+				powerUse=			"10"
+
+				sound=				"&snLaserCannon;"
+				>
+			<Configuration aimTolerance="5" alternating="true">
+				<Shot posAngle="90" posRadius="2" angle="0"/>
+				<Shot posAngle="270" posRadius="2" angle="0"/>
+			</Configuration>
+			<Effect>
+				<Bolt
+						length=				"14"
+						width=				"3"
+						primaryColor=		"0xf1, 0x5f, 0x2a"
+						secondaryColor=		"0xff, 0x33, 0x33"
+						/>
+			</Effect>
+			
+		</Weapon>
+		<!--<Events>
+			<onDamageArmor>
+				(block (theDamage)
+					(setq theDamage (add 1 (random 0 (itmGetLevel aArmorSeg))))
+					
+					;return
+					theDamage
+				)
+			</onDamageArmor>
+			<onDamageShields>
+				(block (theDamage)
+					(setq theDamage (add 1 (random 0 (itmGetLevel aDeviceItem))))
+					
+					;return
+					(list Nil theDamage 0)
+				)
+			</onDamageShields>
+			<onDamageOverlay>
+				(block (theDamage)
+					(setq theDamage (add 1 (random 0 (itmGetLevel aArmorSeg))))
+					
+					;return
+					theDamage
+				)
+			</onDamageOverlay>
+		</Events>-->
+
+	</ItemType>
+	
+	<ItemType UNID="&itIonImpactHowitzer;"
+			name=				"Ion Impact howitzer"
+			level=				"10"
+			value=				"300000"
+			mass=				"8000"
+			frequency=			"rare"
+			numberAppearing=	"1"
+			attributes=			"EnergyWeapon; MajorItem; Military; VSS; Howitzer"
+
+			description=		"The Ion Impact Howitzer is a massive repeating form of the Ion Impact cannon with modifications granting it significantly more range."
+			>
+		<Image imageID="&rsItemsNAMI3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"ion:10d12; WMD5; momentum7"
+				repeating=			"4"
+				fireRate=			"45"
+				missileSpeed=			"100"
+				lifetime=			"65"
+				interaction=			"0"
+				hitPoints=			"10"
+				powerUse=			"2000"
+				sound=				"&snIonImpactCannonBig;"
+				vaporTrailLength=	"7"
+				vaporTrailWidth=	"100"
+				vaporTrailWidthInc=	"0"
+				vaporTrailColor=	"0x90, 0xb0, 0xff"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"2"
+						radius=				"10"
+						primaryColor=		"0xa0, 0xc0, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+				<MoltenBolt
+						width=				"7"
+						length=				"10"
+						growth=				"2"
+						primaryColor=		"0xc0, 0xe0, 0xff"
+						secondaryColor=		"0x90, 0xb0, 0xff"
+						/>
+				<ParticleComet
+						particleCount=	"350"
+						primaryColor=	"0x80, 0xa0, 0xf0"
+
+						width=			"10"
+						length=			"200"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	
+	<ItemType UNID="&itIonImpactCannonH;"
+			name=				"heavy Ion Impact cannon"
+			level=				"8"
+			value=				"80000"
+			mass=				"4000"
+			frequency=			"uncommon"
+			numberAppearing=	"1"
+			attributes=			"EnergyWeapon; MajorItem; Military; VSS"
+
+			description=		"The heavy Ion Impact cannon is a stronger version of the original design."
+			>
+		<Image imageID="&rsItemsNAMI3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"ion:8d10; WMD4; momentum4"
+				fireRate=			"20"
+				missileSpeed=			"100"
+				lifetime=			"30"
+				interaction=			"0"
+				hitPoints=			"10"
+				powerUse=			"1000"
+				sound=				"&snIonImpactCannonBig;"
+				vaporTrailLength=	"6"
+				vaporTrailWidth=	"70"
+				vaporTrailWidthInc=	"0"
+				vaporTrailColor=	"0x90, 0xb0, 0xff"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"2"
+						radius=				"5"
+						primaryColor=		"0xa0, 0xc0, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+				<MoltenBolt
+						width=				"5"
+						length=				"8"
+						growth=				"2"
+						primaryColor=		"0xc0, 0xe0, 0xff"
+						secondaryColor=		"0x90, 0xb0, 0xff"
+						/>
+				<ParticleComet
+						particleCount=	"300"
+						primaryColor=	"0x80, 0xa0, 0xf0"
+
+						width=			"7"
+						length=			"140"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	<ItemType UNID="&itIonImpactCannonHD;"
+			name=				"dual heavy Ion Impact cannon"
+			level=				"9"
+			value=				"180000"
+			mass=				"8500"
+			frequency=			"rare"
+			numberAppearing=	"1"
+			attributes=			"EnergyWeapon; MajorItem; Military; VSS"
+
+			description=		"The dual heavy Ion Impact cannon is a stronger version of the original design in dual configuration."
+			>
+		<Image imageID="&rsItemsNAMI3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"ion:8d10; WMD4; momentum4"
+				configuration=			"dual"
+				fireRate=			"20"
+				missileSpeed=			"100"
+				lifetime=			"30"
+				interaction=			"0"
+				hitPoints=			"10"
+				powerUse=			"1800"
+				sound=				"&snIonImpactCannonBig;"
+				vaporTrailLength=	"6"
+				vaporTrailWidth=	"70"
+				vaporTrailWidthInc=	"0"
+				vaporTrailColor=	"0x90, 0xb0, 0xff"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"2"
+						radius=				"5"
+						primaryColor=		"0xa0, 0xc0, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+				<MoltenBolt
+						width=				"5"
+						length=				"8"
+						growth=				"2"
+						primaryColor=		"0xc0, 0xe0, 0xff"
+						secondaryColor=		"0x90, 0xb0, 0xff"
+						/>
+				<ParticleComet
+						particleCount=	"300"
+						primaryColor=	"0x80, 0xa0, 0xf0"
+
+						width=			"7"
+						length=			"140"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+		<ItemType UNID="&itIonImpactCannonHT;"
+			name=				"heavy Ion Impact turret"
+			level=				"10"
+			value=				"280000"
+			mass=				"9000"
+			frequency=			"rare"
+			numberAppearing=	"1"
+			attributes=			"EnergyWeapon; MajorItem; Military; VSS"
+
+			description=		"The Ion Impact turret has a pair of Ion Impact cannons mounted in an omnidirectional housing. This is the heavy version."
+			>
+		<Image imageID="&rsItemsNAMI3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"ion:8d10; WMD4; momentum4"
+				omnidirectional=		"true"
+				fireRate=			"20"
+				missileSpeed=			"100"
+				lifetime=			"30"
+				interaction=			"0"
+				hitPoints=			"10"
+				powerUse=			"2500"
+				sound=				"&snIonImpactCannonBig;"
+				vaporTrailLength=	"6"
+				vaporTrailWidth=	"70"
+				vaporTrailWidthInc=	"0"
+				vaporTrailColor=	"0x90, 0xb0, 0xff"
+				>
+			<Configuration aimTolerance="1">
+				<Shot posAngle="90" posRadius="2" />
+				<Shot posAngle="270" posRadius="2" />
+			</Configuration>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"2"
+						radius=				"5"
+						primaryColor=		"0xa0, 0xc0, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+				<MoltenBolt
+						width=				"5"
+						length=				"8"
+						growth=				"2"
+						primaryColor=		"0xc0, 0xe0, 0xff"
+						secondaryColor=		"0x90, 0xb0, 0xff"
+						/>
+				<ParticleComet
+						particleCount=	"300"
+						primaryColor=	"0x80, 0xa0, 0xf0"
+
+						width=			"7"
+						length=			"140"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	
+	<ItemType UNID="&itIonImpactCannon;"
+			name=				"Ion Impact cannon"
+			level=				"7"
+			value=				"40000"
+			mass=				"3500"
+			frequency=			"common"
+			numberAppearing=	"1"
+			attributes=			"EnergyWeapon; MajorItem; Military; VSS"
+
+			description=		"The Ion Impact cannon uses a relativistic pulse of heavy ions."
+			>
+		<Image imageID="&rsItemsNAMI3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"ion:5d10; WMD2; momentum2"
+				fireRate=			"15"
+				missileSpeed=			"100"
+				lifetime=			"30"
+				interaction=			"0"
+				hitPoints=			"10"
+				powerUse=			"600"
+				sound=				"&snIonImpactCannon;"
+				vaporTrailLength=	"6"
+				vaporTrailWidth=	"70"
+				vaporTrailWidthInc=	"0"
+				vaporTrailColor=	"0x90, 0xb0, 0xff"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"2"
+						radius=				"3"
+						primaryColor=		"0xa0, 0xc0, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+				<MoltenBolt
+						width=				"3"
+						length=				"5"
+						growth=				"1"
+						primaryColor=		"0xc0, 0xe0, 0xff"
+						secondaryColor=		"0x90, 0xb0, 0xff"
+						/>
+				<ParticleComet
+						particleCount=	"200"
+						primaryColor=	"0x80, 0xa0, 0xf0"
+
+						width=			"5"
+						length=			"100"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	<ItemType UNID="&itIonImpactCannonD;"
+			name=				"dual Ion Impact cannon"
+			level=				"8"
+			value=				"90000"
+			mass=				"6000"
+			frequency=			"uncommon"
+			numberAppearing=	"1"
+			attributes=			"EnergyWeapon; MajorItem; Military; VSS"
+
+			description=		"The dual Ion Impact cannon is a variant of the original design in dual configuration."
+			>
+		<Image imageID="&rsItemsNAMI3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"ion:5d10; WMD2; momentum2"
+				configuration=			"dual"
+				fireRate=			"15"
+				missileSpeed=			"100"
+				lifetime=			"30"
+				interaction=			"0"
+				hitPoints=			"10"
+				powerUse=			"1200"
+				sound=				"&snIonImpactCannon;"
+				vaporTrailLength=	"6"
+				vaporTrailWidth=	"70"
+				vaporTrailWidthInc=	"0"
+				vaporTrailColor=	"0x90, 0xb0, 0xff"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"2"
+						radius=				"3"
+						primaryColor=		"0xa0, 0xc0, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+				<MoltenBolt
+						width=				"3"
+						length=				"5"
+						growth=				"1"
+						primaryColor=		"0xc0, 0xe0, 0xff"
+						secondaryColor=		"0x90, 0xb0, 0xff"
+						/>
+				<ParticleComet
+						particleCount=	"200"
+						primaryColor=	"0x80, 0xa0, 0xf0"
+
+						width=			"5"
+						length=			"100"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+		<ItemType UNID="&itIonImpactCannonT;"
+			name=				"Ion Impact turret"
+			level=				"9"
+			value=				"150000"
+			mass=				"6000"
+			frequency=			"rare"
+			numberAppearing=	"1"
+			attributes=			"EnergyWeapon; MajorItem; Military; VSS"
+
+			description=		"The Ion Impact turret has a pair of Ion Impact cannons mounted in an omnidirectional housing."
+			>
+		<Image imageID="&rsItemsNAMI3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"ion:5d10; WMD2; momentum2"
+				omnidirectional=		"true"
+				fireRate=			"15"
+				missileSpeed=			"100"
+				lifetime=			"30"
+				interaction=			"0"
+				hitPoints=			"10"
+				powerUse=			"1500"
+				sound=				"&snIonImpactCannon;"
+				vaporTrailLength=	"6"
+				vaporTrailWidth=	"70"
+				vaporTrailWidthInc=	"0"
+				vaporTrailColor=	"0x90, 0xb0, 0xff"
+				>
+			<Configuration aimTolerance="1">
+				<Shot posAngle="90" posRadius="2" />
+				<Shot posAngle="270" posRadius="2" />
+			</Configuration>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"2"
+						radius=				"3"
+						primaryColor=		"0xa0, 0xc0, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+				<MoltenBolt
+						width=				"3"
+						length=				"5"
+						growth=				"1"
+						primaryColor=		"0xc0, 0xe0, 0xff"
+						secondaryColor=		"0x90, 0xb0, 0xff"
+						/>
+				<ParticleComet
+						particleCount=	"200"
+						primaryColor=	"0x80, 0xa0, 0xf0"
+
+						width=			"5"
+						length=			"100"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	
+	<ItemType UNID="&itIonImpactCannonL;"
+			name=				"light Ion Impact cannon"
+			level=				"6"
+			value=				"25000"
+			mass=				"2500"
+			frequency=			"uncommon"
+			numberAppearing=	"1"
+			attributes=			"EnergyWeapon; MajorItem; Military; VSS"
+
+			description=		"The light Ion Impact cannon is a weaker but cheaper version of the original design."
+			>
+		<Image imageID="&rsItemsNAMI3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"ion:5d6; WMD1; momentum1"
+				fireRate=			"10"
+				missileSpeed=			"100"
+				lifetime=			"30"
+				interaction=			"0"
+				hitPoints=			"10"
+				powerUse=			"300"
+				sound=				"&snIonImpactCannonSmall;"
+				vaporTrailLength=	"3"
+				vaporTrailWidth=	"35"
+				vaporTrailWidthInc=	"0"
+				vaporTrailColor=	"0x90, 0xb0, 0xff"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"2"
+						radius=				"2"
+						primaryColor=		"0xa0, 0xc0, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+				<MoltenBolt
+						width=				"2"
+						length=				"2"
+						growth=				"0"
+						primaryColor=		"0xc0, 0xe0, 0xff"
+						secondaryColor=		"0x90, 0xb0, 0xff"
+						/>
+				<ParticleComet
+						particleCount=	"150"
+						primaryColor=	"0x80, 0xa0, 0xf0"
+
+						width=			"2"
+						length=			"40"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	<ItemType UNID="&itIonImpactCannonLD;"
+			name=				"dual light Ion Impact cannon"
+			level=				"7"
+			value=				"50000"
+			mass=				"4500"
+			frequency=			"rare"
+			numberAppearing=	"1"
+			attributes=			"EnergyWeapon; MajorItem; Military; VSS"
+
+			description=		"The dual heavy Ion Impact cannon is a stronger version of the original design in dual configuration."
+			>
+		<Image imageID="&rsItemsNAMI3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"ion:5d6; WMD1; momentum1"
+				configuration=			"dual"
+				fireRate=			"10"
+				missileSpeed=			"100"
+				lifetime=			"30"
+				interaction=			"0"
+				hitPoints=			"10"
+				powerUse=			"650"
+				sound=				"&snIonImpactCannonSmall;"
+				vaporTrailLength=	"3"
+				vaporTrailWidth=	"35"
+				vaporTrailWidthInc=	"0"
+				vaporTrailColor=	"0x90, 0xb0, 0xff"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"2"
+						radius=				"2"
+						primaryColor=		"0xa0, 0xc0, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+				<MoltenBolt
+						width=				"2"
+						length=				"2"
+						growth=				"0"
+						primaryColor=		"0xc0, 0xe0, 0xff"
+						secondaryColor=		"0x90, 0xb0, 0xff"
+						/>
+				<ParticleComet
+						particleCount=	"150"
+						primaryColor=	"0x80, 0xa0, 0xf0"
+
+						width=			"2"
+						length=			"40"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	
+	<ShipClass UNID="&scCoalitionKomodo;"
+			manufacturer=		"Viper Space Systems"
+			class=				"Komodo"
+			type=				"Battleship"
+			score=				"2300"
+			techOrder=			"mech"
+			
+			mass=				"18000"
+			cargoSpace=			"8000"
+			thrust=				"18000"
+			maneuver=			"8"
+			maxSpeed=			"10"
+			rotationCount=			"40"	
+			cyberDefenseLevel=	"10"
+
+			explosionType=		"&vtThermoExplosion4;"
+			leavesWreck=		"100"
+
+			attributes=			"genericClass,coalition"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itIsophase1000;" />
+			<ArmorSection start="330" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itIsophase1000;" />
+			<ArmorSection start="300" span="15" armorID="&itIsophase1000;" />
+			<ArmorSection start="285" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itIsophase1000;" />
+			<ArmorSection start="30"  span="15" armorID="&itIsophase1000;" />
+			<ArmorSection start="15"  span="15" armorID="&itIsophase1000;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itIsophase1000;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itIonImpactHowitzer;" omnidirectional="true" posAngle="0" posRadius="-40"/>
+			<Device deviceID="&itIonImpactCannonHT;"  secondaryWeapon="true" posAngle="0" posRadius="8"/>
+			<Device deviceID="&itIonImpactCannonHT;"  secondaryWeapon="true" posAngle="0" posRadius="66"/>
+			<Device deviceID="&itIonImpactCannonHT;"  secondaryWeapon="true" posAngle="0" posRadius="-82"/>
+			<Device deviceID="&itIonImpactCannonT;"  secondaryWeapon="true" posAngle="0" posRadius="85"/>
+			<Device deviceID="&itIonImpactCannonL;"  omnidirectional="true" secondaryWeapon="true" posAngle="180" posRadius="50"/>
+			<Device deviceID="&itIonImpactCannonL;"  secondaryWeapon="true" posAngle="150" posRadius="64" minFireArc="350" maxFireArc="170"/>
+			<Device deviceID="&itIonImpactCannonL;"  secondaryWeapon="true" posAngle="210" posRadius="64" minFireArc="190" maxFireArc="10"/>
+			<Device deviceID="&itIonImpactCannonL;"  secondaryWeapon="true" posAngle="15" posRadius="58" minFireArc="350" maxFireArc="170"/>
+			<Device deviceID="&itIonImpactCannonL;"  secondaryWeapon="true" posAngle="345" posRadius="58" minFireArc="190" maxFireArc="10"/>
+			<Device deviceID="&itMicroLaserTurret;" posAngle="165" posRadius="60"/>
+			<Device deviceID="&itMicroLaserTurret;" posAngle="195" posRadius="60"/>
+			<Device deviceID="&itMammoth100Deflector;"/>
+			<Device deviceID="&it500MWReactor;"/>
+			<Device deviceID="&it500MWReactor;"/>
+			<Device deviceID="&it500MWReactor;"/>
+		</Devices>
+
+		<Items>
+			<Item				count="5d12"	item="&itPteracniumFuelRod;"/>
+			<Lookup		count="1"		table="&trMajorItem8;"/>
+			<Table>
+				<Lookup	chance="40"	count="1d4"		table="&trConsumables8;"/>
+				<Lookup	chance="30"	count="1d2"		table="&trMinorItem8;"/>
+				<Lookup	chance="30"	count="1"		table="&trMajorItem7;"/>
+			</Table>
+		</Items>
+
+		<Image imageID="&rsCoalitionKomodo;" imageX="0" imageY="0" imageWidth="224" imageHeight="224" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"30"
+			fireAccuracy=		"90"
+			perception=			"6"
+			combatStyle=		"standOff"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scCoalitionPerentie;"
+			manufacturer=		"Viper Space Systems"
+			class=				"Perentie"
+			type=				"frigate"
+			score=				"1500"
+
+			mass=				"5000"
+			cargoSpace=			"500"
+			thrust=				"3500"
+			maneuver=			"6"
+			maxSpeed=			"13"
+			rotationCount=			"40"
+			cyberDefenseLevel=	"8"
+
+			explosionType=		"&vtThermoExplosion1;"
+			leavesWreck=		"100"
+
+			attributes=			"genericClass,coalition"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="30" armorID="&itIsophase500;" />
+			<ArmorSection start="315" span="30" armorID="&itIsophase500;" />
+			<ArmorSection start="285" span="30" armorID="&itIsophase500;" />
+			<ArmorSection start="255" span="30" armorID="&itIsophase500;" />
+			<ArmorSection start="225" span="30" armorID="&itIsophase500;" />
+			<ArmorSection start="195" span="30" armorID="&itIsophase500;" />
+			<ArmorSection start="165" span="30" armorID="&itIsophase500;" />
+			<ArmorSection start="135" span="30" armorID="&itIsophase500;" />
+			<ArmorSection start="105" span="30" armorID="&itIsophase500;" />
+			<ArmorSection start="75"  span="30" armorID="&itIsophase500;" />
+			<ArmorSection start="45"  span="30" armorID="&itIsophase500;" />
+			<ArmorSection start="15"  span="30" armorID="&itIsophase500;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itIonImpactCannonL;" omnidirectional="true" secondaryWeapon="true" posAngle="0" posRadius="32"/>
+			<Device deviceID="&itIonImpactCannonT;" secondaryWeapon="true" posAngle="0" posRadius="0"/>
+			<Device deviceID="&itIonImpactCannonT;" secondaryWeapon="true" posAngle="0" posRadius="-36"/>
+			<Device deviceID="&itMicroLaserTurret;"/>
+			<Device deviceID="&itMammoth50Deflector;"/>
+			<Device deviceID="&it250MWReactor;"/>
+		</Devices>
+
+		<Items>
+			<Item				count="2d12"	item="&itPteracniumFuelRod;"/>
+			<Lookup		count="1"		table="&trMajorItem7;"/>
+			<Table>
+				<Lookup	chance="40"	count="1d4"		table="&trConsumables7;"/>
+				<Lookup	chance="30"	count="1d2"		table="&trMinorItem7;"/>
+				<Lookup	chance="30"	count="1"		table="&trMajorItem8;"/>
+			</Table>
+		</Items>
+
+		<Image imageID="&rsCoalitionPerentie;" imageX="0" imageY="0" imageWidth="128" imageHeight="128" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"6"
+			combatStyle=		"standOff"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scCoalitionCobra;"
+			manufacturer=		"Viper Space Systems"
+			class=				"Cobra"
+			type=				"gunship"
+			score=				"1000"
+
+			mass=				"300"
+			cargoSpace=			"30"
+			thrust=				"600"
+			maneuver=			"1"
+			maxSpeed=			"30"
+			rotationCount=		"40"
+			leavesWreck=		"100"
+
+			attributes=			"coalition,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itIsophase250;"/>
+			<ArmorSection start="225" span="90" armorID="&itIsophase250;"/>
+			<ArmorSection start="135" span="90" armorID="&itIsophase250;"/>
+			<ArmorSection start="45"  span="90" armorID="&itIsophase250;"/>
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itIonImpactCannonD;"/>
+			<Device deviceID="&itMammoth50Deflector;"/>
+			<Device deviceID="&it100MWReactor;"/>
+		</Devices>
+
+		<Image imageID="&rsCoalitionCobra;" imageX="0" imageY="0" imageWidth="72" imageHeight="72" rotationOffset="0" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scCoalitionViper;"
+			manufacturer=		"Viper Space Systems"
+			class=				"Viper"
+			type=				"gunship"
+			score=				"500"
+
+			mass=				"200"
+			cargoSpace=			"30"
+			thrust=				"400"
+			maneuver=			"1"
+			maxSpeed=			"25"
+			rotationCount=		"40"
+			leavesWreck=		"100"
+
+			attributes=			"coalition,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itIsophase100;"/>
+			<ArmorSection start="225" span="90" armorID="&itIsophase100;"/>
+			<ArmorSection start="135" span="90" armorID="&itIsophase100;"/>
+			<ArmorSection start="45"  span="90" armorID="&itIsophase100;"/>
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itIonImpactCannonLD;"/>
+			<Device deviceID="&itMammoth25Deflector;"/>
+			<Device deviceID="&it100MWReactor;"/>
+		</Devices>
+
+		<Image imageID="&rsCoalitionViper;" imageX="0" imageY="0" imageWidth="48" imageHeight="48" rotationOffset="0" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"15"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	<ShipClass UNID="&scCoalitionWhiptail;"
+			manufacturer=		"Viper Space Systems"
+			class=				"Whiptail-M"
+			type=				"drone"
+			score=				"300"
+
+			mass=				"100"
+			cargoSpace=			"5"
+			thrust=				"250"
+			maneuver=			"1"
+			maxSpeed=			"28"
+			rotationCount=		"40"
+			leavesWreck=		"100"
+
+			attributes=			"coalition,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itLightBlastPlate;"/>
+			<ArmorSection start="225" span="90" armorID="&itLightBlastPlate;"/>
+			<ArmorSection start="135" span="90" armorID="&itLightBlastPlate;"/>
+			<ArmorSection start="45"  span="90" armorID="&itLightBlastPlate;"/>
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itIonImpactCannonLD;"/>
+			<Device deviceID="&it50MWReactor;"/>
+		</Devices>
+
+		<Image imageID="&rsCoalitionWhiptail;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" rotationOffset="0" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"15"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	<ItemType UNID="&itIsophase1000;"
+			name=				"[segment(s) of ]Isophase 1000 armor"
+			level=				"10"
+			value=				"80000"
+			mass=				"25000"
+			attributes=			"Isophase; Military; MinorItem"
+			frequency=			"veryrare"
+			numberAppearing=	"1d6"
+
+			description=		"Isophase armor is derivative of the readily available Hexphase. It is more difficult to repair however."
+
+			sortName=			"Isophase armor, 1000, segment of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=	"800"
+				hpBonus=	"  +0,  +0,+75,+75, +0,  +100"
+				/>
+
+	</ItemType>
+	<ItemType UNID="&itIsophase750;"
+			name=				"[segment(s) of ]Isophase 750 armor"
+			level=				"9"
+			value=				"40000"
+			mass=				"15000"
+			attributes=			"Isophase; Military; MinorItem"
+			frequency=			"veryrare"
+			numberAppearing=	"1d6"
+
+			description=		"Isophase armor is derivative of the readily available Hexphase. It is more difficult to repair however."
+
+			sortName=			"Isophase armor, 750, segment of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=	"600"
+				hpBonus=	"  +0,  +0,+80,+80, +0,  +80"
+				/>
+
+	</ItemType>
+	<ItemType UNID="&itIsophase500;"
+			name=				"[segment(s) of ]Isophase 500 armor"
+			level=				"8"
+			value=				"20000"
+			mass=				"8000"
+			attributes=			"Isophase; Military; MinorItem"
+			frequency=			"rare"
+			numberAppearing=	"1d4"
+
+			description=		"Isophase armor is derivative of the readily available Hexphase. It is more difficult to repair however."
+
+			sortName=			"Isophase armor, 500, segment of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=	"400"
+				hpBonus=	"  +0,  +0,+95,+95, +0,  +60"
+				repairTech=	"9"
+				/>
+
+	</ItemType>
+	<ItemType UNID="&itIsophase250;"
+			name=				"[segment(s) of ]Isophase 250 armor"
+			level=				"7"
+			value=				"10000"
+			mass=				"4000"
+			attributes=			"Isophase; Military; MinorItem"
+			frequency=			"uncommon"
+			numberAppearing=	"1d4"
+
+			description=		"Isophase armor is derivative of the readily available Hexphase. It is more difficult to repair however."
+
+			sortName=			"Isophase armor, 250, segment of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=	"200"
+				hpBonus=	"  +0,  +0,+100,+100, +0,  +40"
+				repairTech=	"9"
+				/>
+
+	</ItemType>
+	<ItemType UNID="&itIsophase100;"
+			name=				"[segment(s) of ]Isophase 100 armor"
+			level=				"6"
+			value=				"5000"
+			mass=				"2000"
+			attributes=			"Isophase; Military; MinorItem"
+			frequency=			"uncommon"
+			numberAppearing=	"1d4"
+
+			description=		"Isophase armor is derivative of the readily available Hexphase. It is more difficult to repair however."
+
+			sortName=			"Isophase armor, 100, segment of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=	"100"
+				hpBonus=	"  +0,  +0,+100,+100, +0,  +25"
+				repairTech=	"8"
+				/>
+
+	</ItemType>
+
+</TranscendenceModule>

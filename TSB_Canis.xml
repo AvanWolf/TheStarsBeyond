@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!ENTITY unidExtension						"0xE3140009">
+
+<!-- IMAGES -->
+
+	<!ENTITY rsCoyote							"0xE3140200">
+	<!ENTITY rsCoyoteLarge							"0xE3140201">
+	<!ENTITY rsCoyoteEngines						"0xE3140202">
+	<!ENTITY rsFox								"0xE3140203">
+	<!ENTITY rsFoxLarge							"0xE3140204">
+	<!ENTITY rsFoxEngines							"0xE3140205">
+	<!ENTITY rsCanisCoyote							"0xE3140206">
+
+<!-- DEVICES -->
+
+	<!ENTITY itLightIonGunDual						"0xE3141100">
+	<!ENTITY itLightADNRPlasteel						"0xE3141101">
+	<!ENTITY itK1Deflector							"0xE3141102">
+
+<!-- SHIPS -->
+
+	<!ENTITY scCoyotePlayer							"0xE3146100">
+	<!ENTITY scCoyote							"0xE3146101">
+	<!ENTITY scFoxPlayer							"0xE3146102">
+	<!ENTITY scCanisCoyotePlayer							"0xE3146103">
+
+<!-- External References -->
+
+
+	<!ENTITY baShieldBase							"0xE31401B5">
+
+]>
+<TranscendenceModule> <!-- UNID="0xE314000C" version="1.0" -->
+
+<!-- Wolfen overwrite -->
+
+	<!-- Player Ship: Wolfen-class Gunship -->
+
+	<ShipClass UNID="&scWolfenPlayer;"
+			manufacturer=		"Arctica Shipyards"
+			class=				"Wolfen"
+			type=				"gunship"
+			score=				"225"
+
+			mass=				"30"
+			reactorPower=		"100"
+			fuelCapacity=		"25000"
+			cargoSpace=			"35"
+			thrust=				"300"
+			rotationCount=		"40"
+			maneuver=			"2"
+			maxSpeed=			"25"
+
+			maxArmor=			"10000"
+			maxCargoSpace=		"100"
+			maxDevices=			"8"
+			maxNonWeapons=		"4"
+
+			leavesWreck=		"20"
+			
+			attributes=			"playerClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itLightPlasteelPlate;" areaSet="0,2" />
+			<ArmorSection start="225" span="90" armorID="&itLightPlasteelPlate;" areaSet="3,4" />
+			<ArmorSection start="45"  span="90" armorID="&itLightPlasteelPlate;" areaSet="7,13" />
+			<ArmorSection start="135" span="90" armorID="&itLightPlasteelPlate;" areaSet="1,6" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itDualLaserCannon;"/>
+			<Device deviceID="&itNAMIMissileLauncher;"/>
+			<Device deviceID="&itHullPlateIonizer;"/>
+		</Devices>
+
+		<Items>
+			<Item count="4d6" item="&itHelium3FuelRod;"/>
+			<Item count="4d6" item="&itKM100Missile;"/>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"30"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+		<Image imageID="&rsWolfenGunship;" imageX="0" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<DriveImages>
+			<NozzleImage imageID="&rsDriveExhaust2;" imageX="0" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+			<NozzlePos x="-41" y="-8"/>
+			<NozzlePos x="-41" y="0"/>
+			<NozzlePos x="-41" y="8"/>
+		</DriveImages>
+
+		<PlayerSettings
+			desc=				"Fast and deadly, the Wolfen is designed for combat. Though limited in cargo capacity, it has lots of room for more weapons."
+			largeImage=			"&rsWolfenLarge;"
+			initialClass=		"true"
+
+			startingSystem=		"SE"
+			startingPos=		"Start"
+			>
+
+			<ArmorDisplay>
+				<ArmorSection name="forward"
+						imageID="&rsWolfenArmor;" 
+						imageX="0" imageY="0" imageWidth="52" imageHeight="15"
+						destX="42" destY="19" hpX="55" hpY="18"
+						nameY="8" nameBreakWidth="200" nameDestX="0" nameDestY="10" />
+
+				<ArmorSection name="starboard"
+						imageID="&rsWolfenArmor;" 
+						imageX="75" imageY="0" imageWidth="23" imageHeight="69"
+						destX="94" destY="34" hpX="97" hpY="60"
+						nameY="30" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+
+				<ArmorSection name="port"
+						imageID="&rsWolfenArmor;" 
+						imageX="52" imageY="0" imageWidth="23" imageHeight="69"
+						destX="19" destY="34" hpX="13" hpY="60"
+						nameY="52" nameBreakWidth="200" nameDestX="0" nameDestY="8" />
+
+				<ArmorSection name="aft"
+						imageID="&rsWolfenArmor;" 
+						imageX="0" imageY="75" imageWidth="52" imageHeight="16"
+						destX="42" destY="103" hpX="55" hpY="107"
+						nameY="74" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+			</ArmorDisplay>
+
+			<ShieldDisplay>
+				<Image imageID="&rsWolfenShields;" imageX="0" imageY="0" imageWidth="136" imageHeight="136"/>
+			</ShieldDisplay>
+
+			<ReactorDisplay>
+				<Image imageID="&rsZubrinReactor;" 
+						imageX="0" imageY="0" imageWidth="256" imageHeight="60"/>
+
+				<PowerLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="60" imageWidth="202" imageHeight="14"
+						destX="54" destY="9"/>
+
+				<FuelLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="74" imageWidth="194" imageHeight="14"
+						destX="54" destY="37"/>
+
+				<FuelLowLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="88" imageWidth="194" imageHeight="14"/>
+
+				<ReactorText x="62" y="22" width="154" height="14"/>
+				<PowerLevelText x="62" y="0" width="154" height="9"/>
+				<FuelLevelText x="62" y="51" width="154" height="9"/>
+			</ReactorDisplay>
+
+		</PlayerSettings>
+
+	</ShipClass>
+
+<!-- new content -->
+
+	<Image UNID="&rsCoyoteLarge;"		bitmap="resources/images/coyotelarge.jpg"		loadOnUse="true" />
+	<Image UNID="&rsCoyote;"		bitmap="resources/images/coyote.jpg" bitmask="resources/images/coyotemask.bmp"   loadOnUse="true"/>
+	<Image UNID="&rsCanisCoyote;"		bitmap="resources/images/CIhuskyheavyfreighter.jpg" bitmask="resources/images/CIhuskyheavyfreighterMask.bmp"   loadOnUse="true"/>
+	<!-- <Image UNID="&rsCanisCoyote;"		bitmap="resources/images/coyotefighter.jpg" bitmask="resources/images/coyotefightermask.bmp"   loadOnUse="true"/>-->
+	<Image UNID="&rsCoyoteEngines;"		bitmap="resources/images/coyoteglow.jpg" bitmask="resources/images/coyoteglowmask.bmp"   loadOnUse="true"/>
+
+<!--	<Image UNID="&rsFoxLarge;"		bitmap="resources/images/foxlarge.jpg"		loadOnUse="true" /> -->
+	<Image UNID="&rsFox;"			bitmap="resources/images/fox.jpg" bitmask="resources/images/foxmask.bmp"   loadOnUse="true"/>
+	<Image UNID="&rsFoxEngines;"		bitmap="resources/images/foxengineglow.jpg" bitmask="resources/images/foxengineglowmask.bmp"   loadOnUse="true"/>
+
+
+	<ItemType UNID="&itLightIonGunDual;"
+			name=				"dual light ion gun"
+			level=				"2"
+			value=				"800"
+			mass=				"2000"
+			frequency=			"rare"
+			modifiers=			"MajorItem; Canis; EnergyWeapon"
+			showReference=		"true"
+
+			description=		"An entry level version of the advanced Canis Industries Ion Cannon, in dual configuration."
+
+			sortName=			"recoilless cannon, heavy"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				configuration=			"dual"
+				damage=				"ion:1d4"
+				fireRate=			"10"
+				missileSpeed=		"100"
+				hitPoints=		"3"
+				interaction=		"0"
+				passthrough=		"0"
+				lifetime=			"30"
+				powerUse=			"30"
+
+				sound=				"&snLaserCannon;"
+				>
+
+			<Effect>
+				<Bolt
+						length=				"50"
+						width=				"2"
+						primaryColor=		"0x00, 0xf0, 0xff"
+						secondaryColor=		"0x00, 0xd0, 0xff"
+						/>
+						<ParticleComet
+							particleCount=	"30"
+							primaryColor=	"0x00, 0xc0, 0xdf"
+					
+							width=			"3"
+							length=			"60"
+							/>
+			</Effect>
+
+		</Weapon>
+
+	</ItemType>
+
+	<ItemType UNID="&itK1Deflector;"
+			inherit=			"&baShieldBase;"
+			name=				"K1 deflector"
+			level=				"2"
+			value=				"1200"
+			mass=				"1500"
+			frequency=			"rare"
+			modifiers=			"Canis; MajorItem"
+			showReference=		"true"
+
+			description=		"K1 deflectors are the entry level shield in the Canis K-series deflectors. They are optimized for regeneration."
+
+			sortName=			"deflector, K1"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"30"
+				regen=			"32"
+				depletionDelay=	"180"
+				powerUse=		"30"
+				/>
+	</ItemType>
+
+	<ItemType UNID="&itLightADNRPlasteel;"
+			name=				"[segment(s) of ]light ADNR microplated plasteel plate"
+			level=				"3"
+			value=				"350"
+			mass=				"3000"
+			frequency=			"rare"
+			numberAppearing=	"1d4"
+			modifiers=			"MinorItem; Canis"
+			showReference=		"true"
+
+			description=		"This armor is composed of many small, thin, ADNR plates mounted on light plasteel plating, allowing it to resist kinetic damage."
+
+			sortName=			"ADNR.30"
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=	"60"
+				hpBonus=	"  +0,+100,  +0, +20"
+				/>
+
+	</ItemType>
+
+	<ShipClass UNID="&scCanisCoyotePlayer;"
+			manufacturer=		"Canis Industries"
+			class=				"Coyote"
+			type=				"test"
+			score=				"230"
+
+			mass=				"50"
+			reactorPower=		"150"
+			fuelCapacity=		"37500"
+			cargoSpace=			"25"
+			thrust=				"250"
+			rotationCount=		"40"
+			maneuver=			"2"
+			maxSpeed=			"25"
+
+			maxArmor=			"12000"
+			maxCargoSpace=		"100"
+			maxDevices=			"9"
+			maxNonWeapons=		"5"
+
+			leavesWreck=		"100"
+			
+			attributes=			"playerClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itLightADNRPlasteel;" areaSet="0,2" />
+			<ArmorSection start="225" span="90" armorID="&itLightADNRPlasteel;" areaSet="3,4" />
+			<ArmorSection start="45"  span="90" armorID="&itLightADNRPlasteel;" areaSet="7,13" />
+			<ArmorSection start="135" span="90" armorID="&itLightADNRPlasteel;" areaSet="1,6" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itLightIonGunDual;"/>
+			<Device deviceID="&itK1Deflector;"/>
+		</Devices>
+
+		<Items>
+			<Item count="4d6" item="&itHelium3FuelRod;"/>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"95"
+			perception=			"4"
+			/>
+
+		<Image imageID="&rsCanisCoyote;" imageX="0" imageY="0" imageWidth="144" imageHeight="144"/>
+		<!--<DriveImages>
+			<NozzleImage imageID="&rsCoyoteEngines;" imageX="0" imageY="0" imageWidth="64" imageHeight="64"/>
+			<NozzlePos x="0" y="0"/>
+		</DriveImages>-->
+		<PlayerSettings
+			desc=				"TEST A cutting-edge design loosely based off of the aging wolfen, the Coyote sacrifices cargo space and acceleration to gain an edge in other areas."
+			largeImage=			"&rsCoyoteLarge;"
+			initialClass=		"true"
+
+			startingSystem=		"SE"
+			startingPos=		"Start"
+			>
+
+			<ArmorDisplay>
+				<ArmorSection name="forward"
+						imageID="&rsWolfenArmor;" 
+						imageX="0" imageY="0" imageWidth="52" imageHeight="15"
+						destX="42" destY="19" hpX="55" hpY="18"
+						nameY="8" nameBreakWidth="200" nameDestX="0" nameDestY="10" />
+
+				<ArmorSection name="starboard"
+						imageID="&rsWolfenArmor;" 
+						imageX="75" imageY="0" imageWidth="23" imageHeight="69"
+						destX="94" destY="34" hpX="97" hpY="60"
+						nameY="30" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+
+				<ArmorSection name="port"
+						imageID="&rsWolfenArmor;" 
+						imageX="52" imageY="0" imageWidth="23" imageHeight="69"
+						destX="19" destY="34" hpX="13" hpY="60"
+						nameY="52" nameBreakWidth="200" nameDestX="0" nameDestY="8" />
+
+				<ArmorSection name="aft"
+						imageID="&rsWolfenArmor;" 
+						imageX="0" imageY="75" imageWidth="52" imageHeight="16"
+						destX="42" destY="103" hpX="55" hpY="107"
+						nameY="74" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+			</ArmorDisplay>
+
+			<ShieldDisplay>
+				<Image imageID="&rsWolfenShields;" imageX="0" imageY="0" imageWidth="136" imageHeight="136"/>
+			</ShieldDisplay>
+
+			<ReactorDisplay>
+				<Image imageID="&rsZubrinReactor;" 
+						imageX="0" imageY="0" imageWidth="256" imageHeight="60"/>
+
+				<PowerLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="60" imageWidth="202" imageHeight="14"
+						destX="54" destY="9"/>
+
+				<FuelLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="74" imageWidth="194" imageHeight="14"
+						destX="54" destY="37"/>
+
+				<FuelLowLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="88" imageWidth="194" imageHeight="14"/>
+
+				<ReactorText x="62" y="22" width="154" height="14"/>
+				<PowerLevelText x="62" y="0" width="154" height="9"/>
+				<FuelLevelText x="62" y="51" width="154" height="9"/>
+			</ReactorDisplay>
+
+		</PlayerSettings>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scCoyotePlayer;"
+			manufacturer=		"Canis Industries"
+			class=				"Coyote"
+			type=				"Gunship"
+			score=				"230"
+
+			mass=				"50"
+			reactorPower=		"150"
+			fuelCapacity=		"37500"
+			cargoSpace=			"25"
+			thrust=				"250"
+			rotationCount=		"40"
+			maneuver=			"2"
+			maxSpeed=			"25"
+
+			maxArmor=			"12000"
+			maxCargoSpace=		"100"
+			maxDevices=			"9"
+			maxNonWeapons=		"5"
+
+			leavesWreck=		"100"
+			
+			attributes=			"playerClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itLightADNRPlasteel;" areaSet="0,2" />
+			<ArmorSection start="225" span="90" armorID="&itLightADNRPlasteel;" areaSet="3,4" />
+			<ArmorSection start="45"  span="90" armorID="&itLightADNRPlasteel;" areaSet="7,13" />
+			<ArmorSection start="135" span="90" armorID="&itLightADNRPlasteel;" areaSet="1,6" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itLightIonGunDual;"/>
+			<Device deviceID="&itK1Deflector;"/>
+		</Devices>
+
+		<Items>
+			<Item count="4d6" item="&itHelium3FuelRod;"/>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"95"
+			perception=			"4"
+			/>
+
+		<Image imageID="&rsCoyote;" imageX="0" imageY="0" imageWidth="64" imageHeight="64"/>
+		<DriveImages>
+			<NozzleImage imageID="&rsCoyoteEngines;" imageX="0" imageY="0" imageWidth="64" imageHeight="64"/>
+			<NozzlePos x="0" y="0"/>
+		</DriveImages>
+		<PlayerSettings
+			desc=				"A cutting-edge design loosely based off of the aging wolfen, the Coyote sacrifices cargo space and acceleration to gain an edge in other areas."
+			largeImage=			"&rsCoyoteLarge;"
+			initialClass=		"true"
+
+			startingSystem=		"SE"
+			startingPos=		"Start"
+			>
+
+			<ArmorDisplay>
+				<ArmorSection name="forward"
+						imageID="&rsWolfenArmor;" 
+						imageX="0" imageY="0" imageWidth="52" imageHeight="15"
+						destX="42" destY="19" hpX="55" hpY="18"
+						nameY="8" nameBreakWidth="200" nameDestX="0" nameDestY="10" />
+
+				<ArmorSection name="starboard"
+						imageID="&rsWolfenArmor;" 
+						imageX="75" imageY="0" imageWidth="23" imageHeight="69"
+						destX="94" destY="34" hpX="97" hpY="60"
+						nameY="30" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+
+				<ArmorSection name="port"
+						imageID="&rsWolfenArmor;" 
+						imageX="52" imageY="0" imageWidth="23" imageHeight="69"
+						destX="19" destY="34" hpX="13" hpY="60"
+						nameY="52" nameBreakWidth="200" nameDestX="0" nameDestY="8" />
+
+				<ArmorSection name="aft"
+						imageID="&rsWolfenArmor;" 
+						imageX="0" imageY="75" imageWidth="52" imageHeight="16"
+						destX="42" destY="103" hpX="55" hpY="107"
+						nameY="74" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+			</ArmorDisplay>
+
+			<ShieldDisplay>
+				<Image imageID="&rsWolfenShields;" imageX="0" imageY="0" imageWidth="136" imageHeight="136"/>
+			</ShieldDisplay>
+
+			<ReactorDisplay>
+				<Image imageID="&rsZubrinReactor;" 
+						imageX="0" imageY="0" imageWidth="256" imageHeight="60"/>
+
+				<PowerLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="60" imageWidth="202" imageHeight="14"
+						destX="54" destY="9"/>
+
+				<FuelLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="74" imageWidth="194" imageHeight="14"
+						destX="54" destY="37"/>
+
+				<FuelLowLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="88" imageWidth="194" imageHeight="14"/>
+
+				<ReactorText x="62" y="22" width="154" height="14"/>
+				<PowerLevelText x="62" y="0" width="154" height="9"/>
+				<FuelLevelText x="62" y="51" width="154" height="9"/>
+			</ReactorDisplay>
+
+		</PlayerSettings>
+
+	</ShipClass>
+
+	<ShipClass UNID="&scFoxPlayer;"
+			manufacturer=		"Canis Industries"
+			class=				"Fox"
+			type=				"Recon-Fighter"
+			score=				"230"
+
+			mass=				"30"
+			reactorPower=		"150"
+			fuelCapacity=		"37500"
+			cargoSpace=			"20"
+			thrust=				"300"
+			rotationCount=		"40"
+			maneuver=			"2"
+			maxSpeed=			"30"
+
+			maxArmor=			"8000"
+			maxCargoSpace=		"70"
+			maxDevices=			"8"
+			maxNonWeapons=		"5"
+
+			leavesWreck=		"100"
+			
+			attributes=			"playerClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itLightADNRPlasteel;" areaSet="0,2" />
+			<ArmorSection start="225" span="90" armorID="&itLightADNRPlasteel;" areaSet="3,4" />
+			<ArmorSection start="45"  span="90" armorID="&itLightADNRPlasteel;" areaSet="7,13" />
+			<ArmorSection start="135" span="90" armorID="&itLightADNRPlasteel;" areaSet="1,6" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itLightIonGunDual;"/>
+			<Device deviceID="&itK1Deflector;"/>
+		</Devices>
+
+		<Items>
+			<Item count="4d6" item="&itHelium3FuelRod;"/>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"95"
+			perception=			"4"
+			/>
+
+		<Image imageID="&rsFox;" imageX="0" imageY="0" imageWidth="48" imageHeight="48"/>
+
+		<DriveImages>
+			<NozzleImage imageID="&rsFoxEngines;" imageX="0" imageY="0" imageWidth="48" imageHeight="48"/>
+			<NozzlePos x="0" y="0"/>
+		</DriveImages>
+
+		<PlayerSettings
+			desc=				"The Canis Industries Fox is an extremely fast and well out-fitted fighter, designed to act independantly as a reconnaisance ship."
+			largeImage=			"&rsCoyoteLarge;"
+			initialClass=		"true"
+
+			startingSystem=		"SE"
+			startingPos=		"Start"
+			>
+
+			<ArmorDisplay>
+				<ArmorSection name="forward"
+						imageID="&rsWolfenArmor;" 
+						imageX="0" imageY="0" imageWidth="52" imageHeight="15"
+						destX="42" destY="19" hpX="55" hpY="18"
+						nameY="8" nameBreakWidth="200" nameDestX="0" nameDestY="10" />
+
+				<ArmorSection name="starboard"
+						imageID="&rsWolfenArmor;" 
+						imageX="75" imageY="0" imageWidth="23" imageHeight="69"
+						destX="94" destY="34" hpX="97" hpY="60"
+						nameY="30" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+
+				<ArmorSection name="port"
+						imageID="&rsWolfenArmor;" 
+						imageX="52" imageY="0" imageWidth="23" imageHeight="69"
+						destX="19" destY="34" hpX="13" hpY="60"
+						nameY="52" nameBreakWidth="200" nameDestX="0" nameDestY="8" />
+
+				<ArmorSection name="aft"
+						imageID="&rsWolfenArmor;" 
+						imageX="0" imageY="75" imageWidth="52" imageHeight="16"
+						destX="42" destY="103" hpX="55" hpY="107"
+						nameY="74" nameBreakWidth="360" nameDestX="12" nameDestY="0" />
+			</ArmorDisplay>
+
+			<ShieldDisplay>
+				<Image imageID="&rsWolfenShields;" imageX="0" imageY="0" imageWidth="136" imageHeight="136"/>
+			</ShieldDisplay>
+
+			<ReactorDisplay>
+				<Image imageID="&rsZubrinReactor;" 
+						imageX="0" imageY="0" imageWidth="256" imageHeight="60"/>
+
+				<PowerLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="60" imageWidth="202" imageHeight="14"
+						destX="54" destY="9"/>
+
+				<FuelLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="74" imageWidth="194" imageHeight="14"
+						destX="54" destY="37"/>
+
+				<FuelLowLevelImage imageID="&rsZubrinReactor;"
+						imageX="0" imageY="88" imageWidth="194" imageHeight="14"/>
+
+				<ReactorText x="62" y="22" width="154" height="14"/>
+				<PowerLevelText x="62" y="0" width="154" height="9"/>
+				<FuelLevelText x="62" y="51" width="154" height="9"/>
+			</ReactorDisplay>
+
+		</PlayerSettings>
+
+	</ShipClass>
+
+</TranscendenceModule>

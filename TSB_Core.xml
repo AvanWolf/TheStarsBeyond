@@ -1,0 +1,1121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceAdventure
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!ENTITY unidExtension						"0xE3140000">
+
+	<!ENTITY adTheStarsBeyond					"0xE314E000">
+	
+	<!-- Modules -->
+	
+	<!-- ANSABI -->
+	
+<!-- IMAGES -->
+
+	<!ENTITY rsAnsabiGunship						"0xE3140600">
+	<!ENTITY rsAnsabiFreighterC						"0xE3140601">
+	<!ENTITY rsAnsabiTurretIon						"0xE3140602">
+	<!ENTITY rsAnsabiTurretPositron						"0xE3140603">
+	<!ENTITY rsAnsabiEMPGrenade						"0xE3140604">
+	<!ENTITY rsAnsabiIonGrenade						"0xE3140605">
+	
+	<!ENTITY snEnergyCannon							"0xE3140606">
+	<!ENTITY snBeamWeapon							"0xE3140607">
+	
+	<!ENTITY rsAnsabiYacht							"0xE3140608">
+	<!ENTITY rsAnsabiHabitat						"0xE3140609">
+	
+	<!ENTITY svAnsabi							"0xE314060A">
+	
+	<!ENTITY rsAnsabiMetropolis						"0xE314060B">
+
+<!-- DEVICES -->
+
+	<!ENTITY itAnsabiIonLancette						"0xE3141500">
+	<!ENTITY itAnsabiIonBeam						"0xE3141501">
+	<!ENTITY itAnsabiPositronBeam						"0xE3141502">
+	<!ENTITY itAnsabiAntimatterBeam						"0xE3141503">
+	<!ENTITY itAnsabiPositronPulse						"0xE3141504">
+	<!ENTITY itAnsabiPositronLancette					"0xE3141505">
+	<!ENTITY itAnsabiLauncher						"0xE3141506">
+	<!ENTITY itAnsabiEMPGrenade						"0xE3141507">
+	<!ENTITY itAnsabiIonGrenade						"0xE3141508">
+	<!ENTITY itAnsabiPositronGrenade					"0xE3141509">
+	<!ENTITY itAnsabiAntimatterGrenade					"0xE314150A">
+	<!ENTITY itAnsabiBomb							"0xE314150B">
+	<!ENTITY itAnsabiTrackingMine						"0xE314150C">
+	<!ENTITY itAnsabi750MWReactor						"0xE314150D">
+	<!ENTITY itAnsabi1GWReactor						"0xE314150E">
+
+<!-- SHIPS -->
+
+	<!ENTITY scAnsabiGunship						"0xE3146500">
+	<!ENTITY scAnsabiFreighterC						"0xE3146501">
+	<!ENTITY scAnsabiYacht							"0xE3146504">
+
+<!-- STATIONS -->
+	
+	<!ENTITY stAnsabiTurretIon						"0xE3146502">
+	<!ENTITY stAnsabiTurretPositron						"0xE3146503">
+	<!ENTITY stAnsabiHabitat						"0xE3146505">
+	<!ENTITY stAnsabiMetropolis						"0xE3146506">
+	
+<!-- DOCKSCREENS -->
+
+	<!ENTITY dsAnsabiBuy							"0xE314E500">
+	<!ENTITY dsAnsabiSell							"0xE314E501">
+	<!ENTITY dsAnsabiImprison						"0xE314E502">
+	
+<!-- TABLES -->
+	
+	<!ENTITY tbAnsabiDefenders						"0xE314E503">
+	<!ENTITY tbAnsabiEliteDefenders						"0xE314E504">
+	<!ENTITY tbAnsabiPrivateCrafts						"0xE314E505">
+	<!ENTITY tbAnsabiTraffic						"0xE314E506">
+	
+	<!-- ARES -->
+	
+	<!ENTITY unidExtension						"0xE314000A">
+
+<!-- IMAGES -->
+
+	<!ENTITY rsAresCarrier							"0xE31402A0">
+
+<!-- DEVICES -->
+
+	<!ENTITY itAresMicroTurret						"0xE31411A0">
+	<!ENTITY itLightADNRPlasteel						"0xE31411A1">
+	<!ENTITY itK1Deflector							"0xE31411A2">
+
+<!-- SHIPS -->
+
+	<!ENTITY scAresCarrier							"0xE31461A0">
+	
+	<!-- Autons -->
+	
+
+<!-- IMAGES -->
+
+	<!ENTITY rsAutonCanis							"0xE314010F">
+	<!ENTITY rsAutonEIMining1						"0xE3140102">
+	<!ENTITY rsAutonEIMining2						"0xE3140103">
+	<!ENTITY rsAutonCharonLoot1						"0xE3140104">
+	<!ENTITY rsDUMMY3							"0xE3140105">
+	<!ENTITY rsDUMMY2							"0xE3140106">
+	<!ENTITY rsAutonHeavy1							"0xE3140107">
+	<!ENTITY rsAutonHeavy2							"0xE3140108">
+	<!ENTITY rsAutonTherrusian						"0xE3140109">
+	<!ENTITY rsAutonCWMilitary						"0xE314010A">
+	<!ENTITY rsAutonMedium1							"0xE314010B">
+	<!ENTITY rsAutonLuminousPod						"0xE314010C">
+
+	<!ENTITY rsAutonLuminousProbe						"0xE314010D">
+	<!ENTITY rsDUMMY4							"0xE314010E">
+
+<!-- ITEMS -->
+
+	<!ENTITY itAutonCanis							"0xE314100F">
+	<!ENTITY itAutonEIMining1						"0xE3141002">
+	<!ENTITY itAutonEIMining2						"0xE3141003">
+	<!ENTITY itAutonCharonLoot1						"0xE3141004">
+	<!ENTITY itAutonCharonLoot2						"0xE3141005">
+	<!ENTITY itK3aShield							"0xE3141006">
+	<!ENTITY itAutonHeavy1							"0xE3141007">
+	<!ENTITY itAutonHeavy2							"0xE3141008">
+	<!ENTITY itAutonTherrusian						"0xE3141009">
+	<!ENTITY itAutonCWMilitary						"0xE314100A">
+	<!ENTITY itAutonMedium1							"0xE314100B">
+	<!ENTITY itAutonLuminousPod						"0xE314100C">
+
+	<!ENTITY itUnkownAuton2							"0xE314100D">
+
+	<!ENTITY itK6aShield							"0xE314100E">
+
+<!-- SHIPS -->
+
+	<!ENTITY scAutonCanis							"0xE314600F">
+	<!ENTITY scAutonEIMining1						"0xE3146002">
+	<!ENTITY scAutonEIMining2						"0xE3146003">
+	<!ENTITY scAutonCharonLoot1						"0xE3146004">
+	<!ENTITY scAutonCharonLoot2						"0xE3146005">
+	<!ENTITY scAutonCharonLoot3						"0xE3146006">
+	<!ENTITY scAutonHeavy1							"0xE3146007">
+	<!ENTITY scAutonHeavy2							"0xE3146008">
+	<!ENTITY scAutonTherrusian						"0xE3146009">
+	<!ENTITY scAutonCWMilitary						"0xE314600A">
+	<!ENTITY scAutonMedium1							"0xE314600B">
+	<!ENTITY scAutonLuminousPod						"0xE314600C">
+
+	<!ENTITY scDefectiveAuton						"0xE314600D">
+
+	<!ENTITY scAutonLuminousProbe						"0xE314600E">
+	
+	<!-- Canis -->
+	
+
+<!-- IMAGES -->
+
+	<!ENTITY rsCoyote							"0xE3140200">
+	<!ENTITY rsCoyoteLarge							"0xE3140201">
+	<!ENTITY rsCoyoteEngines						"0xE3140202">
+	<!ENTITY rsFox								"0xE3140203">
+	<!ENTITY rsFoxLarge							"0xE3140204">
+	<!ENTITY rsFoxEngines							"0xE3140205">
+
+<!-- DEVICES -->
+
+	<!ENTITY itLightIonGunDual						"0xE3141100">
+	<!ENTITY itLightADNRPlasteel						"0xE3141101">
+	<!ENTITY itK1Deflector							"0xE3141102">
+
+<!-- SHIPS -->
+
+	<!ENTITY scCoyotePlayer							"0xE3146100">
+	<!ENTITY scCoyote							"0xE3146101">
+	<!ENTITY scFoxPlayer							"0xE3146102">
+	
+	<!-- Centauri-->
+	
+<!-- IMAGES -->
+
+	<!ENTITY rsCentauriRaiderL						"0xE3140100">
+	<!ENTITY rsCentauriMonitor						"0xE3140101">
+
+<!-- DEVICES -->
+
+	<!ENTITY itCentauriAutogun						"0xE3141000">
+	<!ENTITY itCentauriDual505						"0xE3141001">
+
+<!-- SHIPS -->
+
+	<!ENTITY scCentauriRaiderL						"0xE3146000">
+	<!ENTITY scCentauriMonitor						"0xE3146001">
+	
+	<!-- Coalition -->
+	
+	<!-- Collective -->
+	
+	<!-- Commonwealth -->
+	
+	<!-- CW Militia -->
+	
+	<!-- CW Fleet -->
+	
+	<!-- Domain -->
+	
+	<!-- KAIDAN -->
+	
+<!-- IMAGES -->
+
+	<!ENTITY rsKaidanFighter						"0xE3140400">
+	<!ENTITY rsKaidanCarrier						"0xE3140401">
+
+<!-- DEVICES -->
+
+	<!ENTITY itKaidanChaingun						"0xE3141300">
+	<!ENTITY itKaidanVulcan							"0xE3141301">
+	<!ENTITY itKaidanChaingunDual						"0xE3141302">
+	<!ENTITY itKaidanChaingunOmni						"0xE3141303">
+	<!ENTITY itKaidanVulcanOmni						"0xE3141304">
+	<!ENTITY itKaidanLauncher						"0xE3141305">
+	<!ENTITY itKaidanFusionCannon						"0xE3141306">
+	<!ENTITY itKaidanFusionTurret						"0xE3141307">
+	<!ENTITY itKaidanBlastCannon						"0xE3141308">
+	<!ENTITY itKaidanBlastTurret						"0xE3141309">
+	<!ENTITY itKaidanLauncherOmni						"0xE314130A">
+	<!ENTITY itKaidanBlastBattery						"0xE314130B">
+	<!ENTITY itKaidanFusionBattery						"0xE314130C">
+
+<!-- SHIPS -->
+
+	<!ENTITY scKaidanFighter						"0xE3146300">
+	<!ENTITY scKaidanCarrier						"0xE3146301">
+	
+	<!-- Luminous -->
+	
+	<!ENTITY rsLuminousProbeL						"0xE3140180">
+	<!ENTITY rsLuminousPod							"0xE3140181">
+	<!ENTITY rsLuminousHunter						"0xE3140182">
+	<!ENTITY snLuminousSeeker						"0xE3140183">
+
+	<!ENTITY itLightIonBlaster						"0xE3141080">
+	<!ENTITY itLuminousSeeker						"0xE3141081">
+	<!ENTITY itHeavyLuminousSeeker						"0xE3141082">
+	<!ENTITY itHeavyLuminousArmature					"0xE3141083">
+	<!ENTITY itAdvancedLuminousArmature					"0xE3141084">
+	<!ENTITY itMassiveLuminousArmature					"0xE3141085">
+	<!ENTITY itAdaptiveShield1						"0xE3141086">
+	<!ENTITY itAdaptiveShield2						"0xE3141087">
+	<!ENTITY itAdaptiveShield3						"0xE3141088">
+	<!ENTITY itAdaptiveShield4						"0xE3141089">
+	<!ENTITY itLuminousSeekerBomb						"0xE314108A">
+
+	<!ENTITY scLuminousProbeL						"0xE3146080">
+	<!ENTITY scLuminousPod							"0xE3146081">
+	<!ENTITY scLuminousHunter						"0xE3146082">
+	
+	<!-- Ranx Empire -->
+	
+	<!ENTITY rsRanxIBattleship						"0xE3140130">
+	<!ENTITY snRanxFusionCannon						"0xE3140131">
+	<!ENTITY snGiantCannon							"0xE3140132">
+	<!ENTITY snVulcanCannon							"0xE3140133">
+	<!ENTITY rsPlasmaShockwave						"0xE3140134">
+
+	<!ENTITY itRanxFusionCannon						"0xE3141030">
+	<!ENTITY itRanxDragonHowitzer						"0xE3141031">
+	<!ENTITY itRanxArmorLght						"0xE3141032">
+	<!ENTITY itRanxArmorNorm						"0xE3141033">
+	<!ENTITY itRanxArmorHeav						"0xE3141034">
+	<!ENTITY itRanxArmorMass						"0xE3141035">
+	<!ENTITY itRanxArmorDrgn						"0xE3141036">
+	<!ENTITY itRanxAShields							"0xE3141037">
+	<!ENTITY itRanxBShields							"0xE3141038">
+	<!ENTITY itRanxCShields							"0xE3141039">
+	<!ENTITY itRanxDShields							"0xE314103A">
+	<!ENTITY itRanxEShields							"0xE314103B">
+	<!ENTITY itRanxFShields							"0xE314103C">
+	<!ENTITY itRanxFireSpear						"0xE314103D">
+	<!ENTITY itRanxBombard							"0xE314103E">
+	<!ENTITY itRanxRailgun1							"0xE314103F">
+	<!ENTITY itRanxRailgun2							"0xE3141040">
+	<!ENTITY itRanxRailgun3							"0xE3141041">
+	<!ENTITY itRanxVulcan1							"0xE3141042">
+	<!ENTITY itRanxVulcan2							"0xE3141043">
+
+	<!ENTITY scRanxIBattleship						"0xE3146030">
+	
+	<!-- Shields -->
+	
+	<!ENTITY itShieldBooster1						"0xE31401B0">
+	<!ENTITY itShieldBooster2						"0xE31401B1">
+	<!ENTITY itShieldBooster3						"0xE31401B2">
+	<!ENTITY itShieldBooster4						"0xE31401B3">
+	<!ENTITY itShieldCapacitor						"0xE31401B4">
+
+	<!ENTITY itOC1Deflector							"0xE31401B6">
+	<!ENTITY itType1Deflector							"0xE31401B7">
+
+	<!ENTITY baShieldBase							"0xE31401B5">
+	
+	<!-- Sung -->
+
+	<!ENTITY rsNandaoSml						"0xE31401A0">
+	<!ENTITY rsNandaoMed						"0xE31401A1">
+
+	<!ENTITY itNandaoBlaster					"0xE31410A0">
+	<!ENTITY itNandaoGun						"0xE31410A1">
+	<!ENTITY itNandaoGunAlt						"0xE31410A2">
+	<!ENTITY itDragonArmorPly					"0xE31410A3">
+	
+	<!-- Teratons -->
+	
+	<!ENTITY svTeraton1						"0xE314E531">
+	<!ENTITY svTeratonDefence1					"0xE314E532">
+	<!ENTITY svTeraton2						"0xE314E533">
+	<!ENTITY svTeratonDefence2					"0xE314E534">
+	<!ENTITY svTeraton3						"0xE314E535">
+	<!ENTITY svTeratonDefence3					"0xE314E536">
+	<!ENTITY svTeraton4						"0xE314E537">
+	<!ENTITY svTeratonDefence4					"0xE314E538">
+	<!ENTITY svTeraton5						"0xE314E539">
+	<!ENTITY svTeratonDefence5					"0xE314E53A">
+	<!ENTITY svTeratonRaiders					"0xE314E53B">
+	
+	
+	<!ENTITY rsTeratonGunship					"0xE3140630">
+	<!ENTITY rsTeratonHeavyGunship					"0xE3140631">
+	<!ENTITY rsTeratonFighter					"0xE3140632">
+	<!ENTITY rsTeratonFreighter					"0xE3140633">
+	<!ENTITY rsTeratonFreighterBig					"0xE3140634">
+	<!ENTITY rsTeratonDefenders					"0xE3140635">
+	
+	<!ENTITY itBioArmorL						"0xE3141530">
+	<!ENTITY itBioArmorM						"0xE3141531">
+	<!ENTITY itBioArmorH						"0xE3141532">
+	<!ENTITY itTeratonGrade1Deflector				"0xE3141533">
+	<!ENTITY itTeratonGrade2Deflector				"0xE3141534">
+	<!ENTITY itTeratonGrade3Deflector				"0xE3141535">
+	<!ENTITY itTeratonGrade4Deflector				"0xE3141536">
+	<!ENTITY itDualKytrynBlaster					"0xE3141537">
+	<!ENTITY itDualPlasmaBolter					"0xE3141538">
+	<!ENTITY itPlasmaBolter						"0xE3141539">
+	<!ENTITY itPlasmaDrill						"0xE314153A">
+	
+	<!ENTITY scTeratonGunship					"0xE3146530">
+	<!ENTITY scTeratonHeavyGunship					"0xE3146531">
+	<!ENTITY scTeratonFighter					"0xE3146532">
+	<!ENTITY scTeratonFreighter					"0xE3146533">
+	<!ENTITY scTeratonFreighterBig					"0xE3146534">
+	<!ENTITY scTeratonDefender					"0xE3146535">
+	<!ENTITY scTeratonDrill						"0xE3146536">
+	
+	<!ENTITY tbTeratonDefenders					"0xE314E53C">
+	<!ENTITY tbTeratonEliteDefenders				"0xE314E53D">
+	<!ENTITY tbTeratonPrivateCrafts					"0xE314E53E">
+	<!ENTITY tbTeratonTraffic					"0xE314E53F">
+	<!ENTITY tbTeratonEncounters					"0xE314E530">
+	
+	<!-- Twilight-->
+	
+<!-- IMAGES -->
+
+	<!ENTITY rsTwilightTurret							"0xE31403f0">
+	<!ENTITY rsTwilightDestroyer							"0xE31403f1">
+	<!ENTITY rsTwilightFighter							"0xE31403f2">
+
+<!-- DEVICES -->
+
+	<!ENTITY itNightfallBeam						"0xE31412f0">
+	<!ENTITY itHorizonBeam							"0xE31412f1">
+	<!ENTITY itShadowBeam							"0xE31412f2">
+
+<!-- SHIPS -->
+
+	<!ENTITY scTwilightTurret							"0xE31462f0">
+	<!ENTITY scTwilightDestroyer							"0xE31462f1">
+	<!ENTITY scTwilightFighter							"0xE31462f2">
+
+]>
+<TranscendenceAdventure name="Transcendence: The Stars Beyond" credits="Designer; Wolfy; Special thanks to:; Atarlost (Proofing); George Moromisato (Original Transcendence universe, Design coordination); ----------; Graphics; Wolfy; Aeonic (Teraton ships, Praetorian); Atarlost (Assorted ships, Review); Special Thanks to:; George Moromisato (Original graphical assets); Hades (Review); ----------; Scripting and XML; Wolfy; Special Thanks to: Alterecco; Atarlost; Betelgeuse; Prophet; ----------; Balance and Gameplay; Wolfy (Gameplay); Atarlost (Balance); ----------; Special thanks to:; Ttech (IRC); Anubis [DevDB] (Original 1.0 port and modularization of TX2/TSB); White Wolf Sanctuary (assorted names in TSB) - www.whitewolfsancturary.org; The guys over at Battleships Forever (Getting me into Transcendencce)" UNID="0xE3140000" version="1.0">
+
+
+
+	<Modules>
+		<Module filename="TSB_Ansabi.xml"/>
+		<Module filename="TSB_Ares.xml"/>
+		<Module filename="TSB_Autons.xml"/>
+		<Module filename="TSB_Canis.xml"/>
+		<Module filename="TSB_Centauri.xml"/>
+		<Module filename="TSB_Coalition.xml"/>
+		<Module filename="TSB_Collective.xml"/>
+		<Module filename="TSB_CommonwealthFleet.xml"/>
+		<Module filename="TSB_Domain.xml"/>
+		<Module filename="TSB_Hauri.xml"/>
+		<Module filename="TSB_Kaidan.xml"/>
+		<Module filename="TSB_Luminous.xml"/>
+
+		<!-- <Module filename="TSB_RanxEmpire.xml"/> Omitted until completion of ranx adv. ext -->
+		<Module filename="TSB_Shields.xml"/>
+		<Module filename="TSB_Sung.xml"/>
+		<Module filename="TSB_Teratons.xml"/>
+		<Module filename="TSB_Twilight.xml"/>
+		<Module filename="TSB_Template.xml"/>
+	</Modules>
+
+	
+	
+	<AdventureDesc
+		unid=                   "&adTheStarsBeyond;"
+		name=                   "Transcendence: The Stars Beyond"
+		backgroundID=           "&rsPart1Cover;"
+		startingShipCriteria=   "*"
+	>
+		<Events>
+			<OnGameStart>
+				(block Nil
+					(gamSetCrawlImage &rsProlog1;)
+						(gamSetCrawlText
+							(cat
+								"The date is 2419AD as you make your way out into the galaxy. This is a path well worn, by people of all walks of life."
+								"\n\nMany have come before you, and likely many after. The rich, the poor, the living, the dying."
+								"\nThe galaxy offers many opportunities, yet for each opportunity, there is also the dangers that lurk around every corner, be they pirate, military, or of the races beyond."
+								"\nThis is your story. Written by you, as you travel from star to star."
+								"\n\nAs you journey to the stars beyond, remember; the choice is yours."
+							)
+						)
+					)
+			</OnGameStart>
+			<OnGameEnd>
+				(block Nil
+					(gamSetCrawlImage
+						(if (eq aEndGameReason 'leftHumanSpace)
+							&rsEndGameEscaped;
+							&rsEndGameDestroyed;
+							)
+						)
+
+					(gamSetCrawlText 
+						(plyComposeString gPlayer
+							(cat
+								"%name% " aEpitaph ". "
+								"%name% visited "
+								(if (eq aSystemsVisited 1)
+									"a single star system "
+									(cat aSystemsVisited " star systems ")
+									)
+								"and destroyed "
+								(switch
+									(or (eq aEnemiesDestroyed 0) (not aBestEnemyClass))
+										"no enemy ships"
+
+									(eq aEnemiesDestroyed aBestEnemiesDestroyed)
+										(if (eq aEnemiesDestroyed 1)
+											(shpGetClassName aBestEnemyClass 0x04)
+											(cat aEnemiesDestroyed " " (shpGetClassName aBestEnemyClass 0x02))
+											)
+
+									(eq aBestEnemiesDestroyed 1)
+										(cat aEnemiesDestroyed " enemy ships, including " (shpGetClassName aBestEnemyClass 0x04))
+
+									(cat aEnemiesDestroyed " enemy ships, including " aBestEnemiesDestroyed " " (shpGetClassName aBestEnemyClass 0x02))
+									)
+								". "
+								(if (eq aEndGameReason 'leftHumanSpace)
+									"\n\nTo be continued..."
+									"%He% never reached the Galactic Core."
+									)
+								)
+							)
+						)
+					)
+        		</OnGameEnd>
+        	</Events>
+        </AdventureDesc>
+
+	<SystemTopology>
+
+		<!-- LEVEL I -->
+
+		<Node ID="SE" rootNode="true">
+			<System 
+					name=			"Eridani"
+					level=			"1"
+					attributes=		"newBeyond"
+					>
+				<System UNID="&ssStartonEridani;"/>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Outbound" DestID="C1" DestGate="Inbound"/>
+				<StarGate Name="Debug"	  DestID="BA" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="C1">
+			<System
+					level=			"1"
+					attributes=		"newBeyond"
+					variant=		"commonwealth"
+					>
+				<Table>
+					<System chance="30" name="Groombridge" UNID="&ssEarthSpaceStandard;"/>
+					<System chance="40" name="Lalande"	UNID="&ssEarthSpaceRedDwarf;"/>
+					<System chance="30" name="5 Indi"		UNID="&ssEarthSpaceAsteroids;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="C3" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<!-- LEVEL II -->
+
+		<Node ID="C3">
+			<System
+					level=			"2"
+					attributes=		"NewBeyond"
+					variant=		"commonwealth"
+					>
+				<Table>
+					<System chance="25" name="Orgos"		UNID="&ssEarthSpaceStandard;"/>
+					<System chance="25" name="Ross 248"	UNID="&ssEarthSpaceRedDwarf;"/>
+					<System chance="25" name="Cairn"		UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="25" name="Ras Alhague" UNID="&ssEarthSpaceDesert;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="C3A" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="C3A">
+			<System
+					level=			"2"
+					attributes=		"newBeyond"
+					variant=		"commonwealth"
+					>
+				<Table>
+					<System chance="50" name="Lacaille"	UNID="&ssEarthSpaceRedDwarf;"/>
+					<System chance="50" name="Cygni"		UNID="&ssEarthSpaceAsteroids;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="BA" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="BA">
+			<System
+					name=			"Rigel Aurelius"
+					level=			"2"
+					attributes=		"newBeyond"
+					>
+				<System UNID="&ssBattleArena;"/>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="C4" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<!-- LEVEL III -->
+
+		<Node ID="C4">
+			<System
+					level=			"3"
+					attributes=		"newBeyond"
+					variant=		"commonwealth"
+					>
+				<Table>
+					<System chance="17" name="Van Maanen"	UNID="&ssEarthSpaceStandard;"/>
+					<System chance="8"  name="Moren-Lin"	UNID="&ssEarthSpaceBinary;"/>
+					<System chance="25" name="Jotunheim"	UNID="&ssEarthSpaceRedDwarf;"/>
+					<System chance="25" name="Hena's Star" UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="25" name="Ankaa"		UNID="&ssEarthSpaceDesert;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<Table>
+					<StarGate chance="50" Name="Outbound" DestID="C4A" DestGate="Inbound"/>
+					<StarGate chance="50" Name="Outbound" DestID="CP" DestGate="Inbound"/>
+				</Table>
+			</StarGates>
+		</Node>
+
+		<Node ID="C4A">
+			<System
+					level=			"3"
+					attributes=		"newBeyond"
+					variant=		"commonwealth"
+					>
+				<Table>
+					<System chance="17" name="Manchester"	UNID="&ssEarthSpaceStandard;"/>
+					<System chance="8"  name="Fridlund"	UNID="&ssEarthSpaceBinary;"/>
+					<System chance="25" name="L372"		UNID="&ssEarthSpaceRedDwarf;"/>
+					<System chance="25" name="Kaus Media" UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="25" name="Al Maisan"	UNID="&ssEarthSpaceDesert;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="CP" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="CP">
+			<System
+					name="Charon"
+					level=			"3"
+					attributes=		"newBeyond"
+					>
+				<System UNID="&ssCharonPirateFortress;"/>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="SK" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<!-- LEVEL IV -->
+
+		<Node ID="SK">
+			<System
+					name=			"St. Katharine's Star"
+					level=			"4"
+					attributes=		"stKatharine"
+					variant=		"ungoverned"
+					>
+				<System UNID="&ssStKatharine;"/>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<Table>
+					<StarGate chance="50" Name="Outbound" DestID="C5A" DestGate="Inbound"/>
+					<StarGate chance="50" Name="Outbound" DestID="C5" DestGate="Inbound"/>
+				</Table>
+			</StarGates>
+		</Node>
+
+		<Node ID="C5A">
+			<System
+					level=			"4"
+					attributes=		"ungoverned"
+					variant=		"ungoverned"
+					>
+				<Table>
+					<System chance="50" name="Mu Casser"	UNID="&ssEarthSpaceStandard;"/>
+					<System chance="50" name="Dorado"		UNID="&ssEarthSpaceDesert;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="C5" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="C5">
+			<System		
+					level=			"4"
+					attributes=		"ungoverned"
+					variant=		"ungoverned"
+					>
+				<Table>
+					<System chance="17" name="Humboldt"	UNID="&ssEarthSpaceStandard;"/>
+					<System chance="8"  name="Neheb"		UNID="&ssEarthSpaceBinary;"/>
+					<System chance="25" name="70 Ophiuchi" UNID="&ssEarthSpaceRedDwarf;"/>
+					<System chance="25" name="Draconis"	UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="25" name="Hadar"		UNID="&ssEarthSpaceDesert;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="C6" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<!-- LEVEL V -->
+
+		<Node ID="C6">
+			<System				
+					level=			"5"
+					attributes=		"ungoverned"
+					variant=		"ungoverned"
+					>
+				<Table>
+					<System chance="17" name="Orthrus"	UNID="&ssEarthSpaceBinary;"/>
+					<System chance="8"  name="Kinder's Star"	UNID="&ssEarthSpaceStandard;"/>
+					<System chance="17" name="Lebezerin"	UNID="&ssEarthSpaceNebulae;"/>
+					<System chance="8"  name="Kruger 60"	UNID="&ssEarthSpaceRedDwarf;"/>
+					<System chance="25" name="Tiberius"	UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="17" name="Acheron"	UNID="&ssEarthSpaceVolcanic;"/>
+					<System chance="8"  name="Khaldun"	UNID="&ssEarthSpaceDesert;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<Table>
+					<StarGate chance="50" Name="Outbound" DestID="C6A" DestGate="Inbound"/>
+					<StarGate chance="50" Name="Outbound" DestID="CD" DestGate="Inbound"/>
+				</Table>
+			</StarGates>
+		</Node>
+
+		<Node ID="C6A">
+			<System
+					level=			"5"
+					attributes=		"ungoverned"
+					variant=		"ungoverned"
+					>
+				<Table>
+					<System chance="17" name="Junger"		UNID="&ssEarthSpaceStandard;"/>
+					<System chance="8"  name="Ravena"		UNID="&ssEarthSpaceBinary;"/>
+					<System chance="17" name="Jaoel"		UNID="&ssEarthSpaceNebulae;"/>
+					<System chance="8"  name="55 Cancri"	UNID="&ssEarthSpaceRedDwarf;"/>
+					<System chance="25" name="Trajan"		UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="17" name="Tarterus"	UNID="&ssEarthSpaceVolcanic;"/>
+					<System chance="8"  name="Shihab"		UNID="&ssEarthSpaceDesert;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="CD" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="CD">
+			<System
+					name=			"Sanctuary"
+					level=			"5"
+					attributes=		"ungoverned"
+					variant=		"ungoverned"
+					>
+				<System UNID="&ssEarthSpaceNebulae;"/>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="C7" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="C7">
+			<System
+					level=			"5"
+					attributes=		"ungoverned"
+					variant=		"ungoverned"
+					>
+				<Table>
+					<System chance="17" name="Amphion"	UNID="&ssEarthSpaceBinary;"/>
+					<System chance="8"  name="Kanto"		UNID="&ssEarthSpaceStandard;"/>
+					<System chance="17" name="Raziel"		UNID="&ssEarthSpaceNebulae;"/>
+					<System chance="8"  name="Estelle"	UNID="&ssEarthSpaceRedDwarf;"/>
+					<System chance="25" name="Domitus"	UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="17" name="Gehenna"	UNID="&ssEarthSpaceVolcanic;"/>
+					<System chance="8"  name="Arrakis"	UNID="&ssEarthSpaceDesert;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="C8" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<!-- Hauri -->
+
+		<Node ID="Huaramarca" rootNode="true">
+			<System 
+					name=			"Huaramarca"
+					level=			"6"
+					attributes=		"huari"
+					>
+				<System UNID="&ssHuaramarca;"/>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound"  DestID="[Prev]"/>
+			</StarGates>
+		</Node>
+		
+		<!-- LEVEL VI -->
+
+		<Node ID="C8">
+			<System
+					level=			"6"
+					attributes=		"ungoverned"
+					variant=		"ungoverned"
+					>
+				<Table>
+					<System chance="17" name="Zethus"		UNID="&ssEarthSpaceBinary;"/>
+					<System chance="8"  name="Nobunaga"	UNID="&ssEarthSpaceStandard;"/>
+					<System chance="20" name="Galgaliel"	UNID="&ssEarthSpaceNebulae;"/>
+					<System chance="5"  name="Cinder"		UNID="&ssEarthSpaceRedDwarf;"/>
+					<System chance="25" name="Numerianus"	UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="20" name="Exael"		UNID="&ssEarthSpaceVolcanic;"/>
+					<System chance="5"  name="Alembra"	UNID="&ssEarthSpaceDesert;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<Table>
+					<StarGate chance="50" Name="Outbound" DestID="C8A" DestGate="Inbound"/>
+					<StarGate chance="50" Name="Outbound" DestID="C9" DestGate="Inbound"/>
+				</Table>
+			</StarGates>
+		</Node>
+
+		<Node ID="C8A">
+			<System
+					level=				"6"
+					attributes=			"ungoverned"
+					variant=			"ungoverned"
+					>
+				<Table>
+					<System chance="50" name="Maharashtra" UNID="&ssEarthSpaceNebulae;"/>
+					<System chance="50" name="Bhutihan"	UNID="&ssEarthSpaceVolcanic;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="C9" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="C9">
+			<System
+					name=				"Jiang's Star"
+					level=				"6"
+					attributes=			"ungoverned"
+					variant=			"ungoverned"
+					>
+				<System UNID="&ssEarthSpaceVolcanic;"/>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="A1" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<!-- LEVEL VII -->
+
+		<Node ID="A1">
+			<System
+					level=				"7"
+					attributes=			"outerRealm"
+					variant=			"ungoverned"
+					>
+				<Table>
+					<System chance="17" name="Sleng"		UNID="&ssEarthSpaceStandard;"/>
+					<System chance="8"  name="Enkidu"		UNID="&ssEarthSpaceBinary;"/>
+					<System chance="25" name="Tzadkiel"	UNID="&ssEarthSpaceNebulae;"/>
+					<System chance="25" name="Severian's Star" UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="25" name="Flauros"	UNID="&ssEarthSpaceVolcanic;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="A2" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="A2">
+			<System
+					level=				"7"
+					attributes=			"outerRealm"
+					variant=			"ungoverned"
+					>
+				<Table>
+					<System chance="17" name="Zhang Li"	UNID="&ssEarthSpaceStandard;"/>
+					<System chance="8"  name="Liu Bai"	UNID="&ssEarthSpaceBinary;"/>
+					<System chance="25" name="Peng Lai"	UNID="&ssEarthSpaceNebulae;"/>
+					<System chance="25" name="Kunlun"		UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="25" name="Shenlong"	UNID="&ssEarthSpaceVolcanic;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="EC" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="EC">
+			<System
+					name=				"Eta Ceti"
+					level=				"7"
+					attributes=			"outerRealm"
+					variant=			"ungoverned"
+					>
+				<System UNID="&ssEarthSpaceVolcanic;"/>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="A3" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<!-- LEVEL VIII -->
+
+		<Node ID="A3">
+			<System
+					level=				"8"
+					attributes=			"outerRealm"
+					variant=			"ungoverned"
+					>
+				<Table>
+					<System chance="17" name="Ki Xyrrmir"	UNID="&ssEarthSpaceStandard;"/>
+					<System chance="8"  name="Ulom"		UNID="&ssEarthSpaceBinary;"/>
+					<System chance="25" name="Qilin"		UNID="&ssEarthSpaceNebulae;"/>
+					<System chance="25" name="Tao Tie"	UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="25" name="Tianlong"	UNID="&ssEarthSpaceVolcanic;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<Table>
+					<StarGate chance="50" Name="Outbound" DestID="A3A" DestGate="Inbound"/>
+					<StarGate chance="50" Name="Outbound" DestID="PJ" DestGate="Inbound"/>
+				</Table>
+			</StarGates>
+		</Node>
+
+		<Node ID="A3A">
+			<System
+					level=				"8"
+					attributes=			"outerRealm"
+					variant=			"ungoverned"
+					>
+				<Table>
+					<System chance="25" name="St. Esperance's Star" UNID="&ssEarthSpaceStandard;"/>
+					<System chance="25" name="Metatron"	UNID="&ssEarthSpaceNebulae;"/>
+					<System chance="25" name="Que Qiao"	UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="25" name="Li"			UNID="&ssEarthSpaceVolcanic;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="PJ" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="PJ">
+			<System
+					name=				"Point Juno"
+					level=				"8"
+					attributes=			"outerRealm"
+					variant=			"ungoverned"
+					>
+				<System UNID="&ssPointJuno;"/>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="A5" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<!-- LEVEL IX -->
+
+		<Node ID="A5">
+			<System
+					level=				"9"
+					attributes=			"outerRealm"
+					variant=			"ungoverned"
+					>
+				<Table>
+					<System chance="25" name="Umi"		UNID="&ssEarthSpaceStandard;"/>
+					<System chance="25" name="Vori"		UNID="&ssEarthSpaceNebulae;"/>
+					<System chance="25" name="Meri"		UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="25" name="Penati"		UNID="&ssEarthSpaceVolcanic;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="A6" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="A6">
+			<System
+					level=				"9"
+					attributes=			"outerRealm"
+					variant=			"ungoverned"
+					>
+				<Table>
+					<System chance="25" name="Denebola"	UNID="&ssEarthSpaceStandard;"/>
+					<System chance="25" name="Pharos"		UNID="&ssEarthSpaceNebulae;"/>
+					<System chance="25" name="Saurus Mons" UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="25" name="Erebus"		UNID="&ssEarthSpaceVolcanic;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="A7" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="A7">
+			<System
+					name=				"Dantalion"
+					level=				"9"
+					attributes=			"outerRealm"
+					variant=			"ungoverned">
+				<System UNID="&ssDantalion;"/>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="G1" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<!-- LEVEL X -->
+
+		<Node ID="G1">
+			<System
+					level=				"10"
+					attributes=			"outerRealm"
+					variant=			"ungoverned"
+					>
+				<Table>
+					<System chance="25" name="LV 426"		UNID="&ssEarthSpaceStandard;"/>
+					<System chance="25" name="IC 767"		UNID="&ssEarthSpaceNebulae;"/>
+					<System chance="25" name="HD 11901"	UNID="&ssEarthSpaceAsteroids;"/>
+					<System chance="25" name="HD 44594"	UNID="&ssEarthSpaceVolcanic;"/>
+				</Table>
+			</System>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="Outbound" DestID="G2" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+		<Node ID="G2">
+			<System
+					UNID=				"&ssHeretic;"
+					name=				"Heretic"
+					level=				"10"
+					attributes=			"outerRealm"
+					/>
+
+			<StarGates>
+				<StarGate Name="Inbound" DestID="[Prev]" DestGate="Outbound"/>
+				<StarGate Name="EndGame" DestID="EndGame"/>
+			</StarGates>
+		</Node>
+
+		<Node	ID="EndGame"
+				endGame="true"
+				endGameReason="leftHumanSpace"
+				epitaph="left Human Space on a journey to the Galactic Core"
+				>
+		</Node>
+
+		<!-- SPECIAL SYSTEMS -->
+
+		<Node ID="Elysium" rootNode="true">
+			<System
+					UNID=				"&ssElysium;"
+					name=				"Elysium"
+					level=				"5"
+					/>
+
+			<StarGates>
+				<StarGate Name="SE" DestID="SE" DestGate="Outbound"/>
+				<StarGate Name="C3" DestID="C3" DestGate="Outbound"/>
+				<StarGate Name="SK" DestID="SK" DestGate="Outbound"/>
+				<StarGate Name="C6" DestID="C6" DestGate="Outbound"/>
+				<StarGate Name="C8" DestID="C8" DestGate="Outbound"/>
+				<StarGate Name="A1" DestID="A1" DestGate="Outbound"/>
+				<StarGate Name="EC" DestID="EC" DestGate="Outbound"/>
+				<StarGate Name="PJ" DestID="PJ" DestGate="Outbound"/>
+				<StarGate Name="A6" DestID="A6" DestGate="Outbound"/>
+				<StarGate Name="G2" DestID="G2" DestGate="Inbound"/>
+			</StarGates>
+		</Node>
+
+	</SystemTopology>
+
+</TranscendenceAdventure>

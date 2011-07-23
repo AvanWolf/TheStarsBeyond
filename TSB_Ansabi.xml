@@ -1,0 +1,2230 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!ENTITY unidExtension						"0xE314000F">
+
+<!-- IMAGES -->
+
+	<!ENTITY rsAnsabiGunship						"0xE3140600">
+	<!ENTITY rsAnsabiFreighterC						"0xE3140601">
+	<!ENTITY rsAnsabiTurretIon						"0xE3140602">
+	<!ENTITY rsAnsabiTurretPositron						"0xE3140603">
+	<!ENTITY rsAnsabiEMPGrenade						"0xE3140604">
+	<!ENTITY rsAnsabiIonGrenade						"0xE3140605">
+	
+	<!ENTITY snEnergyCannon							"0xE3140606">
+	<!ENTITY snBeamWeapon							"0xE3140607">
+	
+	<!ENTITY rsAnsabiYacht							"0xE3140608">
+	<!ENTITY rsAnsabiHabitat						"0xE3140609">
+	
+	<!ENTITY svAnsabi							"0xE314060A">
+	
+	<!ENTITY rsAnsabiMetropolis						"0xE314060B">
+	
+	<!ENTITY rsAnsabiCommandShip						"0xE314060C">
+
+<!-- DEVICES -->
+
+	<!ENTITY itAnsabiIonLancette						"0xE3141500">
+	<!ENTITY itAnsabiIonBeam						"0xE3141501">
+	<!ENTITY itAnsabiPositronBeam						"0xE3141502">
+	<!ENTITY itAnsabiAntimatterBeam						"0xE3141503">
+	<!ENTITY itAnsabiPositronPulse						"0xE3141504">
+	<!ENTITY itAnsabiPositronLancette					"0xE3141505">
+	<!ENTITY itAnsabiLauncher						"0xE3141506">
+	<!ENTITY itAnsabiEMPGrenade						"0xE3141507">
+	<!ENTITY itAnsabiIonGrenade						"0xE3141508">
+	<!ENTITY itAnsabiPositronGrenade					"0xE3141509">
+	<!ENTITY itAnsabiAntimatterGrenade					"0xE314150A">
+	<!ENTITY itAnsabiBomb							"0xE314150B">
+	<!ENTITY itAnsabiTrackingMine						"0xE314150C">
+	<!ENTITY itAnsabi750MWReactor						"0xE314150D">
+	<!ENTITY itAnsabi1GWReactor						"0xE314150E">
+	<!ENTITY itAnsabiICX							"0xE314150F">
+	<!ENTITY itElectrium100							"0xE3141510">
+	<!ENTITY itElectrium180							"0xE3141511">
+	<!ENTITY itElectrium300							"0xE3141512">
+	<!ENTITY itElectrium500							"0xE3141513">
+	<!ENTITY itAnsabiPatcher						"0xE3141514">
+	<!ENTITY itMassiveIthaliumArmor						"0xE3141515">
+
+<!-- SHIPS -->
+
+	<!ENTITY scAnsabiGunship						"0xE3146500">
+	<!ENTITY scAnsabiFreighterC						"0xE3146501">
+	<!ENTITY scAnsabiYacht							"0xE3146504">
+	<!ENTITY scAnsabiCommandShip						"0xE3146507">
+
+<!-- STATIONS -->
+	
+	<!ENTITY stAnsabiTurretIon						"0xE3146502">
+	<!ENTITY stAnsabiTurretPositron						"0xE3146503">
+	<!ENTITY stAnsabiHabitat						"0xE3146505">
+	<!ENTITY stAnsabiMetropolis						"0xE3146506">
+	
+<!-- DOCKSCREENS -->
+
+	<!ENTITY dsAnsabiBuy							"0xE314E500">
+	<!ENTITY dsAnsabiSell							"0xE314E501">
+	<!ENTITY dsAnsabiImprison						"0xE314E502">
+	
+<!-- TABLES -->
+	
+	<!ENTITY tbAnsabiDefenders						"0xE314E503">
+	<!ENTITY tbAnsabiEliteDefenders						"0xE314E504">
+	<!ENTITY tbAnsabiPrivateCrafts						"0xE314E505">
+	<!ENTITY tbAnsabiTraffic						"0xE314E506">
+	
+	
+	
+	<!-- DO NOT MERGE THIS!!!!!!!!!-->
+	
+	<!ENTITY svTeraton1						"0xE314E531">
+]>
+<TranscendenceModule> <!--  UNID="0xE314000F" version="1.0" -->
+
+<!-- Sov -->
+
+	<Sovereign UNID="&svAnsabi;"
+		name="Ansabi"
+		alignment="constructive chaos"
+		>
+		<Relationships>
+			<Relationship sovereign="&svTeraton1;" disposition="enemy" mutual="true"/>
+			<Relationship sovereign="&svRingers;" disposition="neutral" mutual="true"/>
+		</Relationships>
+	</Sovereign>
+
+<!-- resources -->
+
+<!-- ships -->
+<Image UNID="&rsAnsabiGunship;"		bitmap="resources/images/ansabigunship.jpg" bitmask="resources/images/ansabigunshipmask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsAnsabiFreighterC;"	bitmap="resources/images/ansabicivilianfreighter.jpg" bitmask="resources/images/ansabicivilianfreightermask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsAnsabiYacht;"		bitmap="resources/images/ansabiyacht.jpg" bitmask="resources/images/ansabiyachtmask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsAnsabiCommandShip;"		bitmap="resources/images/ansabicommandship.jpg" bitmask="resources/images/ansabicommandshipmask.bmp"   loadOnUse="true"/>
+<!-- stations -->
+<Image UNID="&rsAnsabiTurretIon;"		bitmap="resources/images/ansabiturretion.jpg" bitmask="resources/images/ansabiturretionmask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsAnsabiTurretPositron;"		bitmap="resources/images/AnsabiTurret.jpg" bitmask="resources/images/AnsabiTurretmask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsAnsabiHabitat;"			bitmap="resources/images/ansabihabitat.jpg" bitmask="resources/images/ansabihabitatmask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsAnsabiMetropolis;"		bitmap="resources/images/ansabimetropolis.jpg" bitmask="resources/images/ansabimetropolismask.bmp"   loadOnUse="true"/>
+<!-- projectiles -->
+<Image UNID="&rsAnsabiEMPGrenade;"		bitmap="resources/images/ansabigrenadeEMP.jpg" bitmask="resources/images/ansabigrenadeEMPmask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsAnsabiIonGrenade;"		bitmap="resources/images/ansabichargeion.jpg" bitmask="resources/images/ansabichargeionmask.bmp"   loadOnUse="true"/>
+
+<!-- Sounds -->
+<Sound UNID="&snEnergyCannon;"				filename="resources/sounds/giantcannon.wav"/>
+<Sound UNID="&snBeamWeapon;"				filename="resources/sounds/phaser1.wav"/>
+
+<!-- items and stuff -->
+
+	<ItemType UNID="&itAnsabi750MWReactor;"
+			name=				"Foundation 750 reactor"
+			level=				"8"
+			value=				"160000"
+			frequency=			"veryrare"
+			mass=				"6000"
+			modifiers=			"MajorItem; Military"
+
+			description=		"An exotic vacuum reactor, the F-750 was designed by the Ansabi Science Foundation. Though less powerful than a hyperion, it is more efficient and stores more fuel."
+			>
+
+		<Image imageID="&rsItems1;" imageX="288" imageY="288" imageWidth="96" imageHeight="96"/>
+
+		<ReactorDevice
+				maxPower=		"7500"
+				fuelEfficiency=	"35"
+				maxFuel=		"3000000"
+				minFuelTech=	"5"
+				maxFuelTech=	"9"
+				/>
+
+	</ItemType>
+
+	<ItemType UNID="&itAnsabi1GWReactor;"
+			name=				"Foundation 1000 reactor"
+			level=				"10"
+			value=				"400000"
+			frequency=			"veryrare"
+			mass=				"10000"
+			modifiers=			"MajorItem; Military"
+
+			description=		"The Ansabi F-1000 matches the Hyperion's power output while sporting increased efficiency and fuel storage. It costs twice as much as the ringer's reactor though."
+			>
+
+		<Image imageID="&rsItems1;" imageX="288" imageY="288" imageWidth="96" imageHeight="96"/>
+
+		<ReactorDevice
+				maxPower=		"10000"
+				fuelEfficiency=	"35"
+				maxFuel=		"4000000"
+				minFuelTech=	"6"
+				maxFuelTech=	"9"
+				/>
+
+	</ItemType>
+	
+	<ItemType UNID="&itAnsabiIonLancette;"
+			name=				"Ansabi Ion Lancette"
+			level=				"7"
+			value=				"40000"
+			mass=				"1000"
+			frequency=			"rare"
+			modifiers=			"MajorItem; Ansabi; EnergyWeapon"
+
+			description=		"The Ansabi Ion Lancette is a light ion weapon the Ansabi employ as a point-defense system."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"ion:3d2; WMD1"
+				fireRate=			"1"
+				missileSpeed=		"75"
+				interaction="0"
+				lifetime=			"30"
+				powerUse=			"300"
+				sound=				"&snBeamWeapon;"
+
+				counter=			"capacitor"
+				counterActivate=	"-6"
+				counterUpdate=		"5"
+				counterUpdateRate=	"4"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"3"
+						radius=				"10"
+						primaryColor=		"0xa0, 0xb0, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+
+
+				
+
+				<Shape
+						directional=		"true"
+						scaleLength=		"64" 
+						scaleWidth=			"3"
+
+						color=				"0xa0, 0xa0, 0xff"
+						opacity=			"255"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-25"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-25"	y="-50"/>
+				</Shape>
+				
+				<Shape
+						directional=		"true"
+						scaleLength=		"72" 
+						scaleWidth=			"6"
+
+						color=				"0x30, 0x50, 0xe0"
+						opacity=			"140"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-35"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-35"	y="-50"/>
+				</Shape>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+
+		<ItemType UNID="&itAnsabiIonBeam;"
+			name=				"Ansabi Ion Beam"
+			level=				"8"
+			value=				"90000"
+			mass=				"2000"
+			frequency=			"rare"
+			modifiers=			"MajorItem; Ansabi; EnergyWeapon"
+
+			description=		"The Ansabi Ion beam is capable of cutting through armors and shields with a sustained sublight ion beam."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"ion:3d2; WMD1"
+				fireRate=			"1"
+				missileSpeed=		"75"
+				interaction=		"0"
+				lifetime=			"30"
+				powerUse=			"800"
+				sound=				"&snBeamWeapon;"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"3"
+						radius=				"10"
+						primaryColor=		"0xa0, 0xb0, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+
+
+				
+
+				<Shape
+						directional=		"true"
+						scaleLength=		"64" 
+						scaleWidth=			"3"
+
+						color=				"0xa0, 0xa0, 0xff"
+						opacity=			"255"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-25"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-25"	y="-50"/>
+				</Shape>
+				
+				<Shape
+						directional=		"true"
+						scaleLength=		"72" 
+						scaleWidth=			"6"
+
+						color=				"0x30, 0x50, 0xe0"
+						opacity=			"140"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-35"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-35"	y="-50"/>
+				</Shape>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	
+	<ItemType UNID="&itAnsabiPositronLancette;"
+			name=				"Ansabi Positron Lancette"
+			level=				"8"
+			value=				"80000"
+			mass=				"1000"
+			frequency=			"rare"
+			modifiers=			"MajorItem; Ansabi; EnergyWeapon"
+
+			description=		"The Ansabi Positron Lancette is more adept at penetrating advanced armors and shields than the Ion Lancette."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"positron:3d3; WMD1"
+				fireRate=			"1"
+				missileSpeed=		"75"
+				interaction="0"
+				lifetime=			"30"
+				powerUse=			"850"
+				sound=				"&snBeamWeapon;"
+
+				counter=			"capacitor"
+				counterActivate=	"-6"
+				counterUpdate=		"5"
+				counterUpdateRate=	"4"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"3"
+						radius=				"10"
+						primaryColor=		"0xff, 0xf0, 0x50"
+					/>
+			</FireEffect>
+			<Effect>
+
+				<Shape
+						directional=		"true"
+						scaleLength=		"64" 
+						scaleWidth=			"3"
+
+						color=				"0xff, 0xf0, 0x50"
+						opacity=			"255"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-25"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-25"	y="-50"/>
+				</Shape>
+				
+				<Shape
+						directional=		"true"
+						scaleLength=		"72" 
+						scaleWidth=			"6"
+
+						color=				"0xe0, 0xd0, 0x30"
+						opacity=			"140"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-35"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-35"	y="-50"/>
+				</Shape>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	
+	<ItemType UNID="&itAnsabiPositronBeam;"
+			name=				"Ansabi Positron Beam"
+			level=				"9"
+			value=				"195000"
+			mass=				"2500"
+			frequency=			"rare"
+			modifiers=			"MajorItem; Ansabi; EnergyWeapon"
+
+			description=		"Ansabi Positron beams will cut through most advanced armors and shields with minimal difficulty."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"positron:3d3; WMD1"
+				fireRate=			"1"
+				missileSpeed=		"75"
+				interaction="0"
+				lifetime=			"30"
+				powerUse=			"1500"
+				sound=				"&snBeamWeapon;"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"3"
+						radius=				"10"
+						primaryColor=		"0xff, 0xff, 0xa0"
+					/>
+			</FireEffect>
+			<Effect>
+
+				<Shape
+						directional=		"true"
+						scaleLength=		"64" 
+						scaleWidth=			"3"
+
+						color=				"0xff, 0xff, 0x80"
+						opacity=			"255"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-25"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-25"	y="-50"/>
+				</Shape>
+				
+				<Shape
+						directional=		"true"
+						scaleLength=		"72" 
+						scaleWidth=			"6"
+
+						color=				"0xd8, 0xd8, 0x50"
+						opacity=			"140"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-35"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-35"	y="-50"/>
+				</Shape>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	
+	<ItemType UNID="&itAnsabiAntimatterBeam;"
+			name=				"Ansabi antimatter Beam"
+			level=				"10"
+			value=				"420000"
+			mass=				"3000"
+			frequency=			"veryrare"
+			modifiers=			"MajorItem; Ansabi; EnergyWeapon"
+
+			description=		"The most powerful weapon of Ansabi manufacture, the antimatter beam can decimate any ship that strays in its path."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"antimatter:5d3; WMD1"
+				fireRate=			"1"
+				missileSpeed=		"75"
+				interaction="0"
+				lifetime=			"30"
+				powerUse=			"2500"
+				sound=				"&snBeamWeapon;"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"3"
+						radius=				"10"
+						primaryColor=		"0xff, 0xf0, 0x00"
+					/>
+			</FireEffect>
+			<Effect>
+
+				<Shape
+						directional=		"true"
+						scaleLength=		"64" 
+						scaleWidth=			"3"
+
+						color=				"0xff, 0xe0, 0x00"
+						opacity=			"255"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-25"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-25"	y="-50"/>
+				</Shape>
+				
+				<Shape
+						directional=		"true"
+						scaleLength=		"72" 
+						scaleWidth=			"6"
+
+						color=				"0xe0, 0xc0, 0x00"
+						opacity=			"140"
+						>
+					<Point x="0"	y="0"/>
+					<Point x="-35"	y="50"/>
+					<Point x="-100"	y="0"/>
+					<Point x="-35"	y="-50"/>
+				</Shape>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+
+	<ItemType UNID="&itMassiveIthaliumArmor;"
+			name=				"[segment(s) of ]massive ithalium armor"
+			level=				"11"
+			value=				"120000"
+			frequency=			"veryrare"
+			numberAppearing=	"1d4"
+			mass=				"10000"
+			modifiers=			"MinorItem; Military; Ansabi"
+
+			description=		"These huge segments of ithalium armor rarely see use outside of the Ansabi Foundation. They are large enough to resist disintigration effects."
+
+			sortName=			"ithalium.10"
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=	"800"
+				hpBonus=	"  +0,  +0,  +0,  +0, -25,+100,  +0, +25"
+				repairTech=	"10"
+				disintegrationImmune="true"
+				/>
+
+	</ItemType>
+	
+	<ItemType UNID="&itElectrium100;"
+			name=				"Electrium 100 shield generator"
+			level=				"7"
+			value=				"60000"
+			mass=				"2000"
+			frequency=			"uncommon"
+			modifiers=			"MajorItem; Military; Ansabi"
+
+			description=		"The E100 shield generator excells at defending against ion and positron weapons."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"100"
+				hpBonus=		"  +0,  +0,  +0,  +0, +40, -15, +60, -5"
+				regen=			"60"
+				depletionDelay=	"300"
+				powerUse=		"350"
+				/>
+
+	</ItemType>
+
+	<ItemType UNID="&itElectrium180;"
+			name=				"Electrium 180 shield generator"
+			level=				"8"
+			value=				"110000"
+			mass=				"3000"
+			frequency=			"uncommon"
+			modifiers=			"MajorItem; Military; Ansabi"
+
+			description=		"The E180 shield generator excells at defending against ion and positron weapons."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"180"
+				hpBonus=		"  +0,  +0,  +5,  -10, +60, -20,+80, -15"
+				regen=			"90"
+				depletionDelay=	"240"
+				powerUse=		"900"
+				/>
+
+	</ItemType>
+	
+	<ItemType UNID="&itElectrium300;"
+			name=				"Electrium 300 shield generator"
+			level=				"9"
+			value=				"190000"
+			mass=				"4500"
+			frequency=			"rare"
+			modifiers=			"MajorItem; Military; Ansabi"
+
+			description=		"The E300 shield generator excells at defending against ion and positron weapons."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"300"
+				hpBonus=		"  +0,  +0,  +10,  -15, +75, -25,+100, -25"
+				regen=			"120"
+				depletionDelay=	"240"
+				powerUse=		"1500"
+				/>
+
+	</ItemType>
+	
+	<ItemType UNID="&itElectrium500;"
+			name=				"Electrium 500 shield generator"
+			level=				"10"
+			value=				"390000"
+			mass=				"4500"
+			frequency=			"rare"
+			modifiers=			"MajorItem; Military; Ansabi"
+
+			description=		"The E500 shield generator excells at defending against ion and positron weapons."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"500"
+				hpBonus=		"  +0,  +0,  +18,  -25, +90, -35,+150, -30"
+				regen=			"150"
+				depletionDelay=	"180"
+				powerUse=		"2800"
+				/>
+
+	</ItemType>
+	
+	<ItemType UNID="&itAnsabiICX;"
+			name=				"Ansabi missile defense turret"
+			level=				"7"
+			value=				"45000"
+			mass=				"7000"
+			frequency=			"veryrare"
+			modifiers=			"MajorItem; Ansabi"
+
+			description=		"This device mounts a turreted Ansabi ion beam that automatically targets and shoots down enemy missiles."
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="192" imageWidth="96" imageHeight="96"/>
+
+		<AutoDefenseDevice
+				target=			"missiles"
+				weapon=			"&itAnsabiIonBeam;"
+				fireRate=		"1"
+				/>
+	</ItemType>
+	
+	<ItemType UNID="&itAnsabiPatcher;"
+			name=				"Ansabi hull refabricator"
+			level=				"7"
+			value=				"18000"
+			mass=				"3000"
+			frequency=			"rare"
+			modifiers=			"MajorItem; Ansabi"
+
+			description=		"The Ansabi hull refabricator acts like a patch spider, not requiring installation, but works from inside of the hull."
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="192" imageWidth="96" imageHeight="96"/>
+
+		<RepairerDevice
+				regen=			" 3, 3, 3, 3, 3,  2, 2, 2, 2, 1,  1, 1"
+				powerUse=		"70"
+
+				deviceSlots=	"0"
+				/>
+
+		<Invoke>
+			(intAutoInstall gSource gItem)
+		</Invoke>
+	</ItemType>
+	
+<!-- ships & stations -->
+
+	<ShipClass UNID="&scAnsabiGunship;"
+			manufacturer=		"Ansabi Science Foundation"
+			class=				"Carbon"
+			type=				"gunship"
+			score=				"2000"
+
+			mass=				"210"
+			cargoSpace=			"50"
+			thrust=				"500"
+			maneuver=			"2"
+			maxSpeed=			"25"
+			rotationCount=		"40"
+			leavesWreck=		"100"
+
+			attributes=			"ansabi,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itLightIthaliumArmor;"/>
+			<ArmorSection start="225" span="90" armorID="&itLightIthaliumArmor;"/>
+			<ArmorSection start="135" span="90" armorID="&itLightIthaliumArmor;"/>
+			<ArmorSection start="45"  span="90" armorID="&itLightIthaliumArmor;"/>
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itAnsabiPositronBeam;"/>
+			<Device deviceID="&itElectrium180;"/>
+		</Devices>
+
+		<Image imageID="&rsAnsabiGunship;" imageX="0" imageY="0" imageWidth="80" imageHeight="80" rotationOffset="0" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+
+		<!--
+		<DriveImages>
+			<NozzleImage imageID="&rsDriveExhaust;" imageX="48" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+			<NozzlePos x="-38" y="-3"/>
+			<NozzlePos x="-38" y="0"/>
+			<NozzlePos x="-38" y="3"/>
+		</DriveImages>
+		-->
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scAnsabiYacht;"
+			manufacturer=		"Ansabi Science Foundation"
+			class=				"Iridium"
+			type=				"yacht"
+			score=				"1600"
+
+			mass=				"160"
+			cargoSpace=			"100"
+			thrust=				"500"
+			maneuver=			"2"
+			maxSpeed=			"20"
+			rotationCount=		"40"
+			leavesWreck=		"100"
+
+			attributes=			"ansabi,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itLightIthaliumArmor;"/>
+			<ArmorSection start="225" span="90" armorID="&itLightIthaliumArmor;"/>
+			<ArmorSection start="135" span="90" armorID="&itLightIthaliumArmor;"/>
+			<ArmorSection start="45"  span="90" armorID="&itLightIthaliumArmor;"/>
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itAnsabiPositronLancette;"/>
+			<Device deviceID="&itAnsabiIonLancette;" secondaryWeapon="true" posAngle="23" posRadius="20" maxFireArc="30" minFireArc="350"/>
+			<Device deviceID="&itAnsabiIonLancette;" secondaryWeapon="true" posAngle="337" posRadius="20" maxFireArc="10" minFireArc="330"/>
+			<Device deviceID="&itElectrium100;"/>
+		</Devices>
+
+		<Image imageID="&rsAnsabiYacht;" imageX="0" imageY="0" imageWidth="72" imageHeight="72" rotationOffset="0" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			perception=			"4"
+			/>
+
+		<!--
+		<DriveImages>
+			<NozzleImage imageID="&rsDriveExhaust;" imageX="48" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+			<NozzlePos x="-38" y="-3"/>
+			<NozzlePos x="-38" y="0"/>
+			<NozzlePos x="-38" y="3"/>
+		</DriveImages>
+		-->
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scAnsabiFreighterC;"
+			manufacturer=		"Ansabi Science Foundation"
+			class=				"Hydrogen"
+			type=				"freighter"
+			score=				"1800"
+
+			mass=				"200"
+			cargoSpace=			"500"
+			thrust=				"200"
+			maneuver=			"6"
+			maxSpeed=			"16"
+			rotationCount="40"
+			leavesWreck=		"75"
+
+			attributes=			"ansabi,freighter,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="330" span="60" armorID="&itLightIthaliumArmor;" />
+			<ArmorSection start="270" span="60" armorID="&itLightIthaliumArmor;" />
+			<ArmorSection start="210" span="60" armorID="&itLightIthaliumArmor;" />
+			<ArmorSection start="150" span="60" armorID="&itLightIthaliumArmor;" />
+			<ArmorSection start="90"  span="60" armorID="&itLightIthaliumArmor;" />
+			<ArmorSection start="30"  span="60" armorID="&itLightIthaliumArmor;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itAnsabiIonBeam;" omnidirectional="true"/>
+			<Device deviceID="&itElectrium100;"/>
+		</Devices>
+
+		<Image imageID="&rsAnsabiFreighterC;" imageX="0" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			perception=			"4"
+		/>
+	</ShipClass>
+	
+	<ShipClass UNID="&scAnsabiCommandShip;"
+			manufacturer=		"Ansabi Science Foundation"
+			class=				"Neutronium"
+			type=				"command ship"
+			score=				"10000"
+
+			mass=				"16000"
+			cargoSpace=			"10000"
+			thrust=				"40000"
+			maneuver=			"8"
+			maxSpeed=			"12"
+			rotationCount=		"40"
+			leavesWreck=		"100"
+			explosionType=		"&vtThermoExplosion4;"
+			attributes=			"ansabi,genericClass"
+			>
+
+		<Armor>
+
+			<ArmorSection start="350" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" />
+			<ArmorSection start="340" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="330" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="320" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="310" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="300" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="290" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="280" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="270" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="260" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="250" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="240" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+
+			<ArmorSection start="230" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="220" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="210" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="200" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="190" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="180" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" />
+			<ArmorSection start="170" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" />
+			<ArmorSection start="160" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="150" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="140" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="130" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="120" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+
+			<ArmorSection start="110" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="100" span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="90"  span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="80"  span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="70"  span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="60"  span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="50"  span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="40"  span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="30"  span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="20"  span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="10"  span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="0"   span="10" armorID="&itMassiveIthaliumArmor;" areaSet="7,13" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itAnsabiAntimatterBeam;" posAngle="0" posRadius="10"/>
+			<Device deviceID="&itAnsabiAntimatterBeam;" secondaryWeapon="true" posAngle="45" posRadius="6"/>
+			<Device deviceID="&itAnsabiAntimatterBeam;" secondaryWeapon="true" posAngle="315" posRadius="6"/>
+			<Device deviceID="&itAnsabiAntimatterBeam;" secondaryWeapon="true" posAngle="90" posRadius="10"/>
+			<Device deviceID="&itAnsabiAntimatterBeam;" secondaryWeapon="true" posAngle="270" posRadius="10"/>
+			<Device deviceID="&itAnsabiPositronLancette;" secondaryWeapon="true" posAngle="130" posRadius="45" maxFireArc="160" minFireArc="330"/>
+			<Device deviceID="&itAnsabiPositronLancette;" secondaryWeapon="true" posAngle="230" posRadius="45" maxFireArc="30" minFireArc="200"/>
+			<Device deviceID="&itAnsabiAntimatterBeam;" secondaryWeapon="true" posAngle="180" posRadius="20" omnidirectional="true"/>
+			<Device deviceID="&itAnsabiPositronBeam;" secondaryWeapon="true" posAngle="180" posRadius="40" maxFireArc="240" minFireArc="120"/>
+			<Device deviceID="&itAnsabiPositronBeam;" secondaryWeapon="true" posAngle="0" posRadius="25" maxFireArc="150" minFireArc="210"/>
+			<Device deviceID="&itAnsabiIonBeam;" secondaryWeapon="true" posAngle="0" posRadius="50" maxFireArc="140" minFireArc="220"/>
+			<Device deviceID="&itAnsabiIonLancette;" secondaryWeapon="true" posAngle="10" posRadius="60" maxFireArc="150" minFireArc="340"/>
+			<Device deviceID="&itAnsabiIonLancette;" secondaryWeapon="true" posAngle="350" posRadius="60" maxFireArc="20" minFireArc="210"/>
+			<Device deviceID="&itAnsabiIonLancette;" secondaryWeapon="true" posAngle="30" posRadius="30" maxFireArc="150" minFireArc="340"/>
+			<Device deviceID="&itAnsabiIonLancette;" secondaryWeapon="true" posAngle="330" posRadius="30" maxFireArc="20" minFireArc="210"/>
+			<Device deviceID="&itAnsabiIonBeam;" secondaryWeapon="true" posAngle="150" posRadius="50" maxFireArc="270" minFireArc="355"/>
+			<Device deviceID="&itAnsabiIonBeam;" secondaryWeapon="true" posAngle="210" posRadius="50" maxFireArc="5" minFireArc="90"/>
+			<Device deviceID="&itAnsabiICX;" posAngle="0" posRadius="150"/>
+			<Device deviceID="&itAnsabiICX;" posAngle="0" posRadius="75"/>
+			<Device deviceID="&itAnsabiICX;" posAngle="150" posRadius="90"/>
+			<Device deviceID="&itAnsabiICX;" posAngle="210" posRadius="90"/>
+			<Device deviceID="&itElectrium500;"/>
+		</Devices>
+
+		<Image imageID="&rsAnsabiCommandShip;" imageX="0" imageY="0" imageWidth="352" imageHeight="352" rotationOffset="0" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			perception=			"4"
+			ignoreShieldsDown=	"true"
+			combatStyle=		"noRetreat"
+			/>
+
+		<!--
+		<DriveImages>
+			<NozzleImage imageID="&rsDriveExhaust;" imageX="48" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+			<NozzlePos x="-38" y="-3"/>
+			<NozzlePos x="-38" y="0"/>
+			<NozzlePos x="-38" y="3"/>
+		</DriveImages>
+		-->
+
+	</ShipClass>
+
+	<StationType UNID="&stAnsabiTurretIon;"
+			name=				"Ansabi Ion Turret"
+			sovereign=			"&svAnsabi;"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"4"
+			noMapLabel=			"true"
+			noFriendlyFire=		"true"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			mass=				"5000"
+			armorID=			"&itLightIthaliumArmor;"
+			maxHitPoints=		"70"
+			maxStructuralHitPoints= "20"
+			repairRate=		"1"
+			fireRateAdj=		"10"
+			ejectaType=			"&vtWreckEjecta;"
+			
+			attributes=			"teraton, teratonDefender"
+			>
+
+		<Image	imageID="&rsAnsabiTurretIon;" imageWidth="32" imageHeight="32"/>
+
+		<Devices>
+			<Device deviceID="&itAnsabiIonLancette;"	omnidirectional="true"/>
+		</Devices>
+
+	</StationType>
+
+	<StationType UNID="&stAnsabiTurretPositron;"
+			name=				"Ansabi Positron Turret"
+			sovereign=			"&svAnsabi;"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"4"
+			noMapLabel=			"true"
+			noFriendlyFire=		"true"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			mass=				"5000"
+			armorID=			"&itMassiveIthaliumArmor;"
+			maxHitPoints=		"120"
+			maxStructuralHitPoints= "30"
+			repairRate=		"2"
+			fireRateAdj=		"10"
+			ejectaType=			"&vtWreckEjecta;"
+			
+			attributes=			"teraton, teratonDefender"
+			>
+
+		<Image	imageID="&rsAnsabiTurretPositron;" imageWidth="64" imageHeight="64" imageFrameCount="13" imageTicksPerFrame="2"/>
+
+		<Devices>
+			<Device deviceID="&itAnsabiPositronBeam;"	omnidirectional="true"/>
+		</Devices>
+
+	</StationType>
+	
+	<StationType UNID="&stAnsabiHabitat;"
+			name=				"Ansabi habitat"
+			sovereign=			"&svAnsabi;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			canAttack=			"true"
+			noFriendlyFire=		"true"
+			multiHull=			"true"
+			armorID=			"&itMassiveIthaliumArmor;"
+			maxHitPoints=		"600"
+			hitPoints=			"600"
+			repairRate=			"10"
+			fireRateAdj=		"10"
+			explosionType=		"&vtThermoExplosion4;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envEarth,envAvoidsAir,populated,ansabi"
+			levelFrequency=		"----- vucur ----- ----- -----"
+			locationCriteria=	"+InnerSystem,-void"
+			enemyExclusionRadius="50"
+			>
+
+		<Image			imageID="&rsAnsabiHabitat;" imageX="0" imageY="0" imageWidth="128" imageHeight="128"/>
+
+		<Ships>
+			<Lookup count="1" table="&tbAnsabiEliteDefenders;"/>
+			<Lookup count="1d3" table="&tbAnsabiPrivateCrafts;"/>
+			<Ship chance="50"	count="1" class="&scAnsabiFreighterC;" orders="gateOnThreat"/>
+		</Ships>
+
+		<Devices>
+			<Device deviceID="&itAnsabiIonBeam;" maxFireArc="200" minFireArc="340" posAngle="90" posRadius="50"/>
+			<Device deviceID="&itAnsabiIonBeam;" maxFireArc="340" minFireArc="90" posAngle="200" posRadius="50"/>
+			<Device deviceID="&itAnsabiIonBeam;" maxFireArc="90" minFireArc="200" posAngle="340" posRadius="50"/>
+		</Devices>
+
+		<Items>
+			<RandomItem count="1d12" 
+					criteria=		"* +Meds; -Illegal; -NotForSale;"
+					level=			"6"
+					levelCurve=		"2"
+					/>
+					
+			<RandomItem count="1d4" 
+					criteria=		"* +Ansabi;"
+					level=			"6"
+					levelCurve=		"2"
+					/>
+
+			<RandomItem count="1d4" 
+					criteria=		"w -NotForSale;"
+					level=			"8"
+					levelCurve=		"2"
+					/>
+
+			<RandomItem count="1d4" 
+					criteria=		"d~w -NotForSale;"
+					level=			"7"
+					levelCurve=		"2"
+					/>
+
+			<RandomItem count="1d8" 
+					criteria=		"a -NotForSale;"
+					level=			"9"
+					levelCurve=		"1"
+					/>
+
+			<RandomItem count="1d4" 
+					criteria=		"u -NotForSale;"
+					level=			"7"
+					levelCurve=		"2"
+					/>
+
+			<RandomItem count="2d12" 
+					criteria=		"f -NotForSale;"
+					level=			"7"
+					levelCurve=		"2"
+					/>
+
+			<Item				count="4d12"	item="&itEuropanIceMoss;" />
+			<Item				count="1d12"	item="&itEuropanIceVodka;" />
+
+			<Item chance="25"	count="1"		item="&itGemOfDespair;" />
+			<Item chance="25"	count="1"		item="&itGemOfContrition;" />
+
+			<Item chance="50"	count="1"		item="&itPlasmaTorch;" />
+		</Items>
+
+		<Reinforcements minShips="3">
+			<Table>
+				<Lookup chance="20" table="&tbAnsabiDefenders;"/>
+				<Lookup chance="60" table="&tbAnsabiPrivateCrafts;"/>
+				<Ship   chance="20"	class="&scAnsabiFreighterC;" orders="gateOnThreat"/>
+			</Table>
+		</Reinforcements>
+
+		<Satellites>
+			<Orbitals distance="20" angle="45">
+				<Station type="&stAnsabiTurretIon;"/>
+			</Orbitals>
+
+			<Orbitals distance="20" angle="135">
+				<Station type="&stAnsabiTurretIon;"/>
+			</Orbitals>
+
+			<Orbitals distance="20" angle="225">
+				<Station type="&stAnsabiTurretIon;"/>
+			</Orbitals>
+
+			<Orbitals distance="20" angle="315">
+				<Station type="&stAnsabiTurretIon;"/>
+			</Orbitals>
+			
+			<Orbitals distance="20" angle="0">
+				<Station type="&stAnsabiTurretPositron;"/>
+			</Orbitals>
+
+			<Orbitals distance="20" angle="90">
+				<Station type="&stAnsabiTurretIon;"/>
+			</Orbitals>
+
+			<Orbitals distance="20" angle="180">
+				<Station type="&stAnsabiTurretPositron;"/>
+			</Orbitals>
+
+			<Orbitals distance="20" angle="270">
+				<Station type="&stAnsabiTurretIon;"/>
+			</Orbitals>
+		</Satellites>
+		
+		<Events>
+			<OnDestroy>
+				(intAnsabiOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(intAnsabiOnInit "Main")
+				</OnInit>
+
+				<Panes>
+					<Default
+							desc=	"You are docked at an Ansabi habitat. The cavernous docking bay echos with the sounds of various traders loading and unloading their goods, with the loud yet calm voice of the Ansabi traffic control cutting through the din.">
+
+						<Actions>
+							<Action name="Trade Center" default="1" key="T">
+								(if (objGetData gPlayerShip "rins")
+									(scrShowPane gScreen "Exchange")
+									(scrShowPane gScreen "ExchangeIntro")
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+
+					</Default>
+
+					<Exchange
+							desc=	"The Ansabi habitat's trade center offers a wide array of advanced technologies for sale. Commonwealth credits are not accepted here.">
+
+						<Actions>
+							<Action name="Buy items" default="1" key="B">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "Exchange")
+									(setq gMargin Nil)
+									(scrShowScreen gScreen "&dsAnsabiBuy;")
+									)
+							</Action>
+
+							<Action name="Sell items" key="S">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "Exchange")
+									(setq gMargin Nil)
+									(scrShowScreen gScreen "&dsAnsabiSell;")
+									)
+							</Action>
+
+							<Action name="Done" cancel="1" key="D">
+								<ShowPane pane="Default"/>
+							</Action>
+
+						</Actions>
+					</Exchange>
+
+					<ExchangeIntro
+							desc=	"Upon entering the trade center, an automated greeter plays a pre-recorded message. &quot;Greetings, we would like to inform you that the currency in use by the Ansabi Science Foundation is the rin; Commonwealth credits are not accepted as valid currency here. Thank you, and have a nice day.&quot;">
+
+						<Actions>
+							<Action name="Continue" cancel="1" default="1" key="C">
+								(block Nil
+									(objSetData gPlayerShip "rins" 0)
+									(scrShowPane gScreen "Exchange")
+									)
+							</Action>
+
+						</Actions>
+					</ExchangeIntro>
+
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="66"	y="94" />
+			<Port x="-66"	y="94" />
+			<Port x="107"	y="30" />
+			<Port x="-107"	y="30" />
+			<Port x="86"	y="-34" />
+			<Port x="-86"	y="-34" />
+			<Port x="39"	y="-72" />
+			<Port x="-39"	y="-72" />
+		</DockingPorts>
+
+	</StationType>
+	
+	<StationType UNID="&stAnsabiMetropolis;"
+			name=				"Ansabi metropolis"
+			sovereign=			"&svAnsabi;"
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			canAttack=			"true"
+			noFriendlyFire=		"true"
+			multiHull=			"true"
+			armorID=			"&itMassiveIthaliumArmor;"
+			maxHitPoints=		"1200"
+			hitPoints=			"1200"
+			repairRate=			"10"
+			fireRateAdj=		"10"
+			explosionType=		"&vtThermoExplosion4;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"independent,friendly,envEarth,envAvoidsAir,populated,ansabi"
+			levelFrequency=		"----- -vrru ----- ----- -----"
+			locationCriteria=	"+InnerSystem,-void"
+			enemyExclusionRadius="50"
+			>
+
+		<Image			imageID="&rsAnsabiMetropolis;" imageX="0" imageY="0" imageWidth="256" imageHeight="256"/>
+
+		<Ships>
+			<Lookup count="1d2+1" table="&tbAnsabiEliteDefenders;"/>
+			<Lookup count="1d3" table="&tbAnsabiPrivateCrafts;"/>
+			<Ship chance="50"	count="1" class="&scAnsabiFreighterC;" orders="gateOnThreat"/>
+		</Ships>
+
+		<Devices>
+			<Device deviceID="&itAnsabiAntimatterBeam;" omnidirectional="true" posAngle="90" posRadius="90"/>
+			<Device deviceID="&itAnsabiPositronBeam;" maxFireArc="190" minFireArc="7" posAngle="115" posRadius="75"/>
+			<Device deviceID="&itAnsabiPositronBeam;" maxFireArc="352" minFireArc="100" posAngle="225" posRadius="100"/>
+			<Device deviceID="&itAnsabiPositronBeam;" maxFireArc="110" minFireArc="225" posAngle="347" posRadius="85"/>
+		</Devices>
+
+		<Items>
+			<RandomItem count="1d12" 
+					criteria=		"* +Meds; -Illegal; -NotForSale;"
+					level=			"6"
+					levelCurve=		"2"
+					/>
+					
+			<RandomItem count="1d4" 
+					criteria=		"* +Ansabi;"
+					level=			"6"
+					levelCurve=		"2"
+					/>
+
+			<RandomItem count="1d4" 
+					criteria=		"w -NotForSale;"
+					level=			"8"
+					levelCurve=		"2"
+					/>
+
+			<RandomItem count="1d4" 
+					criteria=		"d~w -NotForSale;"
+					level=			"7"
+					levelCurve=		"2"
+					/>
+
+			<RandomItem count="1d8" 
+					criteria=		"a -NotForSale;"
+					level=			"9"
+					levelCurve=		"1"
+					/>
+
+			<RandomItem count="1d4" 
+					criteria=		"u -NotForSale;"
+					level=			"7"
+					levelCurve=		"2"
+					/>
+
+			<RandomItem count="2d12" 
+					criteria=		"f -NotForSale;"
+					level=			"7"
+					levelCurve=		"2"
+					/>
+
+			<Item				count="4d12"	item="&itEuropanIceMoss;" />
+			<Item				count="1d12"	item="&itEuropanIceVodka;" />
+
+			<Item chance="25"	count="1"		item="&itGemOfDespair;" />
+			<Item chance="25"	count="1"		item="&itGemOfContrition;" />
+
+			<Item chance="50"	count="1"		item="&itPlasmaTorch;" />
+		</Items>
+
+		<Reinforcements minShips="5">
+			<Table>
+				<Lookup chance="20" table="&tbAnsabiDefenders;"/>
+				<Lookup chance="60" table="&tbAnsabiPrivateCrafts;"/>
+				<Ship   chance="20"	class="&scAnsabiFreighterC;" orders="gateOnThreat"/>
+			</Table>
+		</Reinforcements>
+
+		<Satellites>
+			<Orbitals distance="20" angle="45">
+				<Station type="&stAnsabiTurretPositron;"/>
+			</Orbitals>
+
+			<Orbitals distance="20" angle="135">
+				<Station type="&stAnsabiTurretPositron;"/>
+			</Orbitals>
+
+			<Orbitals distance="20" angle="225">
+				<Station type="&stAnsabiTurretPositron;"/>
+			</Orbitals>
+
+			<Orbitals distance="20" angle="315">
+				<Station type="&stAnsabiTurretPositron;"/>
+			</Orbitals>
+			
+			<Orbitals distance="20" angle="0">
+				<Station type="&stAnsabiTurretPositron;"/>
+			</Orbitals>
+
+			<Orbitals distance="20" angle="90">
+				<Station type="&stAnsabiTurretPositron;"/>
+			</Orbitals>
+
+			<Orbitals distance="20" angle="180">
+				<Station type="&stAnsabiTurretPositron;"/>
+			</Orbitals>
+
+			<Orbitals distance="20" angle="270">
+				<Station type="&stAnsabiTurretPositron;"/>
+			</Orbitals>
+		</Satellites>
+		
+		<Events>
+			<OnDestroy>
+				(intAnsabiOnDestroy)
+			</OnDestroy>
+		</Events>
+
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<OnInit>
+					(intAnsabiOnInit "Main")
+				</OnInit>
+
+				<Panes>
+					<Default
+							desc=	"The Ansabi metropolis is a massive construction, dwarfing all but the largest of stations.">
+
+						<Actions>
+							<Action name="Trade Center" default="1" key="T">
+								(if (objGetData gPlayerShip "rins")
+									(scrShowPane gScreen "Exchange")
+									(scrShowPane gScreen "ExchangeIntro")
+									)
+							</Action>
+
+							<Action name="Dock Services" default="1" key="D">
+								(if (objGetData gPlayerShip "rins")
+									(scrShowPane gScreen "DockServices")
+									(scrShowPane gScreen "DockServicesGreeter")
+									)
+							</Action>
+
+							<Action name="Undock" cancel="1" key="U">
+								<Exit/>
+							</Action>
+
+						</Actions>
+					</Default>
+
+					<Exchange
+							desc=	"The metropolis' trade center is bustling with activity, mostly from traders coming and going; few Ansabi are in sight other than the few managing the trade center. Commonwealth credits are not accepted here.">
+
+						<Actions>
+							<Action name="Buy items" default="1" key="B">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "Exchange")
+									(setq gMargin Nil)
+									(scrShowScreen gScreen "&dsAnsabiBuy;")
+									)
+							</Action>
+
+							<Action name="Sell items" key="S">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "Exchange")
+									(setq gMargin Nil)
+									(scrShowScreen gScreen "&dsAnsabiSell;")
+									)
+							</Action>
+
+							<Action name="Done" cancel="1" key="D">
+								<ShowPane pane="Default"/>
+							</Action>
+
+						</Actions>
+					</Exchange>
+
+					<DockServices
+							desc=	"You are at the docking services terminal.">
+
+						<Actions>
+							<Action name="Refuel" key="R">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+
+									; If the player ship can use pteracnium, then 
+									; use that. Otherwise, use helium assemblies
+
+									(setq gItem (itmCreate &itPteracniumFuelRod; 1))
+									(if (shpIsFuelCompatible gPlayerShip gItem)
+										(setq gCost 50)
+										(block Nil
+											(setq gItem (itmCreate &itHeliumAssembly; 1))
+											(setq gCost 15)
+											)
+										)
+
+									(scrShowScreen gScreen "&dsRingerRefuel;")
+									)
+							</Action>
+
+							<Action name="Repair or replace armor" key="A">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(setq gTechLevel 12)
+									(setq gArmorSegment 0)
+									(setq gMargin 100)
+									(scrShowScreen gScreen "&dsRingerRepairArmor;")
+									)
+							</Action>
+
+							<Action name="Install device" key="D">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(setq gTechLevel 10)
+									(setq gTechModifier Nil)
+									(setq gCheckMilitaryID Nil)
+									(setq gMargin 100)
+									(scrShowScreen gScreen "&dsRingerInstallDevice;")
+									)
+							</Action>
+
+							<Action name="Remove device" key="V">
+								(block Nil
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(setq gMargin 100)
+									(scrShowScreen gScreen "&dsRingerRemoveDevice;")
+									)
+							</Action>
+
+							<Action name="Upgrade reactor" key="P">
+								(block (maxPower)
+									(setq gPrevScreen "Main")
+									(setq gPrevPane "DockServices")
+									(setq gCheckMilitaryID Nil)
+
+									; Figure out what reactor to upgrade to
+									(setq maxPower (objGetMaxPower gPlayerShip))
+
+									(switch
+										(ls maxPower 2500)
+											(block Nil
+												(setq gCost 12000)
+												(setq gItem (itmCreate &it250MWReactor; 1))
+												)
+
+										(ls maxPower 5000)
+											(block Nil
+												(setq gCost 20000)
+												(setq gItem (itmCreate &it500MWReactor; 1))
+												)
+
+										(ls maxPower 10000)
+											(block Nil
+												(setq gCost 40000)
+												(setq gItem (itmCreate &it1GWReactor; 1))
+												)
+
+										(setq gItem Nil)
+										)
+
+									; Install screen
+									(if gItem
+										(scrShowScreen gScreen "&dsRingerInstallSpecificDevice;")
+										(scrShowPane gScreen "NoReactorUpgrade")
+										)
+									)
+							</Action>
+
+							<Action name="Done" key="N" cancel="1">
+								<ShowPane pane="Default"/>
+							</Action>
+						</Actions>
+					</DockServices>
+
+					<ExchangeIntro
+							desc=	"Upon entering the trade center, an automated greeter plays a pre-recorded message. &quot;Greetings, we would like to inform you that the currency in use by the Ansabi Science Foundation is the rin; Commonwealth credits are not accepted as valid currency here. Thank you, and have a nice day.&quot;">
+
+						<Actions>
+							<Action name="Continue" cancel="1" default="1" key="C">
+								(block Nil
+									(objSetData gPlayerShip "rins" 0)
+									(scrShowPane gScreen "Exchange")
+									)
+							</Action>
+
+						</Actions>
+					</ExchangeIntro>
+
+					<DockServicesGreeter
+							desc=	"Upon entering the dock services center, an automated greeter plays a pre-recorded message. &quot;Greetings, we would like to inform you that the currency in use by the Ansabi Science Foundation is the rin; Commonwealth credits are not accepted as valid currency here. Thank you, and have a nice day.&quot;">
+
+						<Actions>
+							<Action name="Continue" cancel="1" default="1" key="C">
+								(block Nil
+									(objSetData gPlayerShip "rins" 0)
+									(scrShowPane gScreen "DockServices")
+									)
+							</Action>
+
+						</Actions>
+					</DockServicesGreeter>
+
+					<NoReactorUpgrade
+							desc=	"The technology required to upgrade your reactor is not available at this station.">
+
+						<Actions>
+							<Action name="Continue" key="C" default="1" cancel="1">
+								<ShowPane pane="DockServices"/>
+							</Action>
+						</Actions>
+					</NoReactorUpgrade>
+
+				</Panes>
+			</Main>
+
+		</DockScreens>
+
+		<DockingPorts>
+			<Port x="0"		y="128" />
+			<Port x="90"	y="100" />
+			<Port x="-90"	y="100" />
+			<Port x="140"	y="30" />
+			<Port x="-140"	y="30" />
+			<Port x="140"	y="-70" />
+			<Port x="-140"	y="-70" />
+			<Port x="58"	y="-138" />
+			<Port x="-58"	y="-138" />
+		</DockingPorts>
+
+	</StationType>
+	
+	<!-- Dockscreens -->
+	
+		<DockScreen UNID="&dsAnsabiBuy;"
+			name=				"=(objGetName gSource)"
+			type=				"itemPicker"
+			backgroundID=		"&rsItemListScreen;"
+			>
+
+		<ListOptions
+			dataFrom=	"station"
+			list=		"*"
+			>
+			(if (isfunction gMargin)
+				(scrSetListFilter gScreen gMargin)
+				(scrSetListFilter gScreen "*NU")
+				)
+		</ListOptions>
+
+		<Panes>
+			<Default
+					desc=			"There are no items here.">
+
+				<Initialize>
+					(block (thisItem)
+						(setq thisItem (scrGetItem gScreen))
+						(if thisItem
+							(block (affordCount availCount desc fitCount rins)
+
+								(setq rins (objGetData gPlayerShip "rins"))
+
+								; Compute the cost of the item the exchange rate
+								; is at 5 credits per rin
+								(if (isfunction gMargin)
+									(setq gCost (int (apply gMargin thisItem Nil)))
+									(setq gCost (int (intAnsabiBuyMargin thisItem)))
+									)
+									
+								(if (not gCost)
+									(setq gCost 0)
+									)
+
+								(setq availCount (itmGetCount thisItem))
+
+								(if (gr gCost 0)
+									(setq affordCount (divide rins gCost))
+									(setq affordCount 0)
+									)
+								(setq gMaxCount (if (gr affordCount availCount) availCount affordCount))
+
+								(setq fitCount (divide (objGetCargoSpaceLeft gPlayerShip) (itmGetMass thisItem)))
+								(setq gMaxCount (if (gr gMaxCount fitCount) fitCount gMaxCount))
+
+								; Set the price and description
+								(setq desc (cat "Balance: " rins " rin"))
+								(setq desc (cat desc "\nUnit price: " (if (eq gCost 0) "N/A" (cat gCost " rin"))))
+								(if (gr gMaxCount 1)
+									(setq desc (cat desc " (" gMaxCount " for " (multiply gCost gMaxCount) ")"))
+									)
+
+								(setq desc (cat desc "\nUnit mass: " (intMassString (itmGetMass thisItem))))
+								(if (gr gMaxCount 1)
+									(setq desc (cat desc " (" gMaxCount " at " (intMassString (multiply (itmGetMass thisItem) gMaxCount)) ")"))
+									)
+
+								(setq desc (cat desc "\n\n"))
+
+								(switch
+									(eq gCost 0)
+										(setq desc (cat desc "This item is not for sale."))
+									(eq affordCount 0)
+										(setq desc (cat desc "You do not have enough rin to purchase any."))
+									(eq fitCount 0)
+										(setq desc (cat desc "Unfortunately, you cannot fit any in your cargo hold."))
+									(and (gr availCount affordCount) (gr fitCount affordCount))
+										(setq desc (cat desc "You have enough rin to buy " affordCount "."))
+									(and (gr availCount fitCount))
+										(setq desc (cat desc "You have enough room in your cargo hold to carry " fitCount "."))
+									)
+
+								(scrSetDesc gScreen desc)
+								)
+							(setq gMaxCount 0)
+							)
+
+						; Enable/disable actions
+						(scrEnableAction gScreen 0 (gr gMaxCount 0))
+						)
+				</Initialize>
+
+				<Actions>
+					<Action name="Buy this item" default="1" key="B">
+						(if (gr gMaxCount 1)
+							(scrShowPane gScreen "BuyQuantity")
+							(if (eq gMaxCount 1)
+								(block Nil
+									(setq itemsToBuy (scrRemoveItem gScreen 1))
+									(objAddItem gPlayerShip itemsToBuy)
+									(objIncData gPlayerShip "rins" (subtract 0 gCost))
+									(plyRecordBuyItem gPlayer itemsToBuy (multiply gCost 5))
+									(scrShowPane gScreen "Default")
+									)
+								)
+							)
+					</Action>
+
+					<Action name="Done" cancel="1" key="D">
+						(scrShowScreen gScreen gPrevScreen gPrevPane)
+					</Action>
+
+				</Actions>
+
+			</Default>
+
+			<BuyQuantity
+					showCounter=	"true">
+
+				<Initialize>
+					(block Nil
+						(scrSetDesc gScreen (cat "How many items do you wish to purchase at " gCost " rin each?"))
+						(scrSetCounter gScreen gMaxCount)
+						)
+				</Initialize>
+
+				<Actions>
+					<Action name="Buy" default="1" key="B">
+						(block (count)
+							(setq count (scrGetCounter gScreen))
+							(if (gr count gMaxCount)
+								(scrSetCounter gScreen gMaxCount)
+								(block Nil
+									(setq itemsToBuy (scrRemoveItem gScreen count))
+									(objAddItem gPlayerShip itemsToBuy)
+									(objIncData gPlayerShip "rins" (subtract 0 (multiply count gCost)))
+									(plyRecordBuyItem gPlayer itemsToBuy (multiply count gCost 5))
+									(scrShowPane gScreen "Default")
+									)
+								)
+							)
+					</Action>
+
+					<Action name="Cancel" cancel="1" key="C">
+						<ShowPane pane="Default"/>
+					</Action>
+
+				</Actions>
+
+			</BuyQuantity>
+		</Panes>
+
+	</DockScreen>
+
+	<!-- Ringer Sell
+
+		gPrevScreen, gPrevPane: Must be set to the name/UNID of the screen/pane
+				to navigate to when done.
+		gMargin: Function to compute price
+
+		-->
+
+	<DockScreen UNID="&dsAnsabiSell;"
+			name=				"=(objGetName gSource)"
+			type=				"itemPicker"
+			backgroundID=		"&rsItemListScreen;"
+			>
+
+		<ListOptions
+			dataFrom=	"player"
+			list=		"*"
+			>
+			(if (isfunction gMargin)
+				(scrSetListFilter gScreen gMargin)
+				(scrSetListFilter gScreen intAnsabiSellMargin)
+				)
+		</ListOptions>
+
+		<Panes>
+			<Default
+					desc=			"There are no items here.">
+
+				<Initialize>
+					(block (thisItem)
+						(setq thisItem (scrGetItem gScreen))
+						(if thisItem
+							(block (affordCount availCount desc priceText rins)
+								(setq rins (objGetData gPlayerShip "rins"))
+
+								; Compute the cost
+								(if (isfunction gMargin)
+									(setq gCost (int (apply gMargin thisItem Nil)))
+									(setq gCost (int (intAnsabiSellMargin thisItem)))
+									)
+									
+								(if (not gCost)
+									(setq gCost 0)
+									)
+
+								(setq availCount (itmGetCount thisItem))
+								(setq gMaxCount availCount)
+
+								; Set the price and description
+								(setq priceText (cat "Balance: " rins " rin"))
+								(if (gr gCost 0)
+									(block Nil
+										(setq priceText (cat priceText "\nUnit offer: " (if (eq gCost 0) "N/A" (cat gCost " rin"))))
+										(if (gr availCount 1)
+											(setq priceText (cat priceText " (" availCount " for " (multiply gCost availCount) ")"))
+											)
+
+										(setq priceText (cat priceText "\nUnit mass: " (intMassString (itmGetMass thisItem))))
+										(if (gr availCount 1)
+											(setq priceText (cat priceText " (" availCount " at " (intMassString (multiply (itmGetMass thisItem) availCount)) ")"))
+											)
+										)
+									)
+
+								(setq priceText (cat priceText "\n\n"))
+
+								(switch
+									(eq gCost 0)
+										(setq desc (cat priceText "The Collective is not interested in buying " (itmGetName thisItem 2) "."))
+									(eq availCount 1)
+										(setq desc (cat priceText "The Collective offers " gCost " rin for your " (itmGetName thisItem 0) "."))
+									(setq desc (cat priceText "The Collective offers " gCost " rin for each " (itmGetName thisItem 0) "."))
+									)
+
+								(scrSetDesc gScreen desc)
+								)
+							(setq gMaxCount 0)
+							)
+
+						; Enable/disable actions
+						(scrEnableAction gScreen 0 (and (gr gCost 0) (gr gMaxCount 0)))
+						)
+				</Initialize>
+
+				<Actions>
+					<Action name="Sell this item" default="1" key="S">
+						(if (gr gCost 0)
+							(if (gr gMaxCount 1)
+								(scrShowPane gScreen "SellQuantity")
+								(if (eq gMaxCount 1)
+									(block (itemsToSell)
+										(setq itemsToSell (scrRemoveItem gScreen 1))
+										(objAddItem gSource itemsToSell)
+										(objIncData gPlayerShip "rins" gCost)
+										(plyRecordSellItem gPlayer itemsToSell (multiply gCost 5))
+										(scrShowPane gScreen "Default")
+										)
+									)
+								)
+							)
+					</Action>
+
+					<Action name="Done" cancel="1" key="D">
+						(scrShowScreen gScreen gPrevScreen gPrevPane)
+					</Action>
+
+				</Actions>
+
+			</Default>
+
+			<SellQuantity
+					showCounter=	"true">
+
+				<Initialize>
+					(block Nil
+						(scrSetDesc gScreen (cat "How many items do you wish to sell at " gCost " rin each?"))
+						(scrSetCounter gScreen gMaxCount)
+						)
+				</Initialize>
+
+				<Actions>
+					<Action name="Sell" default="1" key="S">
+						(block (count)
+							(setq count (scrGetCounter gScreen))
+							(if (gr count gMaxCount)
+								(scrSetCounter gScreen gMaxCount)
+								(block (itemsToSell)
+									(setq itemsToSell (scrRemoveItem gScreen count))
+									(objAddItem gSource itemsToSell)
+									(objIncData gPlayerShip "rins" (multiply count gCost))
+									(plyRecordSellItem gPlayer itemsToSell (multiply count gCost 5))
+									(scrShowPane gScreen "Default")
+									)
+								)
+							)
+					</Action>
+
+					<Action name="Cancel" cancel="1" key="C">
+						<ShowPane pane="Default"/>
+					</Action>
+
+				</Actions>
+
+			</SellQuantity>
+		</Panes>
+
+	</DockScreen>
+	
+<!-- Globals -->
+
+	<Globals>
+		(block Nil
+			(setq intAnsabiBuyMargin (lambda (thisItem)
+				(block (cost)
+					(switch
+					
+						; We charge a lot for alien items
+						(itmHasModifier thisItem "Alien")
+							(setq cost (divide (multiply 120 (itmGetPrice thisItem)) 100))
+					
+						; We charge extra for notForSale items, unlike everybody else
+						(itmHasModifier thisItem "NotForSale")
+							(setq cost (divide (multiply 110 (itmGetPrice thisItem)) 100))
+							
+						; We slightly discount military goods however that don't fit the above criteria
+						(itmHasModifier thisItem "NotForSale")
+							(setq cost (divide (multiply 95 (itmGetPrice thisItem)) 100))
+
+						; Otherwise, convert to rins
+						(setq cost (divide (itmGetPrice thisItem) 5))
+						)
+
+					; round up
+					(setq cost (multiply (divide (add cost 4) 5) 5))
+
+					(if (gr cost 0)
+						cost
+						Nil
+						)
+					)
+				))
+
+			(setq intAnsabiSellMargin (lambda (thisItem)
+				(block (cost)
+					(switch
+						; Better not be installed
+						(itmIsInstalled thisItem)
+							(setq cost 0)
+						
+						; We love alien stuff at level 7 and up, any lower and you get slightly shortchanged
+						(and (itmHasModifier thisItem "Alien")
+								(geq (itmGetLevel thisItem) 7))
+							(setq cost (divide (multiply (itmGetPrice thisItem) (add (multiply (subtract (itmGetLevel thisItem) 7) 2) 100)) 100))
+							
+						; We reward by quite a bit for over-leveled stuff - unlikely ever to be used, because most should be alien
+						(and (eq 1 1)
+								(geq (itmGetLevel thisItem) 13))
+							(setq cost (divide (multiply (itmGetPrice thisItem) (add (multiply (subtract (itmGetLevel thisItem) 10) 2) 100)) 2))
+
+						; We buy mid and high-level stuff; pay bad for low stuff, pay more fairly for high stuff
+						(and (eq 1 1)
+								(and (geq (itmGetLevel thisItem) 4) (leq (itmGetLevel thisItem) 12)))
+							(setq cost (divide (multiply (itmGetPrice thisItem) 100) (add (mutiply (subtract 12 (itmGetLevel thisItem)) (subtract 10 (itmGetLevel thisItem))) 100)))
+							
+						; We pay poorly for Promethium crystals, etc.
+						(itmHasModifier thisItem "RingerValuable")
+							(setq cost (divide (itmGetPrice thisItem) 2))
+
+						; We buy high-level resources, but really really low
+						(and (itmHasModifier thisItem "Res")
+								(geq (itmGetLevel thisItem) 4))
+							(setq cost (divide (itmGetPrice thisItem) 8))
+
+						; Otherwise, no sale
+						(setq cost 0)
+						)
+
+					; Unknown items are discounted, however not at much as usual
+					(if (not (itmIsKnown thisItem))
+						(setq cost (divide cost 8))
+						)
+
+					(if (gr cost 0)
+						cost
+						Nil
+						)
+					)
+				))
+
+			(setq intAnsabiCrime (lambda (severity description)
+				(if (gr severity (int (objGetData gPlayerShip "ansabiCrimeSeverity")))
+					(block Nil
+						(objSetData gPlayerShip "ansabiCrimeSeverity" severity)
+						(objSetData gPlayerShip "ansabiCrime" description)
+						)
+					)
+				))
+
+			(setq intAnsabiInstallDevicePrep (lambda (thisItem costToInstall isItemInCargo)
+				(block (desc rins cargoNeeded)
+					(setq gCanInstall Nil)
+					(setq rins (objGetData gPlayerShip "rins"))
+
+					(setq desc (cat "Balance: " rins " rin\n\n"))
+
+					(if thisItem
+						(block Nil
+							(if costToInstall
+								(setq gCost costToInstall)
+								(block Nil
+									(setq gCost (divide (multiply gMargin (itmGetInstallCost thisItem)) 500))
+
+									; Weapons cost normal install amount. We don't rip you off.
+									(if (eq (itmGetCategory thisItem) 4)
+										(setq gCost (multiply gCost 1))
+										)
+									)
+								)
+
+							; See if we can install
+							(setq gResult (shpCanInstallDevice gPlayerShip thisItem))
+							(setq gCriteria Nil)
+
+							(switch
+								; If we don't have the technology, we cannot install
+								; (except for specific items that we know about)
+								(and (gr (itmGetLevel thisItem) gTechLevel)
+										(or (not gTechModifier)
+											(not (itmHasModifier thisItem gTechModifier)))
+										)
+									(setq desc (cat desc "We do not have the technology to install " (itmGetName thisItem 4) " on your ship."))
+
+								; Do not check military id
+									
+								; Install Cw illegal stuff. Whod be using an actinide out here anyways...
+
+								(eq gResult 2)
+									(setq desc (cat desc "Your ship cannot support any more devices."))
+
+								(eq gResult 4)
+									(block Nil
+										(setq desc (cat desc "We can replace your shield generator with " (itmGetName thisItem 4)))
+										(setq gCriteria "sI")
+										(setq gCanInstall True)
+										)
+
+								(eq gResult 5)
+									(block Nil
+										(setq desc (cat desc "We can replace your propulsion system with " (itmGetName thisItem 4)))
+										(setq gCriteria "vI")
+										(setq gCanInstall True)
+										)
+
+								(eq gResult 6)
+									(block Nil
+										(setq desc (cat desc "We can replace your missile launcher with " (itmGetName thisItem 4)))
+										(setq gCriteria "lI")
+										(setq gCanInstall True)
+										)
+
+								(eq gResult 7)
+									(setq desc (cat desc "Your ship's reactor is not powerful enough for this device."))
+
+								(eq gResult 8)
+									(setq desc (cat desc "You already have a cargo expansion system installed."))
+
+								(eq gResult 9)
+									(block Nil
+										(setq desc (cat desc "We can replace your reactor with " (itmGetName thisItem 4)))
+										(setq gCriteria "rI")
+										(setq gCanInstall True)
+										)
+
+								(eq gResult 10)
+									(setq desc (cat desc "The cargo expansion system is too large to be installed in your ship."))
+
+								(eq gResult 11)
+									(setq desc (cat desc "The power output of " (itmGetName thisItem 4) " is too high for your ship."))
+
+								(eq gResult 12)
+									(setq desc (cat desc "Your ship cannot support any more weapons."))
+
+								(eq gResult 13)
+									(setq desc (cat desc "Your ship cannot support any more non-weapon devices."))
+									
+								(not (isint gResult))
+									(setq desc (cat desc gResult))
+
+								(not (eq gResult 0))
+									(setq desc (cat desc "This device cannot be installed."))
+
+								(block Nil
+									(setq desc (cat desc "We can install " (itmGetName thisItem 4) " on your ship"))
+									(setq gCanInstall True)
+									)
+								)
+
+							; If we have to uninstall an item, then it will cost more
+
+							(setq cargoNeeded 0)
+							(if (and gCriteria gCanInstall)
+								(objEnumItems gPlayerShip gCriteria itemToRemove
+									(block Nil
+										(if (not costToInstall)
+											(setq gCost (add gCost (divide (multiply gMargin (itmGetInstallCost itemToRemove)) 1000)))
+											)
+
+										(setq cargoNeeded (itmGetMass itemToRemove))
+										(if isItemInCargo
+											(setq cargoNeeded (subtract cargoNeeded (itmGetMass thisItem)))
+											)
+										)
+									)
+								)
+								
+							; Additional checks
+							
+							(switch
+								; If we already know we can't install, no need to continue
+								(not gCanInstall)
+									Nil
+									
+								; See if the item fits
+								(gr cargoNeeded (objGetCargoSpaceLeft gPlayerShip))
+									(block Nil
+										(setq desc (cat desc ". Unfortunately, there isn't enough room in your cargo hold to do the swap."))
+										(setq gCanInstall Nil)
+										)
+										
+								; We don't have enough
+								(gr gCost rins)
+									(block Nil
+										(setq desc (cat desc " for " gCost " rin. Unfortunately, you cannot afford the cost."))
+										(setq gCanInstall Nil)
+										)
+								
+								; If no cost
+								(eq gCost 0)
+									(setq desc (cat desc " at no charge."))
+
+								; We have enough
+								(setq desc (cat desc " for " gCost " rin."))
+								)
+
+							; Done
+															
+							(scrSetDesc gScreen desc)
+							)
+						(scrSetDesc gScreen (cat desc "You do not have any devices that can be installed."))
+						)
+					)
+				))
+
+			(setq intAnsabiOnDestroy (lambda Nil
+				(block Nil
+					; Destroy items on the station
+					(intDestroyItems gSource)
+
+					; Ansabi crime
+					(if (and gPlayerShip (eq aOrderGiver gPlayerShip))
+						(intAnsabiCrime 3 (cat "the destruction of " (objGetName gSource 4)))
+						)
+					)
+				))
+
+			(setq intAnsabiOnInit (lambda (prevScreen)
+				(block Nil
+					(setq gPrevScreen prevScreen)
+
+					(switch
+						; If the player is a danger to the Ansabi Foundation, they are dealt with appropriatly
+						(geq (int (objGetData gPlayerShip "ansabiCrimeSeverity")) 2)
+							(scrShowScreen gScreen "&dsAnsabiImprison;")
+						)
+					)
+				))
+			)
+	</Globals>
+	
+	<DockScreen UNID="&dsAnsabiImprison;"
+			name=				"=(objGetName gSource)"
+			>
+
+		<Panes>
+			<Default>
+
+				<Initialize>
+					(block Nil
+						(scrSetDesc gScreen (cat "Upon exiting your ship, you find yourself encased in a force field. A speaker blares out an automatically generated message: \"For the demonstration of the risk you pose to the Foundation due to " (objGetData gPlayerShip "ansabiCrime") " you have been deemed an existential threat to the Foundation and will be subsequently vaporized. The process of vaporization is entirely painless. Thank you, and have a nice day.\"" ))
+						(plyDestroyed gPlayer (cat "was vaporized by the Ansabi for " (objGetData gPlayerShip "ansabiCrime")))
+						)
+				</Initialize>
+
+				<Actions>
+					<Action name="Continue" default="1" cancel="1" key="C">
+						(scrExitDock gScreen)
+					</Action>
+				</Actions>
+
+			</Default>
+		</Panes>
+
+	</DockScreen>
+	
+<!-- Tables -->
+	
+<!-- TABLES -->
+
+	<!-- Ansabi defenders for normal stations -->
+
+	<ShipTable unid="&tbAnsabiDefenders;">
+		<LevelTable>
+			<Ship levelFrequency="uuucc ccccc" count="1" class="&scAnsabiGunship;" orders="guard"/>
+			<Ship levelFrequency="--ruu uuurr" count="1" class="&scAnsabiYacht;" orders="guard"/>
+			<Ship levelFrequency="--ruc cuuuu" count="1" class="&scManticore;" orders="guard"/>
+			<Ship levelFrequency="----- -uuuu" count="1" class="&scBritannia;" orders="guard"/>
+		</LevelTable>
+	</ShipTable>
+	
+	<!-- Ansabi defenders for large/important stations -->
+
+	<ShipTable unid="&tbAnsabiEliteDefenders;">
+		<LevelTable>
+			<Ship levelFrequency="ccccc ccccc" count="1" class="&scAnsabiGunship;" orders="guard"/>
+			<Ship levelFrequency="---uu uuuuu" count="1" class="&scBritannia;" orders="guard"/>
+		</LevelTable>
+	</ShipTable>
+
+	<!-- Ansabi private crafts -->
+
+	<ShipTable unid="&tbAnsabiPrivateCrafts;">
+		<LevelTable>
+			<Ship levelFrequency="uuucc cur--" count="1" class="&scWolfen;" orders="gateOnThreat"/>
+			<Ship levelFrequency="rrruc ccuuu" count="1" class="&scEI500;" orders="gateOnThreat"/>
+			<Ship levelFrequency="-rrcc ccccc" count="1" class="&scAnsabiYacht;" orders="gateOnThreat"/>
+			<Ship levelFrequency="-rrcc ccccc" count="1" class="&scAnsabiFreighterC;" orders="gateOnThreat"/>
+			<Ship levelFrequency="---uu ccccu" count="1" class="&scEI7000;" orders="gateOnThreat"/>
+			<Ship levelFrequency="---uu ccccu" count="1" class="&scRoninC;" orders="gateOnThreat"/>
+		</LevelTable>
+	</ShipTable>
+	
+	<!-- Ansabi random traffic -->
+	
+	<ShipTable unid="&tbAnsabiTraffic;">
+		<LevelTable>
+			<Ship levelFrequency="ccccc ccccc" count="1" class="&scAnsabiYacht;"/>
+			<Ship levelFrequency="ccccc ccccc" count="1" class="&scAnsabiFreighterC;"/>
+		</LevelTable>
+	</ShipTable>
+
+</TranscendenceModule>

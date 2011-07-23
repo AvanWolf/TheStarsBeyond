@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!ENTITY unidExtension						"0xE314000D">
+
+	<!ENTITY svDomain						"0xE3140620">
+	<!ENTITY rsDomainHeavyGunship						"0xE3140621">
+	<!ENTITY rsDomainFighter						"0xE3140622">
+	<!ENTITY rsDomainCruiser						"0xE3140623">
+	
+	<!ENTITY stDomainMasterNode						"0xE3146520">
+	<!ENTITY scDomainHeavyGunship						"0xE3146521">
+	<!ENTITY scDomainFighter						"0xE3146522">
+	<!ENTITY scDomainCruiser						"0xE3146523">
+	
+	<!ENTITY itDomainGravCannon						"0xE3141520">
+	<!ENTITY itDomainIonBolter						"0xE3141521">
+	<!ENTITY itDomainIonAutoCannon						"0xE3141522">
+	<!ENTITY itDomainIonGun							"0xE3141523">
+	
+	<!ENTITY tbDomainEncounters						"0xE314E520">
+]>
+<TranscendenceModule> <!-- UNID="0xE314000#" version="1.0" -->
+
+	<Sovereign UNID="&svDomain;"
+			name="Domain"
+			alignment="destructive order"
+			>
+		<Relationships>
+			<Relationship sovereign="&svAres;" disposition="enemy" mutual="true"/>
+			<!-- <Relationship sovereign="&svTeraton1;" disposition="enemy" mutual="true"/>
+			<Relationship sovereign="&svTeraton2;" disposition="enemy" mutual="true"/>
+			<Relationship sovereign="&svTeraton3;" disposition="enemy" mutual="true"/>
+			<Relationship sovereign="&svTeraton4;" disposition="enemy" mutual="true"/>
+			<Relationship sovereign="&svTeraton5;" disposition="enemy" mutual="true"/> -->
+			<Relationship sovereign="&svRingers;" disposition="neutral" mutual="true"/>
+		</Relationships>
+	</Sovereign>
+
+	<Image UNID="&rsDomainHeavyGunship;"	bitmap="resources/images/domainheavygunship.jpg" 	bitmask="resources/images/domainheavygunshipmask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsDomainFighter;"	bitmap="resources/images/domainfighterdrone.jpg" 	bitmask="resources/images/domainfighterdronemask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsDomainCruiser;"	bitmap="resources/images/domain cruiser.jpg" 	bitmask="resources/images/domaincruisermask2.bmp" loadOnUse="true"/>
+
+<!-- Grav cannon -->
+
+	<ItemType UNID="&itDomainGravCannon;"
+			name=				"Domain Gravatic Hammer"
+			level=				"9"
+			value=				"170000"
+			mass=				"4000"
+			frequency=			"uncommon"
+			numberAppearing=	"1"
+			attributes=			"EnergyWeapon; MajorItem; Military; Domain; NotForSale"
+
+			description=		"The Domain Gravatic Hammer has the ability to punch through shields, though is not a terribly powerful weapon in and of itself."
+			>
+		<Events>
+			<OnDamageShields>
+				(block (probTable)
+					; Chance of passing through the shield is based on level
+					(setq probTable
+						'(100
+							100		; Level I
+							100		; Level II
+							100		; Level III
+							100		; Level IV
+							100		; Level V
+							95		; Level VI
+							87		; Level VII
+							70		; Level VIII
+							50		; Level IX
+							20		; Level X
+							0		; Level XI
+							0		; Level XII
+							0		; Level XIII
+							0		; Level XIV and higher
+							)
+						)
+
+					(if (leq (random 1 100) (item probTable (min 14 (itmGetLevel aDeviceItem))))
+
+						; If we penetrate shields, then return full damage
+						aDamageHP
+
+						; Otherwise, we return Nil to indicate that normal shield handling applies
+						Nil
+						)
+					)
+			</OnDamageShields>
+		</Events>
+		<Image imageID="&rsItemsNAMI3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"graviton:3d10; momentum1; WMD2"
+				fireRate=			"20"
+				missileSpeed=			"50"
+				lifetime=			"100"
+				hitPoints=			"10"
+				powerUse=			"1500"
+				sound=				"&snLaserCannon;"
+				vaporTrailLength=	"24"
+				vaporTrailWidth=	"150"
+				vaporTrailWidthInc=	"10"
+				vaporTrailColor=	"0xd0, 0x40, 0xc0"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"6"
+						radius=				"60"
+						primaryColor=		"0xff, 0x60, 0xe0"
+					/>
+			</FireEffect>
+			<Effect>
+				<MoltenBolt
+						width=				"6"
+						length=				"56"
+						growth=				"3"
+						primaryColor=		"0xff, 0x80, 0xf0"
+						secondaryColor=		"0xd0, 0x40, 0xc0"
+						/>
+				<ParticleComet
+						particleCount=	"200"
+						primaryColor=	"0xff, 0x00, 0xe0"
+
+						width=			"8"
+						length=			"120"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	
+	<ItemType UNID="&itDomainIonBolter;"
+			name=				"Domain Ion Bolter"
+			level=				"8"
+			value=				"90000"
+			mass=				"3000"
+			frequency=			"uncommon"
+			numberAppearing=	"1"
+			attributes=			"EnergyWeapon; MajorItem; Military; Domain; NotForSale"
+
+			description=		"The Domain Ion Bolter is a more powerful, if slower weapon than the EI ion blaster."
+			>
+		<Image imageID="&rsItemsNAMI3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"ion:6d6; WMD3"
+				fireRate=			"10"
+				missileSpeed=			"50"
+				lifetime=			"60"
+				hitPoints=			"10"
+				powerUse=			"1000"
+				sound=				"&snLaserCannon;"
+				vaporTrailLength=	"12"
+				vaporTrailWidth=	"70"
+				vaporTrailWidthInc=	"10"
+				vaporTrailColor=	"0x70, 0x40, 0xf0"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"4"
+						radius=				"20"
+						primaryColor=		"0xa0, 0x60, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+				<MoltenBolt
+						width=				"5"
+						length=				"30"
+						growth=				"2"
+						primaryColor=		"0xd0, 0xc0, 0xff"
+						secondaryColor=		"0x70, 0x40, 0xf0"
+						/>
+				<ParticleComet
+						particleCount=	"100"
+						primaryColor=	"0x80, 0x40, 0xf0"
+
+						width=			"8"
+						length=			"60"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	
+	<ItemType UNID="&itDomainIonAutoCannon;"
+			name=				"Domain Ion Autocannon"
+			level=				"7"
+			value=				"40000"
+			mass=				"5000"
+			frequency=			"uncommon"
+			numberAppearing=	"1"
+			attributes=			"EnergyWeapon; MajorItem; Military; Domain; NotForSale"
+
+			description=		"The Domain Ion Autocannon fires can fire a stream of ion shots for a short interval of time."
+			>
+		<Image imageID="&rsItemsNAMI3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"ion:7d2"
+				repeating=			"7"
+				fireRate=			"20"
+				missileSpeed=			"50"
+				lifetime=			"60"
+				hitPoints=			"10"
+				powerUse=			"500"
+				sound=				"&snLaserCannon;"
+				vaporTrailLength=	"4"
+				vaporTrailWidth=	"50"
+				vaporTrailWidthInc=	"0"
+				vaporTrailColor=	"0x70, 0x40, 0xf0"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"2"
+						radius=				"10"
+						primaryColor=		"0xa0, 0x60, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+				<MoltenBolt
+						width=				"5"
+						length=				"30"
+						growth=				"2"
+						primaryColor=		"0xd0, 0xc0, 0xff"
+						secondaryColor=		"0x70, 0x40, 0xf0"
+						/>
+				<ParticleComet
+						particleCount=	"100"
+						primaryColor=	"0x80, 0x40, 0xf0"
+
+						width=			"8"
+						length=			"60"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+	<ItemType UNID="&itDomainIonGun;"
+			name=				"Domain Ion Gun"
+			level=				"6"
+			value=				"23000"
+			mass=				"2000"
+			frequency=			"common"
+			numberAppearing=	"1"
+			attributes=			"EnergyWeapon; MajorItem; Domain"
+
+			description=		"The most basic weapon in the Domain's arsenal, these are the ubiquitous weapons used on their drones. They have become common enough they are seen for sale far from the domain's teritory."
+			>
+		<Image imageID="&rsItemsNAMI3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				damage=				"ion:8d2"
+				fireRate=			"10"
+				missileSpeed=			"50"
+				lifetime=			"60"
+				hitPoints=			"10"
+				powerUse=			"500"
+				sound=				"&snLaserCannon;"
+				vaporTrailLength=	"4"
+				vaporTrailWidth=	"50"
+				vaporTrailWidthInc=	"0"
+				vaporTrailColor=	"0x70, 0x40, 0xf0"
+				>
+			<FireEffect>
+				<Flare
+						style=				"fadingBlast"
+						lifetime=			"2"
+						radius=				"10"
+						primaryColor=		"0xa0, 0x60, 0xff"
+					/>
+			</FireEffect>
+			<Effect>
+				<MoltenBolt
+						width=				"3"
+						length=				"10"
+						growth=				"0"
+						primaryColor=		"0xd0, 0xc0, 0xff"
+						secondaryColor=		"0x70, 0x40, 0xf0"
+						/>
+				<ParticleComet
+						particleCount=	"60"
+						primaryColor=	"0x80, 0x40, 0xf0"
+
+						width=			"3"
+						length=			"30"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+
+	<ShipClass UNID="&scDomainCruiser;"
+			manufacturer=			"Domain Fabricators"
+			class=				""
+			type=				"cruiser"
+			score=				"1900"
+
+			mass=				"8000"
+			cargoSpace=			"1000"
+			thrust=				"8000"
+			maneuver=			"6"
+			maxSpeed=			"12"
+
+			explosionType=		"&vtThermoExplosion1;"
+			leavesWreck=		"100"
+			rotationCount=		"40"
+			attributes=			"domain,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="348" span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="324" span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="300" span="24" armorID="&itHeavyTharsisPlate;" nonCritical="general" />
+			<ArmorSection start="276" span="24" armorID="&itHeavyTharsisPlate;" nonCritical="general" />
+			<ArmorSection start="252" span="24" armorID="&itHeavyTharsisPlate;" nonCritical="general" />
+			<ArmorSection start="228" span="24" armorID="&itHeavyTharsisPlate;" nonCritical="general" />
+			<ArmorSection start="204" span="24" armorID="&itHeavyTharsisPlate;" nonCritical="general" />
+			<ArmorSection start="180" span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="156" span="24" armorID="&itHeavyTharsisPlate;" />
+			<ArmorSection start="132" span="24" armorID="&itHeavyTharsisPlate;" nonCritical="general" />
+			<ArmorSection start="108" span="24" armorID="&itHeavyTharsisPlate;" nonCritical="general" />
+			<ArmorSection start="84"  span="24" armorID="&itHeavyTharsisPlate;" nonCritical="general" />
+			<ArmorSection start="60"  span="24" armorID="&itHeavyTharsisPlate;" nonCritical="general" />
+			<ArmorSection start="36"  span="24" armorID="&itHeavyTharsisPlate;" nonCritical="general" />
+			<ArmorSection start="12"  span="24" armorID="&itHeavyTharsisPlate;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itDomainGravCannon;" posAngle="0" posRadius="50"/>
+			<Device deviceID="&itDomainIonAutoCannon;" omnidirectional="true" secondaryWeapon="true"/>
+			<Device deviceID="&itCydonianHeavyShields;"/>
+			<Device deviceID="&it250MWReactor;"/>
+		</Devices>
+
+		<Items>
+			<Item count="2d12"	item="&itPteracniumFuelRod;"/>
+		</Items>
+
+		<Image imageID="&rsDomainCruiser;" imageX="0" imageY="0" imageWidth="160" imageHeight="160" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"90"
+			ignoreShieldsDown=	"true"
+			
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scDomainFighter;"
+			manufacturer=		"Domain Fabricators"
+			class=				""
+			type=				"drone fighter"
+			score=				"1200"
+
+			mass=				"200"
+			cargoSpace=			"50"
+			thrust=				"350"
+			maneuver=			"2"
+			maxSpeed=			"20"
+
+			leavesWreck=		"65"
+			rotationCount=		"40"
+			attributes=			"domain,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itLightTharsisPlate;"/>
+			<ArmorSection start="225" span="90" armorID="&itLightTharsisPlate;"/>
+			<ArmorSection start="135" span="90" armorID="&itLightTharsisPlate;"/>
+			<ArmorSection start="45"  span="90" armorID="&itLightTharsisPlate;"/>
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itDomainIonGun;"/>
+			<Device deviceID="&itCydonianShields;"/>
+		</Devices>
+
+		<Image imageID="&rsDomainFighter;" imageX="0" imageY="0" imageWidth="64" imageHeight="64" rotationOffset="0" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scDomainHeavyGunship;"
+			manufacturer=		"Domain Fabricators"
+			class=				""
+			type=				"heavy gunship"
+			score=				"1800"
+
+			mass=				"200"
+			cargoSpace=			"50"
+			thrust=				"350"
+			maneuver=			"2"
+			maxSpeed=			"20"
+
+			leavesWreck=		"65"
+			rotationCount=		"40"
+			attributes=			"domain,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itLightTharsisPlate;"/>
+			<ArmorSection start="225" span="90" armorID="&itLightTharsisPlate;"/>
+			<ArmorSection start="135" span="90" armorID="&itLightTharsisPlate;"/>
+			<ArmorSection start="45"  span="90" armorID="&itLightTharsisPlate;"/>
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itDomainIonBolter;"/>
+			<Device deviceID="&itCydonianShields;"/>
+		</Devices>
+
+		<Image imageID="&rsDomainHeavyGunship;" imageX="0" imageY="0" imageWidth="80" imageHeight="80" rotationOffset="0" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"15"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+
+	<StationType UNID="&stDomainMasterNode;"
+			name=				"Domain Node"
+			sovereign=			"&svDomain;"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockScreen=			"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			
+			armorID=			"&itHeavyTharsisPlate;"
+			maxHitPoints=		"500"
+			hitPoints=			"500"
+			fireRateAdj=		"30"
+			explosionType=		"&vtThermoExplosion4;"
+			ejectaType=			"&vtWreckEjecta;"
+			repairRate=			"3"
+			attributes=			"Domain,enemy,envWater,envAvoidsEarth,populated"
+			levelFrequency=		"----- -vruu ----- ----- -----"
+			locationCriteria=	"+OuterSystem,-asteroids,-void"
+			>
+
+		<Image imageID="&rsStations7;" imageX="0" imageY="768" imageWidth="256" imageHeight="256"/>
+
+		<Devices>
+			<Device deviceID="&itDomainGravCannon;" posAngle="90" posRadius="50" omnidirectional="true"/>
+		</Devices>
+
+		<Ships>
+			<Table>
+				<Ship chance="20"	count="1d4+1"	class="&scDomainFighter;"	orders="guard"/>
+				<Group chance="45">
+					<Ship			count="1d4"	class="&scDomainFighter;"			orders="guard"/>
+					<Ship			count="1d2"	class="&scDomainHeavyGunship;"			orders="guard"/>
+				</Group>
+				<Ship chance="20"	count="1d3+2"	class="&scDomainHeavyGunship;"			orders="guard"/>
+				<Group chance="10">
+					<Ship			count="1d4"	class="&scDomainFighter;"			orders="guard"/>
+					<Ship			count="1"	class="&scDomainHeavyGunship;"		orders="guard"/>
+				</Group>
+				<Ship chance="5"	count="1"	class="&scDomainCruiser;"			orders="guard"/>
+			</Table>
+		</Ships>
+
+		<Reinforcements minShips="3">
+			<Table>
+				<Ship chance="20"	count="1d4+1"	class="&scDomainFighter;"	orders="guard"/>
+				<Group chance="45">
+					<Ship			count="1d4"	class="&scDomainFighter;"			orders="guard"/>
+					<Ship			count="1d2"	class="&scDomainHeavyGunship;"			orders="guard"/>
+				</Group>
+				<Ship chance="20"	count="1d3+2"	class="&scDomainHeavyGunship;"			orders="guard"/>
+				<Group chance="10">
+					<Ship			count="1d4"	class="&scDomainFighter;"			orders="guard"/>
+					<Ship			count="1"	class="&scDomainHeavyGunship;"		orders="guard"/>
+				</Group>
+				<Ship chance="5"	count="1"	class="&scDomainCruiser;"			orders="guard"/>
+			</Table>
+		</Reinforcements>
+		
+		<Items>
+			<Table>
+			<Item		chance="80" count="1d6" item="&itCentauriRice;"/>
+			<Item		chance="20" count="1" item="&itCentauriRice;"/>
+			</Table>
+			<Table chance="50">
+				<Lookup chance="40" count="1" table="&trConsumables2;"/>
+				<Lookup chance="40" count="1" table="&trMinorItem2;"/>
+				<Lookup chance="20" count="1" table="&trMajorItem2;"/>
+			</Table>
+		</Items>
+
+		<Encounters frequency="uncommon">
+			<Lookup table="&tbDomainEncounters;"/>
+		</Encounters>
+
+	</StationType>
+	
+<!-- encounter table -->
+
+	<ShipTable unid="&tbDomainEncounters;">
+		<LevelTable>
+		
+			<Ship levelFrequency="----- -vvru" count="1"	 class="&scDomainCruiser;" eventHandler="&evStdPatrolEncounterBehavior;" sovereign="&svDomain;">
+				<Escorts>
+					<Ship					   count="1d3-1" class="&scDomainHeavyGunship;" orders="escort"/>
+				</Escorts>
+			</Ship>
+			<Ship levelFrequency="----- -vruu" count="1"	 class="&scDomainCruiser;" eventHandler="&evStdPatrolEncounterBehavior;" sovereign="&svDomain;">
+				<Escorts>
+					<Ship					   count="4d2" class="&scDomainFighter;" orders="escort"/>
+				</Escorts>
+			</Ship>
+			<Ship levelFrequency="----- -rcuu" count="1"	 class="&scDomainHeavyGunship;" eventHandler="&evStdPatrolEncounterBehavior;" sovereign="&svDomain;">
+				<Escorts>
+					<Ship					   count="2d2-1" class="&scDomainFighter;" orders="escort"/>
+				</Escorts>
+			</Ship>
+			
+		</LevelTable>
+	</ShipTable>
+	
+</TranscendenceModule>

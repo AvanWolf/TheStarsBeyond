@@ -1,0 +1,1081 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!ENTITY unidExtension						"0xE3140005">
+
+	<!ENTITY rsLuminousProbeL						"0xE3140180">
+	<!ENTITY rsLuminousPod							"0xE3140181">
+	<!ENTITY rsLuminousHunter						"0xE3140182">
+	<!ENTITY snLuminousSeeker						"0xE3140183">
+
+	<!ENTITY itLightIonBlaster						"0xE3141080">
+	<!ENTITY itLuminousSeeker						"0xE3141081">
+	<!ENTITY itHeavyLuminousSeeker						"0xE3141082">
+	<!ENTITY itHeavyLuminousArmature					"0xE3141083">
+	<!ENTITY itAdvancedLuminousArmature					"0xE3141084">
+	<!ENTITY itMassiveLuminousArmature					"0xE3141085">
+	<!ENTITY itAdaptiveShield1						"0xE3141086">
+	<!ENTITY itAdaptiveShield2						"0xE3141087">
+	<!ENTITY itAdaptiveShield3						"0xE3141088">
+	<!ENTITY itAdaptiveShield4						"0xE3141089">
+	<!ENTITY itLuminousSeekerBomb						"0xE314108A">
+
+	<!ENTITY scLuminousProbeL						"0xE3146080">
+	<!ENTITY scLuminousPod							"0xE3146081">
+	<!ENTITY scLuminousHunter						"0xE3146082">
+
+
+<!-- external ref -->
+	<!ENTITY baShieldBase							"0xE31401B5">
+
+
+]>
+<TranscendenceModule> <!-- UNID="0xE314000#" version="1.0" -->
+
+	<Image UNID="&rsLuminousProbeL;"	bitmap="resources/images/luminousprobe.jpg" 		bitmask="resources/images/luminousprobemask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsLuminousPod;"		bitmap="resources/images/luminouspod.jpg" 		bitmask="resources/images/luminouspodmask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsLuminousHunter;"	bitmap="resources/images/luminoushunter.jpg" 		bitmask="resources/images/luminoushunter_Mask.bmp" loadOnUse="true"/>
+
+	<Sound UNID="&snLuminousSeeker;"			filename="resources\sounds\plasmafire.wav"/>
+
+	<!-- Ion Blaster -->
+
+	<ItemType UNID="&itLightIonBlaster;"
+			name=				"light ion blaster"
+			level=				"7"
+			value=				"42000"
+			mass=				"3000"
+			frequency=			"common"
+			modifiers=			"Luminous; EnergyWeapon; Military; MajorItem; Specialty"
+
+			description=		"A smaller, more compact Luminous adaptation of EI's ubiquitous ion blaster that it also uses."
+
+			sortName=			"ion blaster"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"beam"
+
+				damage=				"ion:5d3"
+				fireRate=			"10"
+				lifetime=			"30"
+				powerUse=			"500"
+
+				beamType=			"lightning"
+				primaryColor=		"0xff, 0xc7, 0xa0"
+				secondaryColor=		"0xff, 0x95, 0x00"
+				intensity=			"3"
+				sound=				"&snLaserCannon;"
+				>
+		</Weapon>
+
+	</ItemType>
+
+	<ItemType UNID="&itLuminousSeeker;"
+			name=				"Luminous seeker cannon"
+			level=				"8"
+			value=				"85000"
+			mass=				"6000"
+			frequency=			"veryrare"
+			numberAppearing=	"1"
+			modifiers=			"EnergyWeapon; MajorItem; Military; Luminous"
+
+			description=		"The luminous seeker cannon fires small self-guided positron packets."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"positron:3d7"
+				fireRate=			"30"
+				missileSpeed=			"80"
+				lifetime=			"70"
+				hitPoints=			"5"
+				powerUse=			"1000"
+				maneuverability=		"3"
+				sound=				"&snLuminousSeeker;"
+				vaporTrailLength="5"
+				vaporTrailWidth="350"
+				vaporTrailWidthInc="-5"
+				vaporTrailColor="0x00, 0xc0, 0x90"
+				autoAcquireTarget=		"true"
+				>
+			<Configuration aimTolerance="180">
+				<Shot posAngle="0" posRadius="0" />
+			</Configuration>
+			<Effect>
+						
+				<Starburst
+						style=			"morningStar"
+						spikeCount=		"2d6+10"
+						spikeLength=	"3d2"
+						primaryColor=		"0x00, 0xff, 0xff"
+						secondaryColor=		"0x00, 0xc0, 0x90"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+
+	<ItemType UNID="&itLuminousSeekerBomb;"
+			name=				"Luminous seeker bomb"
+			level=				"10"
+			value=				"360000"
+			mass=				"10000"
+			frequency=			"veryrare"
+			numberAppearing=	"1"
+			modifiers=			"EnergyWeapon; MajorItem; Military; Luminous"
+
+			description=		"The luminous seeker bomb launches a massive collective packet of seekers which then detonates, releasing the seekers to attack the target."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"positron:60d7"
+				fireRate=			"60"
+				missileSpeed=			"40"
+				lifetime=			"15"
+				failsafe=			"5"
+				hitPoints=			"30"
+				powerUse=			"3000"
+				maneuverability=		"8"
+				sound=				"&snLuminousSeeker;"
+				vaporTrailLength="20"
+				vaporTrailWidth="700"
+				vaporTrailWidthInc="-10"
+				vaporTrailColor="0x00, 0xc0, 0x90"
+				autoAcquireTarget=		"true"
+				>
+			<Configuration aimTolerance="180">
+				<Shot posAngle="0" posRadius="0" />
+			</Configuration>
+			<Effect>
+						
+				<Starburst
+						style=			"morningStar"
+						spikeCount=		"4d6+5d3"
+						spikeLength=	"15d2"
+						primaryColor=		"0x00, 0xff, 0xff"
+						secondaryColor=		"0x00, 0xc0, 0x90"
+						/>
+				<Shape
+						directional=		"true"
+						scaleLength=		"20" 
+						scaleWidth=			"20"
+
+						scaleLengthInc=		"0" 
+
+						color=				"0x00, 0xff, 0xc0"
+						opacity=			"200"
+						>
+					<Point x="0"	y="40"/>
+					<Point x="28"	y="28"/>
+					<Point x="40"	y="0"/>
+					<Point x="28"	y="-28"/>
+					<Point x="0"	y="-40"/>
+					<Point x="-28"	y="-28"/>
+					<Point x="-40"	y="0"/>
+					<Point x="-28"	y="28"/>
+				</Shape>
+				<Shape
+						directional=		"true"
+						scaleLength=		"40" 
+						scaleWidth=			"40"
+
+						scaleLengthInc=		"0" 
+
+						color=				"0x00, 0xc0, 0x90"
+						opacity=			"100"
+						>
+					<Point x="0"	y="80"/>
+					<Point x="56"	y="56"/>
+					<Point x="80"	y="0"/>
+					<Point x="56"	y="-56"/>
+					<Point x="0"	y="-80"/>
+					<Point x="-56"	y="-56"/>
+					<Point x="-80"	y="0"/>
+					<Point x="-56"	y="56"/>
+				</Shape>
+			</Effect>
+		<Fragment
+				type=				"missile"
+				count=				"10d2"
+				damage=				"positron:3d7"
+				fireRate=			"30"
+				missileSpeed=			"80"
+				lifetime=			"70"
+				hitPoints=			"5"
+				maneuverability=		"3"
+				vaporTrailLength="5"
+				vaporTrailWidth="350"
+				vaporTrailWidthInc="-5"
+				vaporTrailColor="0x00, 0xc0, 0x90"
+				autoAcquireTarget=		"true"
+				>
+			<Configuration aimTolerance="180">
+				<Shot posAngle="0" posRadius="0" />
+			</Configuration>
+			<Effect>
+						
+				<Starburst
+						style=			"morningStar"
+						spikeCount=		"2d6+10"
+						spikeLength=	"3d2"
+						primaryColor=		"0x00, 0xff, 0xff"
+						secondaryColor=		"0x00, 0xc0, 0x90"
+						/>
+			</Effect>
+		</Fragment>
+			<Fragment
+					count=			"4d3"
+					type=			"missile"
+
+					damage=			"positron:1d2"
+					missileSpeed=	"15-25"
+					lifetime=		"10-15"
+					hitPoints=		"50"
+					>
+
+				<Effect>
+					<MoltenBolt
+							width=				"4"
+							length=				"12"
+							growth=				"2"
+							primaryColor=		"0x00, 0xff, 0xff"
+							secondaryColor=		"0x00, 0xc0, 0x90"
+						/>
+
+					<SmokeTrail
+							spread=			"4-6"
+							particleLifetime="16"
+							emitDuration=	"80"
+							emitRate=		"16-20"
+							emitSpeed=		"30-35"
+							>
+						<ParticleEffect>
+							<Particle
+									style=			"plain"
+									maxWidth=		"3-7"
+									primaryColor=	"0x00, 0xff, 0xff"
+									secondaryColor=	"0x00, 0xc0, 0x90"
+									/>
+						</ParticleEffect>
+					</SmokeTrail>
+				</Effect>
+			</Fragment>
+		</Weapon>
+
+	</ItemType>
+
+	<ItemType UNID="&itHeavyLuminousSeeker;"
+			name=				"heavy Luminous seeker cannon"
+			level=				"9"
+			value=				"185000"
+			mass=				"10000"
+			frequency=			"veryrare"
+			numberAppearing=	"1"
+			modifiers=			"EnergyWeapon; MajorItem; Military; Luminous"
+
+			description=		"The luminous seeker cannon fires small self-guided positron packets."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"positron:6d7"
+				fireRate=			"30"
+				missileSpeed=			"70"
+				lifetime=			"80"
+				hitPoints=			"10"
+				powerUse=			"2500"
+				maneuverability=		"3"
+				sound=				"&snLuminousSeeker;"
+				vaporTrailLength="5"
+				vaporTrailWidth="350"
+				vaporTrailWidthInc="-5"
+				vaporTrailColor="0x00, 0xc0, 0x90"
+				autoAcquireTarget=		"true"
+				>
+			<Configuration aimTolerance="180">
+				<Shot posAngle="0" posRadius="0" />
+			</Configuration>
+			<Effect>
+						
+				<Starburst
+						style=			"morningStar"
+						spikeCount=		"2d6+10"
+						spikeLength=	"6d2"
+						primaryColor=		"0x00, 0xff, 0xff"
+						secondaryColor=		"0x00, 0xc0, 0x90"
+						/>
+			</Effect>
+		</Weapon>
+
+	</ItemType>
+
+	<ItemType UNID="&itAdaptiveShield1;"
+			inherit=			"&baShieldBase;"
+			name=				"Luminous A50 shield"
+			level=				"5"
+			value=				"10000"
+			mass=				"1000"
+			frequency=			"rare"
+			modifiers=			"MajorItem; Specialty; Luminous; NotForSale"
+
+			description=		"Though lacking in hitpoints, the A50 is capable of adapting to the continous bombardment of any single type of damage at a time."
+
+			sortName=			"Luminous shields, A50"
+			>
+
+		<Events>
+			<onInstall>
+				(block Nil
+					(objSetData gSource 'NumberResisted 0)
+					(objSetData gSource 'NumberHits 0)
+					(objSetData gSource 'LastDamageType aDamageType)
+					(objSetData gSource 'ResistanceAmount 0)
+				)
+			</onInstall>
+			<onUninstall>
+				(block Nil
+					(objSetData gSource 'NumberResisted 0)
+					(objSetData gSource 'NumberHits 0)
+					(objSetData gSource 'LastDamageType aDamageType)
+					(objSetData gSource 'ResistanceAmount 0)
+				)
+			</onUninstall>
+			<onShieldDamage>
+				(block (Resist Reflect)
+					(if (eq aDamageType (objGetData gSource 'LastDamageType))
+						(block Nil
+							(if (geq (objGetData gSource 'NumberHits) 5)
+								(block Nil
+									(objSetData gSource 'NumberHits (add (objGetData gSource 'NumberHits) 1))
+									(setq Resist (add (objGetData gSource 'ResistanceAmount) (subtract (objGetData gSource 'NumberHits) 4)))
+									(if (geq Resist 101)
+										(setq Resist 100)
+									)
+									(setq aShieldDamageHP (divide (multiply aShieldDamageHP (subtract 100 (divide Resist 1))) 100))
+									(if (geq (random 1 100) (subtract 100 (divide Resist 1)))
+										(setq Reflect 'reflect)
+										(setq Reflect Nil)
+									)
+									(objSetData gSource 'ResistanceAmount Resist)
+								)
+								(block Nil
+									(objSetData gSource 'NumberHits (add (objGetData gSource 'NumberHits) 1))
+									(setq Reflect Nil)
+								)
+							)
+						)
+						(block Nil
+							(if (geq (objGetData gSource 'NumberHits) 5)
+								(block Nil
+									(objSetData gSource 'NumberHits 0)
+									(objSetData gSource 'LastDamageType aDamageType)
+									(setq aShieldDamageHP (divide (multiply aShieldDamageHP (add 100 (multiply 2 Resist))) 100))
+									(objSetData gSource 'ResistanceAmount 0)
+									(setq Reflect Nil)
+								)
+								(block Nil
+									(objSetData gSource 'NumberHits 0)
+									(objSetData gSource 'LastDamageType aDamageType)
+									(objSetData gSource 'ResistanceAmount 0)
+									(setq Reflect Nil)
+								)
+							)
+						)
+					)
+					(list Reflect aShieldDamageHP aArmorDamageHP)
+				)
+			</onShieldDamage>
+		</Events>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"50"
+				regen=			"24"
+				depletionDelay=	"360"
+				powerUse=		"200"
+				/>
+
+	</ItemType>
+
+	<ItemType UNID="&itAdaptiveShield2;"
+			inherit=			"&baShieldBase;"
+			name=				"Luminous A100 shield"
+			level=				"7"
+			value=				"45000"
+			mass=				"1000"
+			frequency=			"rare"
+			modifiers=			"MajorItem; Specialty; Luminous; NotForSale"
+
+			description=		"The luminous A100 shield both increases in hitpoints, as well as reduces the conversion shock from one damage resistance to another. It takes longer to develop resistance however."
+
+			sortName=			"Luminous shields, A100"
+			>
+
+		<Events>
+			<onInstall>
+				(block Nil
+					(objSetData gSource 'NumberResisted 0)
+					(objSetData gSource 'NumberHits 0)
+					(objSetData gSource 'LastDamageType aDamageType)
+					(objSetData gSource 'ResistanceAmount 0)
+				)
+			</onInstall>
+			<onUninstall>
+				(block Nil
+					(objSetData gSource 'NumberResisted 0)
+					(objSetData gSource 'NumberHits 0)
+					(objSetData gSource 'LastDamageType aDamageType)
+					(objSetData gSource 'ResistanceAmount 0)
+				)
+			</onUninstall>
+			<onShieldDamage>
+				(block (Resist Reflect)
+					(if (eq aDamageType (objGetData gSource 'LastDamageType))
+						(block Nil
+							(if (geq (objGetData gSource 'NumberHits) 6)
+								(block Nil
+									(objSetData gSource 'NumberHits (add (objGetData gSource 'NumberHits) 1))
+									(setq Resist (add (objGetData gSource 'ResistanceAmount) (subtract (objGetData gSource 'NumberHits) 5)))
+									(if (geq Resist 101)
+										(setq Resist 100)
+									)
+									(setq aShieldDamageHP (divide (multiply aShieldDamageHP (subtract 100 (divide Resist 1))) 100))
+									(if (geq (random 1 100) (subtract 100 (divide Resist 1)))
+										(setq Reflect 'reflect)
+										(setq Reflect Nil)
+									)
+									(objSetData gSource 'ResistanceAmount Resist)
+								)
+								(block Nil
+									(objSetData gSource 'NumberHits (add (objGetData gSource 'NumberHits) 1))
+									(setq Reflect Nil)
+								)
+							)
+						)
+						(block Nil
+							(if (geq (objGetData gSource 'NumberHits) 6)
+								(block Nil
+									(objSetData gSource 'NumberHits 0)
+									(objSetData gSource 'LastDamageType aDamageType)
+									(setq aShieldDamageHP (divide (multiply aShieldDamageHP (add 100 (multiply 1 Resist))) 100))
+									(objSetData gSource 'ResistanceAmount 0)
+									(setq Reflect Nil)
+								)
+								(block Nil
+									(objSetData gSource 'NumberHits 0)
+									(objSetData gSource 'LastDamageType aDamageType)
+									(objSetData gSource 'ResistanceAmount 0)
+									(setq Reflect Nil)
+								)
+							)
+						)
+					)
+					(list Reflect aShieldDamageHP aArmorDamageHP)
+				)
+			</onShieldDamage>
+		</Events>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"100"
+				regen=			"30"
+				depletionDelay=	"360"
+				powerUse=		"500"
+				/>
+
+	</ItemType>
+
+	<ItemType UNID="&itAdaptiveShield3;"
+			inherit=			"&baShieldBase;"
+			name=				"Luminous A150 shield"
+			level=				"9"
+			value=				"130000"
+			mass=				"1000"
+			frequency=			"veryrare"
+			modifiers=			"MajorItem; Specialty; Luminous; NotForSale"
+
+			description=		"The luminous A150 shield is capable of completely dampening the effect of conversion-shock, however at the cost of a slightly longer re-acclimation time."
+
+			sortName=			"Luminous shields, A150"
+			>
+
+		<Events>
+			<onInstall>
+				(block Nil
+					(objSetData gSource 'NumberResisted 0)
+					(objSetData gSource 'NumberHits 0)
+					(objSetData gSource 'LastDamageType aDamageType)
+					(objSetData gSource 'ResistanceAmount 0)
+				)
+			</onInstall>
+			<onUninstall>
+				(block Nil
+					(objSetData gSource 'NumberResisted 0)
+					(objSetData gSource 'NumberHits 0)
+					(objSetData gSource 'LastDamageType aDamageType)
+					(objSetData gSource 'ResistanceAmount 0)
+				)
+			</onUninstall>
+			<onShieldDamage>
+				(block (Resist Reflect)
+					(if (eq aDamageType (objGetData gSource 'LastDamageType))
+						(block Nil
+							(if (geq (objGetData gSource 'NumberHits) 9)
+								(block Nil
+									(objSetData gSource 'NumberHits (add (objGetData gSource 'NumberHits) 1))
+									(setq Resist (add (objGetData gSource 'ResistanceAmount) (subtract (objGetData gSource 'NumberHits) 8)))
+									(if (geq Resist 101)
+										(setq Resist 100)
+									)
+									(setq aShieldDamageHP (divide (multiply aShieldDamageHP (subtract 100 (divide Resist 1))) 100))
+									(if (geq (random 1 100) (subtract 100 (divide Resist 1)))
+										(setq Reflect 'reflect)
+										(setq Reflect Nil)
+									)
+									(objSetData gSource 'ResistanceAmount Resist)
+								)
+								(block Nil
+									(objSetData gSource 'NumberHits (add (objGetData gSource 'NumberHits) 1))
+									(setq Reflect Nil)
+								)
+							)
+						)
+						(block Nil
+							(if (geq (objGetData gSource 'NumberHits) 9)
+								(block Nil
+									(objSetData gSource 'NumberHits 0)
+									(objSetData gSource 'LastDamageType aDamageType)
+									(setq aShieldDamageHP (divide (multiply aShieldDamageHP (add 100 (multiply 0 Resist))) 100))
+									(objSetData gSource 'ResistanceAmount 0)
+									(setq Reflect Nil)
+								)
+								(block Nil
+									(objSetData gSource 'NumberHits 0)
+									(objSetData gSource 'LastDamageType aDamageType)
+									(objSetData gSource 'ResistanceAmount 0)
+									(setq Reflect Nil)
+								)
+							)
+						)
+					)
+					(list Reflect aShieldDamageHP aArmorDamageHP)
+				)
+			</onShieldDamage>
+		</Events>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"150"
+				regen=			"30"
+				depletionDelay=	"360"
+				powerUse=		"1500"
+				/>
+
+	</ItemType>
+
+	<ItemType UNID="&itAdaptiveShield4;"
+			inherit=			"&baShieldBase;"
+			name=				"Luminous A-X shield"
+			level=				"11"
+			value=				"390000"
+			mass=				"2000"
+			frequency=			"veryrare"
+			modifiers=			"MajorItem; Specialty; Luminous; NotForSale"
+
+			description=		"The pinacle of adaptive resistance technology, the Luminous A-X shield is capable of everything the A150 shield can do, without the long adaptation periods."
+
+			sortName=			"Luminous shields, A150"
+			>
+
+		<Events>
+			<onInstall>
+				(block Nil
+					(objSetData gSource 'NumberResisted 0)
+					(objSetData gSource 'NumberHits 0)
+					(objSetData gSource 'LastDamageType aDamageType)
+					(objSetData gSource 'ResistanceAmount 0)
+				)
+			</onInstall>
+			<onUninstall>
+				(block Nil
+					(objSetData gSource 'NumberResisted 0)
+					(objSetData gSource 'NumberHits 0)
+					(objSetData gSource 'LastDamageType aDamageType)
+					(objSetData gSource 'ResistanceAmount 0)
+				)
+			</onUninstall>
+			<onShieldDamage>
+				(block (Resist Reflect)
+					(if (eq aDamageType (objGetData gSource 'LastDamageType))
+						(block Nil
+							(if (geq (objGetData gSource 'NumberHits) 5)
+								(block Nil
+									(objSetData gSource 'NumberHits (add (objGetData gSource 'NumberHits) 1))
+									(setq Resist (add (objGetData gSource 'ResistanceAmount) (subtract (objGetData gSource 'NumberHits) 4)))
+									(if (geq Resist 101)
+										(setq Resist 100)
+									)
+									(setq aShieldDamageHP (divide (multiply aShieldDamageHP (subtract 100 (divide Resist 1))) 100))
+									(if (geq (random 1 100) (subtract 100 (divide Resist 1)))
+										(setq Reflect 'reflect)
+										(setq Reflect Nil)
+									)
+									(objSetData gSource 'ResistanceAmount Resist)
+								)
+								(block Nil
+									(objSetData gSource 'NumberHits (add (objGetData gSource 'NumberHits) 1))
+									(setq Reflect Nil)
+								)
+							)
+						)
+						(block Nil
+							(if (geq (objGetData gSource 'NumberHits) 5)
+								(block Nil
+									(objSetData gSource 'NumberHits 0)
+									(objSetData gSource 'LastDamageType aDamageType)
+									(setq aShieldDamageHP (divide (multiply aShieldDamageHP (add 100 (multiply 0 Resist))) 100))
+									(objSetData gSource 'ResistanceAmount 0)
+									(setq Reflect Nil)
+								)
+								(block Nil
+									(objSetData gSource 'NumberHits 0)
+									(objSetData gSource 'LastDamageType aDamageType)
+									(objSetData gSource 'ResistanceAmount 0)
+									(setq Reflect Nil)
+								)
+							)
+						)
+					)
+					(list Reflect aShieldDamageHP aArmorDamageHP)
+				)
+			</onShieldDamage>
+		</Events>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"200"
+				regen=			"36"
+				depletionDelay=	"360"
+				powerUse=		"3500"
+				/>
+
+	</ItemType>
+
+	<!-- Luminous Drone -->
+
+	<ShipClass UNID="&scLuminousProbeL;"
+			manufacturer=		""
+			class=				"Luminous probe"
+			type=				""
+			score=				"200"
+
+			mass=				"50"
+			reactorPower=		"1000"
+			cargoSpace=			"0"
+			thrust=				"350"
+			maneuver=			"2"
+			maxSpeed=			"30"
+			rotationCount=		"40"
+			maxDevices=			"2"
+			cyberDefenseLevel=	"5"
+			leavesWreck=		"5"
+
+			attributes=			"AI, genericClass, luminous, luminousDrone"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itLuminousArmature;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itLightIonBlaster;" posAngle="180" minFireArc="180" maxFireArc="180"/>
+		</Devices>
+
+		<Items>
+			<Item chance="50" count="1d6" item="&itHeliumAssembly;"/>
+			<Item chance="5"  count="1"	  item="&itOpticalKnowledgeArray;"/>
+		</Items>
+
+		<Image imageID="&rsLuminousProbeL;" imageX="0" imageY="0" imageWidth="32" imageHeight="32"/>
+
+		<AISettings
+			aggressor=			"true"
+			fireRateAdj=		"30"
+			fireRangeAdj=		"50"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+		<Events>
+		</Events>
+
+	</ShipClass>
+
+	<ShipClass UNID="&scLuminousPod;"
+			manufacturer=		""
+			class=				"Luminous pod"
+			type=				""
+			score=				"400"
+
+			mass=				"150"
+			reactorPower=		"1000"
+			cargoSpace=			"10"
+			thrust=				"650"
+			maneuver=			"2"
+			maxSpeed=			"20"
+			rotationCount=			"40"
+			maxDevices=			"2"
+			cyberDefenseLevel=	"10"
+			leavesWreck=		"25"
+
+			attributes=			"AI, genericClass, luminous, luminousDrone"
+			>
+
+		<Armor>
+			<ArmorSection start="270" span="180" armorID="&itLuminousArmature;"/>
+			<ArmorSection start="90" span="180" armorID="&itLuminousArmature;"/>
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itIonBlaster;" posAngle="180" minFireArc="180" maxFireArc="180"/>
+			<!--<Device deviceID="&itYoroiS500;"/>-->
+		</Devices>
+
+		<Items>
+			<Item chance="50" count="1d6" item="&itHeliumAssembly;"/>
+			<Item chance="5"  count="1"	  item="&itOpticalKnowledgeArray;"/>
+		</Items>
+
+		<Image imageID="&rsLuminousPod;" imageX="0" imageY="0" imageWidth="56" imageHeight="56"/>
+
+		<AISettings
+			aggressor=			"true"
+			fireRateAdj=		"40"
+			fireRangeAdj=		"50"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+		<Events>
+		</Events>
+
+	</ShipClass>
+
+	<!-- Luminous Drone -->
+
+	<ShipClass UNID="&scLuminousHunter;"
+			manufacturer=		""
+			class=				"Luminous Hunter"
+			type=				""
+			score=				"2000"
+
+			mass=				"200"
+			reactorPower=			"5000"
+			cargoSpace=			"30"
+			thrust=				"650"
+			maneuver=			"2"
+			maxSpeed=			"25"
+			rotationCount=			"40"
+			cyberDefenseLevel=	"10"
+			leavesWreck=		"100"
+
+			attributes=			"AI, genericClass, luminous, luminousDrone"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itAdvancedLuminousArmature;" areaSet="0,2" />
+			<ArmorSection start="225" span="90" armorID="&itAdvancedLuminousArmature;" areaSet="3,4" />
+			<ArmorSection start="135" span="90" armorID="&itAdvancedLuminousArmature;" areaSet="1,6" />
+			<ArmorSection start="45"  span="90" armorID="&itAdvancedLuminousArmature;" areaSet="7,13" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itLightIonBlaster;"/>
+			<Device deviceID="&itLuminousSeeker;" secondaryWeapon="true" minFireArc="359" maxFireArc="1"  posAngle="90" posRadius="36"/>
+			<Device deviceID="&itLuminousSeeker;" secondaryWeapon="true" minFireArc="359" maxFireArc="1"  posAngle="270" posRadius="36"/>
+			<Device deviceID="&itAdaptiveShield2;"/>
+		</Devices>
+
+		<Items>
+			<Item chance="50" count="1d6" item="&itHeliumAssembly;"/>
+			<Item chance="5"  count="1"	  item="&itOpticalKnowledgeArray;"/>
+		</Items>
+
+		<Image imageID="&rsLuminousHunter;" imageX="0" imageY="0" imageWidth="84" imageHeight="84"/>
+
+		<AISettings
+			aggressor=			"true"
+			fireRateAdj=		"10"
+			fireRangeAdj=		"100"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+		<Events>
+		</Events>
+
+	</ShipClass>
+
+	<!-- Luminous Armature -->
+
+	<ItemType UNID="&itHeavyLuminousArmature;"
+			name=				"[segment(s) of ] heavy Luminous armature"
+			level=				"6"
+			value=				"2000"
+			mass=				"4000"
+			modifiers=			"Luminous; MinorItem; NotForSale;"
+			frequency=			"rare"
+			numberAppearing=	"1d4"
+
+			description=		"The Luminous's pod assemblers are protected with this armor. It is a conductive exotic alloy that resists ion, positron, and thermo damage."
+
+			sortName=			"Luminous armature, segment of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=	"150"
+				hpBonus=	"  +0,  +0,  +0,  +0,+100,+100,+50"
+
+				repairTech=	"7"
+				repairCostAdj=	"200"
+				installCostAdj=	"250"
+				/>
+
+	</ItemType>
+
+	<!-- Luminous Armature -->
+
+	<ItemType UNID="&itAdvancedLuminousArmature;"
+			name=				"[segment(s) of ] advanced Luminous armature"
+			level=				"7"
+			value=				"4200"
+			mass=				"5000"
+			modifiers=			"Luminous; MinorItem; NotForSale;"
+			frequency=			"veryrare"
+			numberAppearing=	"1d4"
+
+			description=		"The Luminous's hunters are protected with this armor. It is a conductive exotic alloy that resists ion, positron, and thermo damage."
+
+			sortName=			"Luminous armature, segment of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=	"200"
+				hpBonus=	"  +0,  +0,  +30,  +30,+150,+150,+75,+50"
+
+				repairTech=	"8"
+				repairCostAdj=	"200"
+				installCostAdj=	"250"
+				/>
+
+	</ItemType>
+
+	<!-- Luminous Armature -->
+
+	<ItemType UNID="&itMassiveLuminousArmature;"
+			name=				"[segment(s) of ] massive Luminous armature"
+			level=				"9"
+			value=				"18000"
+			mass=				"20000"
+			modifiers=			"Luminous; MinorItem; NotForSale;"
+			frequency=			"veryrare"
+			numberAppearing=	"1d4"
+
+			description=		"The Luminous's meta-assemblers are protected with this armor. It is a conductive exotic alloy that resists ion, positron, and thermo damage."
+
+			sortName=			"Luminous armature, segment of"
+			>
+
+		<Image imageID="&rsItems1;" imageX="0" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=	"500"
+				hpBonus=	"  +0,  +0,  +50,  +50,+200,+200,+100,+100,+50"
+
+				repairTech=	"10"
+				repairCostAdj=	"200"
+				installCostAdj=	"250"
+				/>
+
+	</ItemType>
+<!--
+	<ItemType UNID="&itAdaptiveShield1;"
+			inherit=			"&baShieldBase;"
+			name=				"Luminous adaptive deflector"
+			level=				"8"
+			value=				"30000"
+			mass=				"1000"
+			frequency=			"veryrare"
+			modifiers=			"Luminous; NotForSale; MajorItem"
+			showReference=		"true"
+
+			description=		"This shield deflector is able to adapt to incomming shots, improving its resistance against that type of damage."
+
+			sortName=			"deflector, adaptive"
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Events>
+			<onShieldDamaged>
+				;get the attacker, get their damage type
+			(block (attacker damage resistance restype oldresistance oldrestype las kin prt bst ion thm pos pls ant nno gra sng acd fre stl lgt)
+				(setq attacker (shpGetAttacker (itmGetShip gSource)))
+				(setq damage (objGetDamageType attacker))
+				(setq oldresistance (objGetData gSource "curresistance"))
+				(Setq oldrestype (objGetData gSoure "oldrestype"))
+				(switch
+					(eq damage oldrestype)
+					(block Nil
+						(setq aDamage (subtract aDamage (divide (multiply aDamage (divide oldresistance 10)) 10)))
+					)
+
+					(block Nil
+						(setq aDamage (add aDamage (divide (multiply aDamage (divide oldresistance 10)) 10)))
+					)
+				)
+			)
+			</onShieldDamaged>
+		</Events>
+
+		<Shields
+				hitPoints=		"100"
+				regen=			"30"
+				depletionDelay=	"300"
+				powerUse=		"500"
+				/>
+	</ItemType>
+-->
+	<!-- Luminous Assembler -->
+
+	<StationType UNID="&stLuminousAssembler;"
+			name=				"Luminous Assembler"
+			sovereign=			"&svDestructiveOrder;"
+			dockScreen=			"&dsAbandonedStation;"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+
+			multiHull=			"true"
+			armorID=			"&itLuminousArmature;"
+			maxHitPoints=		"300"
+			hitPoints=			"300"
+			explosionType=		"&vtThermoExplosion2;"
+			ejectaType=			"&vtWreckEjecta;"
+
+			attributes=			"luminous,enemy,envWater,envAvoidsEarth"
+			levelFrequency=		"----- -ucur ----- ----- -----"
+			locationCriteria=	"+planetary,-void"
+			enemyExclusionRadius="50"
+			>
+
+		<Image			imageID="&rsStations8;" imageX="0" imageY="0" imageWidth="192" imageHeight="192"/>
+
+		<Devices>
+		</Devices>
+
+		<Items>
+			<RandomItem count="1d6"
+					criteria=			"* +Info"
+					level=				"7"
+					levelCurve=			"1"
+					/>
+			<Table>
+				<Item chance="25"	count="1d6"	item="&itOpticalKnowledgeArray;" />
+				<Item chance="20"	count="1d4"	item="&itLuminousArmature;" />
+				<Item chance="35"	count="1d6"	item="&itLuminousScareProgram;" />
+				<Item chance="20"	count="1"	item="&itLuminousTameProgram;" />
+			</Table>
+		</Items>
+
+		<Ships>
+			<Ship			count="1d4"	class="&scLuminousDrone;"	orders="patrol" patrolDist="5"/>
+			<Ship			count="2d3"	class="&scLuminousPod;"		orders="patrol" patrolDist="5"/>
+			<Ship			count="3d3"	class="&scLuminousProbeL;"	orders="wander"/>
+			<Ship			count="2-1d2"	class="&scLuminousHunter;"	orders="wander"/>
+		</Ships>
+
+		<GlobalData>
+			<Resist>
+				; particle  blast  ion  thermo  total
+				(1 1 1 1 4)
+			</Resist>
+		</GlobalData>
+
+		<Construction constructionRate="500" maxConstruction="12">
+			<Table>
+				<Ship chance="50" count="1"	class="&scLuminousDrone;" orders="patrol" patrolDist="5"/>
+				<Ship chance="15" count="1"	class="&scLuminousProbeL;" orders="wander"/>
+				<Ship chance="30" count="1"	class="&scLuminousPod;" orders="patrol" patrolDist="5"/>
+				<Ship chance="5" count="1"	class="&scLuminousHunter;" orders="wander"/>
+			</Table>
+		</Construction>
+
+		<Encounters frequency="common">
+			<Table>
+			<Ship	chance="35"					   count="1"	 class="&scLuminousDrone;" eventHandler="&evStdPatrolEncounterBehavior;">
+				<Escorts>
+					<Ship					   count="1d4-1" class="&scLuminousDrone;" orders="escort"/>
+				</Escorts>
+			</Ship>
+			<Ship	chance="10"					   count="1"	 class="&scLuminousProbeL;" eventHandler="&evStdPatrolEncounterBehavior;">
+				<Escorts>
+					<Ship					   count="0" class="&scLuminousDrone;" orders="escort"/>
+				</Escorts>
+			</Ship>
+			<Ship	chance="50"					   count="1"	 class="&scLuminousPod;" eventHandler="&evStdPatrolEncounterBehavior;">
+				<Escorts>
+					<Ship					   count="1d4" class="&scLuminousPod;" orders="escort"/>
+				</Escorts>
+			</Ship>
+			<Ship	chance="5"					   count="1"	 class="&scLuminousHunter;" eventHandler="&evStdPatrolEncounterBehavior;">
+				<Escorts>
+					<Ship					   count="0" class="&scLuminousDrone;" orders="escort"/>
+				</Escorts>
+			</Ship>
+			</Table>
+		</Encounters>
+
+	</StationType>
+
+
+
+
+</TranscendenceModule>

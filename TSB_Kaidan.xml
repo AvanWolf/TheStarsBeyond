@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!ENTITY unidExtension						"0xE314000E">
+
+<!-- IMAGES -->
+
+	<!ENTITY rsKaidanFighter						"0xE3140400">
+	<!ENTITY rsKaidanCarrier						"0xE3140401">
+
+<!-- DEVICES -->
+
+	<!ENTITY itKaidanChaingun						"0xE3141300">
+	<!ENTITY itKaidanVulcan							"0xE3141301">
+	<!ENTITY itKaidanChaingunDual						"0xE3141302">
+	<!ENTITY itKaidanChaingunOmni						"0xE3141303">
+	<!ENTITY itKaidanVulcanOmni						"0xE3141304">
+	<!ENTITY itKaidanLauncher						"0xE3141305">
+	<!ENTITY itKaidanFusionCannon						"0xE3141306">
+	<!ENTITY itKaidanFusionTurret						"0xE3141307">
+	<!ENTITY itKaidanBlastCannon						"0xE3141308">
+	<!ENTITY itKaidanBlastTurret						"0xE3141309">
+	<!ENTITY itKaidanLauncherOmni						"0xE314130A">
+	<!ENTITY itKaidanBlastBattery						"0xE314130B">
+	<!ENTITY itKaidanFusionBattery						"0xE314130C">
+
+<!-- SHIPS -->
+
+	<!ENTITY scKaidanFighter						"0xE3146300">
+	<!ENTITY scKaidanCarrier						"0xE3146301">
+
+]>
+<TranscendenceModule> <!-- UNID="0xE314000#" version="1.0" -->
+
+<Image UNID="&rsKaidanCarrier;"		bitmap="resources/images/arescarrier.jpg" bitmask="resources/images/arescarriermask.bmp"   loadOnUse="true"/>
+
+
+
+<!-- Items & Devices -->
+<!-- Weapons -->
+	<ItemType UNID="&itKaidanChaingun;"
+			name=				"Kaidan chaingun"
+			level=				"4"
+			value=				"3000"
+			mass=				"2000"
+			frequency=			"uncommon"
+			modifiers=			"Kaidan; MajorItem"
+			showReference=		"true"
+
+			description=		"Kaidan chainguns are a common weapon in the Republic, used by civilians and the military alike, if only due to their avaliability. It fires many high-speed bullets."
+
+			sortName=			"chaingun, Kaidan"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"kinetic:2d4"
+				fireRate=			"4"
+				missileSpeed=		"60"
+				interaction=		"100"
+				lifetime=			"20"
+				powerUse=			"90"
+
+				sound=				"&snRecoillessCannon;"
+				>
+			<Configuration aimTolerance="5" alternating="true">
+				<Shot posAngle="90" posRadius="2" angle="1d5-3"/>
+				<Shot posAngle="270" posRadius="2" angle="1d5-3"/>
+			</Configuration>
+			<Effect>
+				<Bolt
+						length=				"12"
+						width=				"2"
+						primaryColor=		"0xcd, 0xf3, 0xff"
+						secondaryColor=		"0x8f, 0xa9, 0xb2"
+						/>
+			</Effect>
+
+		</Weapon>
+	</ItemType>
+		<ItemType UNID="&itKaidanChaingunOmni;"
+			name=				"Kaidan chaingun turret"
+			level=				"5"
+			value=				"9000"
+			mass=				"4000"
+			frequency=			"uncommon"
+			modifiers=			"Kaidan; MajorItem"
+			showReference=		"true"
+
+			description=		"Kaidan chaingun turrets are used primarily as secondary armament on Kaidan capital ships, as well as a primary defense system for their freighters."
+
+			sortName=			"chaingun, omni, Kaidan"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				omnidirectional="true"
+				damage=				"kinetic:2d4"
+				fireRate=			"4"
+				missileSpeed=		"60"
+				interaction=		"100"
+				lifetime=			"20"
+				powerUse=			"150"
+
+				sound=				"&snRecoillessCannon;"
+				>
+			<Configuration aimTolerance="5" alternating="true" omnidirectional="true">
+				<Shot posAngle="90" posRadius="2" angle="1d5-3"/>
+				<Shot posAngle="270" posRadius="2" angle="1d5-3"/>
+			</Configuration>
+			<Effect>
+				<Bolt
+						length=				"12"
+						width=				"2"
+						primaryColor=		"0xcd, 0xf3, 0xff"
+						secondaryColor=		"0x8f, 0xa9, 0xb2"
+						/>
+			</Effect>
+
+		</Weapon>
+	</ItemType>
+		<ItemType UNID="&itKaidanChaingunDual;"
+			name=				"Kaidan dual chaingun"
+			level=				"5"
+			value=				"9000"
+			mass=				"5000"
+			frequency=			"uncommon"
+			modifiers=			"Kaidan; MajorItem"
+			showReference=		"true"
+
+			description=		"The Kaidan dual chaingun is used by the Kaidan military's basic fighters."
+
+			sortName=			"chaingun, Kaidan"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"kinetic:2d4"
+				fireRate=			"2"
+				missileSpeed=		"60"
+				interaction=		"100"
+				lifetime=			"20"
+				powerUse=			"180"
+
+				sound=				"&snRecoillessCannon;"
+				>
+			<Configuration aimTolerance="5" alternating="true">
+				<Shot posAngle="90" posRadius="7" angle="1d5-3"/>
+				<Shot posAngle="270" posRadius="7" angle="1d5-3"/>
+				<Shot posAngle="270" posRadius="11" angle="1d5-3"/>
+				<Shot posAngle="90" posRadius="11" angle="1d5-3"/>
+			</Configuration>
+			<Effect>
+				<Bolt
+						length=				"12"
+						width=				"2"
+						primaryColor=		"0xcd, 0xf3, 0xff"
+						secondaryColor=		"0x8f, 0xa9, 0xb2"
+						/>
+			</Effect>
+
+		</Weapon>
+	</ItemType>
+		<ItemType UNID="&itKaidanVulcan;"
+			name=				"Kaidan vulcan"
+			level=				"6"
+			value=				"9500"
+			mass=				"3000"
+			frequency=			"uncommon"
+			modifiers=			"Kaidan; MajorItem"
+			showReference=		"true"
+
+			description=		"The Kaidan vulcan is essentially the same as the chaingun, but firing shells packed with hexagene."
+
+			sortName=			"vulcan, Kaidan"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"blast:2d4"
+				fireRate=			"4"
+				missileSpeed=		"60"
+				interaction=		"100"
+				lifetime=			"20"
+				powerUse=			"350"
+
+				sound=				"&snRecoillessCannon;"
+				>
+			<Configuration aimTolerance="5" alternating="true" omidirectional="true">
+				<Shot posAngle="90" posRadius="2" angle="1d5-3"/>
+				<Shot posAngle="270" posRadius="2" angle="1d5-3"/>
+			</Configuration>
+			<Effect>
+				<Bolt
+						length=				"12"
+						width=				"2"
+						primaryColor=		"0xff, 0xd3, 0xbd"
+						secondaryColor=		"0xb2, 0x99, 0x8f"
+						/>
+			</Effect>
+
+		</Weapon>
+	</ItemType>
+			<ItemType UNID="&itKaidanVulcanOmni;"
+			name=				"Kaidan vulcan turret"
+			level=				"7"
+			value=				"17000"
+			mass=				"5000"
+			frequency=			"rare"
+			modifiers=			"Kaidan; MajorItem"
+			showReference=		"true"
+
+			description=		"Theis is a turreted Kaidan vulcan."
+
+			sortName=			"vulcan, Kaidan"
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				omnidirectional=		"true"
+				damage=				"blast:2d4"
+				fireRate=			"4"
+				missileSpeed=		"60"
+				interaction=		"100"
+				lifetime=			"20"
+				powerUse=			"500"
+
+				sound=				"&snRecoillessCannon;"
+				>
+			<Configuration aimTolerance="5" alternating="true" omidirectional="true">
+				<Shot posAngle="90" posRadius="2" angle="1d5-3"/>
+				<Shot posAngle="270" posRadius="2" angle="1d5-3"/>
+			</Configuration>
+			<Effect>
+				<Bolt
+						length=				"12"
+						width=				"2"
+						primaryColor=		"0xff, 0xd3, 0xbd"
+						secondaryColor=		"0xb2, 0x99, 0x8f"
+						/>
+			</Effect>
+
+		</Weapon>
+	</ItemType>
+		<!-- Thermo Cannon -->
+
+	<ItemType UNID="&itKaidanBlastCannon;"
+			name=				"Kaidan hexagene cannon"
+			level=				"6"
+			value=				"20000"
+			mass=				"6000"
+			frequency=			"uncommon"
+			modifiers=			"MajorItem; Military; Kaidan; Specialty"
+
+			description=		"The hexagene cannon was the Kaidan Republic's most advanced weapon at the time of the syrtian war. It remains a venerable and popular weapon over a century and a half later in the Republic."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				fireRate=			"15"
+				powerUse=			"300"
+				type=			"missile"
+
+				damage=			"blast:4d10; momentum2; WMD4"
+				missileSpeed=	"60"
+				hitPoints=		"10"
+				lifetime=		"75"
+
+				sound=			"&snRecoillessCannon;"
+				>
+
+					<Effect>
+						<Bolt
+							length=				"30"
+							width=				"6"
+							primaryColor=		"0xff, 0xd3, 0xbd"
+							secondaryColor=		"0xc2, 0xa9, 0x8f"
+						/>
+					</Effect>
+
+					<HitEffect
+							sound="&snArmorHit1;"
+							>
+						<Image imageID="&rsMediumExplosions;" 
+								imageX="0" 
+								imageY="0" 
+								imageWidth="64" 
+								imageHeight="64"
+								imageFrameCount="16"
+								imageTicksPerFrame="2"/>
+					</HitEffect>
+
+		</Weapon>
+
+	</ItemType>
+	
+		<ItemType UNID="&itKaidanBlastTurret;"
+			name=				"Kaidan hexagene turret"
+			level=				"7"
+			value=				"40000"
+			mass=				"7000"
+			frequency=			"uncommon"
+			modifiers=			"MajorItem; Military; Kaidan; Specialty"
+
+			description=		"This turreted version of the hexagene cannon provides the Kaidan with a capable omnidirectional weapon. It is often seen on their habitation modules and freighters."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				fireRate=			"15"
+				powerUse=			"500"
+				type=			"missile"
+				omnidirectional="true"
+				damage=			"blast:4d10; momentum2; WMD4"
+				missileSpeed=	"60"
+				hitPoints=		"10"
+				lifetime=		"75"
+
+				sound=			"&snRecoillessCannon;"
+				>
+
+					<Effect>
+						<Bolt
+							length=				"30"
+							width=				"6"
+							primaryColor=		"0xff, 0xd3, 0xbd"
+							secondaryColor=		"0xc2, 0xa9, 0x8f"
+						/>
+					</Effect>
+
+					<HitEffect
+							sound="&snArmorHit1;"
+							>
+						<Image imageID="&rsMediumExplosions;" 
+								imageX="0" 
+								imageY="0" 
+								imageWidth="64" 
+								imageHeight="64"
+								imageFrameCount="16"
+								imageTicksPerFrame="2"/>
+					</HitEffect>
+
+		</Weapon>
+
+	</ItemType>
+	
+		<ItemType UNID="&itKaidanBlastBattery;"
+			name=				"Kaidan hexagene battery"
+			level=				"8"
+			value=				"20000"
+			mass=				"15000"
+			frequency=			"uncommon"
+			modifiers=			"MajorItem; Military; Kaidan; Specialty"
+
+			description=		"The huge turret of the hexagene battery sacrifices range and space in order to put out a huge quantity of hexagene shells."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				fireRate=			"15"
+				powerUse=			"1000"
+				type=			"missile"
+				omnidirectional="true"
+				damage=			"blast:4d10; momentum1; WMD3"
+				missileSpeed=	"50"
+				hitPoints=		"10"
+				lifetime=		"70"
+
+				sound=			"&snRecoillessCannon;"
+				>
+			<Configuration aimTolerance="5">
+				<Shot posAngle="90" posRadius="5" angle="1d5-3"/>
+				<Shot posAngle="0" posRadius="5" angle="1d5-3"/>
+				<Shot posAngle="270" posRadius="5" angle="1d5-3"/>
+			</Configuration>
+					<Effect>
+						<Bolt
+							length=				"30"
+							width=				"6"
+							primaryColor=		"0xff, 0xd3, 0xbd"
+							secondaryColor=		"0xc2, 0xa9, 0x8f"
+						/>
+					</Effect>
+
+					<HitEffect
+							sound="&snArmorHit1;"
+							>
+						<Image imageID="&rsMediumExplosions;" 
+								imageX="0" 
+								imageY="0" 
+								imageWidth="64" 
+								imageHeight="64"
+								imageFrameCount="16"
+								imageTicksPerFrame="2"/>
+					</HitEffect>
+
+		</Weapon>
+
+	</ItemType>
+	
+		<ItemType UNID="&itKaidanFusionCannon;"
+			name=				"Kaidan fusion cannon"
+			level=				"7"
+			value=				"40000"
+			mass=				"6500"
+			frequency=			"uncommon"
+			modifiers=			"MajorItem; Military; Kaidan; Specialty"
+
+			description=		"The pinacle of Kaidan technology is the Fusion cannon line weapons. Still an ancient design based off of the thermo cannon, it provides significant firepower even today."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				fireRate=			"15"
+				powerUse=			"300"
+				type=			"missile"
+
+				damage=			"thermo:4d7; momentum2; WMD4"
+				missileSpeed=	"60"
+				hitPoints=		"10"
+				lifetime=		"75"
+				directional=		"true"
+				sound=			"&snRecoillessCannon;"
+				>
+
+					<Effect>
+						<Image imageID="&rsMissiles2;" imageX="64" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+					</Effect>
+
+					<HitEffect
+							sound="&snArmorHit1;"
+							>
+						<Image imageID="&rsMediumExplosions;" 
+								imageX="0" 
+								imageY="0" 
+								imageWidth="64" 
+								imageHeight="64"
+								imageFrameCount="16"
+								imageTicksPerFrame="2"/>
+					</HitEffect>
+
+		</Weapon>
+
+	</ItemType>
+	
+		<ItemType UNID="&itKaidanFusionTurret;"
+			name=				"Kaidan fusion turret"
+			level=				"8"
+			value=				"100000"
+			mass=				"8000"
+			frequency=			"uncommon"
+			modifiers=			"MajorItem; Military; Kaidan; Specialty"
+
+			description=		"This turreted version of the fusion cannon is often seen on Kaidan capital ships."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				fireRate=			"15"
+				powerUse=			"500"
+				type=			"missile"
+				omnidirectional="true"
+				damage=			"thermo:4d7; momentum2; WMD4"
+				missileSpeed=	"60"
+				hitPoints=		"10"
+				lifetime=		"75"
+				directional=		"true"
+				sound=			"&snRecoillessCannon;"
+				>
+
+					<Effect>
+						<Image imageID="&rsMissiles2;" imageX="64" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+					</Effect>
+
+					<HitEffect
+							sound="&snArmorHit1;"
+							>
+						<Image imageID="&rsMediumExplosions;" 
+								imageX="0" 
+								imageY="0" 
+								imageWidth="64" 
+								imageHeight="64"
+								imageFrameCount="16"
+								imageTicksPerFrame="2"/>
+					</HitEffect>
+
+		</Weapon>
+
+	</ItemType>
+	
+		<ItemType UNID="&itKaidanFusionBattery;"
+			name=				"Kaidan fusion battery"
+			level=				"9"
+			value=				"220000"
+			mass=				"20000"
+			frequency=			"uncommon"
+			modifiers=			"MajorItem; Military; Kaidan; Specialty"
+
+			description=		"The Kaidan fusion battery's turret is largest and heaviest weapon the Kaidan have built. It is capable of dealing out an incredible an incredible amount of damage from its three cannons."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				fireRate=			"15"
+				powerUse=			"1000"
+				type=			"missile"
+				omnidirectional="true"
+				damage=			"thermo:4d7; momentum1; WMD3"
+				missileSpeed=	"50"
+				hitPoints=		"10"
+				lifetime=		"70"
+				directional=		"true"
+				sound=			"&snRecoillessCannon;"
+				>
+			<Configuration aimTolerance="5">
+				<Shot posAngle="90" posRadius="5" angle="1d5-3"/>
+				<Shot posAngle="0" posRadius="5" angle="1d5-3"/>
+				<Shot posAngle="270" posRadius="5" angle="1d5-3"/>
+			</Configuration>
+					<Effect>
+						<Image imageID="&rsMissiles2;" imageX="64" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+					</Effect>
+
+					<HitEffect
+							sound="&snArmorHit1;"
+							>
+						<Image imageID="&rsMediumExplosions;" 
+								imageX="0" 
+								imageY="0" 
+								imageWidth="64" 
+								imageHeight="64"
+								imageFrameCount="16"
+								imageTicksPerFrame="2"/>
+					</HitEffect>
+
+		</Weapon>
+
+	</ItemType>
+
+	<!-- Ships -->
+	
+	<ShipClass UNID="&scKaidanCarrier;"
+			manufacturer=		"Kaidan Republic"
+			class=				"Adamantine"
+			type=				"carrier"
+			score=				"3750"
+
+			mass=				"75000"
+			cargoSpace=			"50000"
+			thrust=				"90000"
+			maneuver=			"10"
+			maxSpeed=			"12"
+			rotationCount=			"40"
+			cyberDefenseLevel=	"9"
+			explosionType=		"&vtThermoExplosion4;"
+			leavesWreck=		"100"
+
+			attributes=			"kaidan,genericClass"
+			>
+
+		<Events>
+			<onCreate>
+			</onCreate>
+			<onSpawnTimer>
+			</onSpawnTimer>
+			<onDestroy>
+			</onDestroy>
+		</Events>
+
+
+		<Armor>
+
+			<ArmorSection start="350" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="340" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="330" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="320" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="310" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="300" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="290" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="280" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="270" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="260" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="250" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="240" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+
+			<ArmorSection start="230" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="220" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="210" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="200" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="190" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="180" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="170" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="160" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="150" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="140" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="130" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="120" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+
+			<ArmorSection start="110" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="100" span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="90"  span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="80"  span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="70"  span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="60"  span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="50"  span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="40"  span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="30"  span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="20"  span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="10"  span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+			<ArmorSection start="0"   span="10" armorID="&itMassiveTharsisPlate;" areaSet="7,13" />
+		</Armor>
+
+		<Devices>
+			<!-- <Device deviceID="&itAresPlasmaCannon;" posAngle="0" posRadius="100"/> -->
+			<Device deviceID="&itKaidanChaingun;" minFireArc="0" maxFireArc="170" secondaryWeapon="true" posAngle="10" posRadius="110"/>
+			<Device deviceID="&itKaidanChaingun;" minFireArc="190" maxFireArc="360" secondaryWeapon="true" posAngle="350" posRadius="110"/>
+			<Device deviceID="&itKaidanChaingun;" minFireArc="0" maxFireArc="170" secondaryWeapon="true" posAngle="13" posRadius="80"/>
+			<Device deviceID="&itKaidanChaingun;" minFireArc="190" maxFireArc="360" secondaryWeapon="true" posAngle="347" posRadius="80"/>
+			<Device deviceID="&itKaidanChaingun;" minFireArc="0" maxFireArc="170" secondaryWeapon="true" posAngle="30" posRadius="40"/>
+			<Device deviceID="&itKaidanChaingun;" minFireArc="190" maxFireArc="360" secondaryWeapon="true" posAngle="330" posRadius="40"/>
+			<Device deviceID="&itKaidanFusionTurret;" omnidirectional="true" secondaryWeapon="true" posAngle="0" posRadius="50"/>
+			<Device deviceID="&itKaidanFusionTurret;" omnidirectional="true" secondaryWeapon="true" posAngle="0" posRadius="25"/>
+			<Device deviceID="&itKaidanFusionCannon;" minFireArc="0" maxFireArc="170" secondaryWeapon="true" posAngle="90" posRadius="16"/>
+			<Device deviceID="&itKaidanFusionCannon;" minFireArc="190" maxFireArc="360" secondaryWeapon="true" posAngle="270" posRadius="16"/>
+			<Device deviceID="&itKaidanChaingun;" minFireArc="0" maxFireArc="170" secondaryWeapon="true" posAngle="120" posRadius="40"/>
+			<Device deviceID="&itKaidanChaingun;" minFireArc="190" maxFireArc="360" secondaryWeapon="true" posAngle="240" posRadius="40"/>
+			<Device deviceID="&itKaidanFusionBattery;" omnidirectional="true" secondaryWeapon="true" posAngle="180" posRadius="50"/>
+			<Device deviceID="&itKaidanFusionBattery;" secondaryWeapon="true" posAngle="180" posRadius="70"/>
+			<Device deviceID="&itKaidanVulcan;" minFireArc="0" maxFireArc="170" secondaryWeapon="true" posAngle="160" posRadius="45"/>
+			<Device deviceID="&itKaidanVulcan;" minFireArc="190" maxFireArc="360" secondaryWeapon="true" posAngle="200" posRadius="45"/>
+			<Device deviceID="&itKaidanVulcan;" minFireArc="0" maxFireArc="170" secondaryWeapon="true" posAngle="165" posRadius="50"/>
+			<Device deviceID="&itKaidanVulcan;" minFireArc="190" maxFireArc="360" secondaryWeapon="true" posAngle="195" posRadius="50"/>
+			<Device deviceID="&itKaidanVulcan;" minFireArc="0" maxFireArc="170" secondaryWeapon="true" posAngle="168" posRadius="60"/>
+			<Device deviceID="&itKaidanVulcan;" minFireArc="190" maxFireArc="360" secondaryWeapon="true" posAngle="192" posRadius="60"/>
+			<!-- <Device deviceID="&itKaidunShields;"/> -->
+		</Devices>
+
+		<Image imageID="&rsKaidanCarrier;" imageX="0" imageY="0" imageWidth="320" imageHeight="320" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+			<Item				count="24d12"	item="&itPteracniumFuelRod;"/>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	
+</TranscendenceModule>

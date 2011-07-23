@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!ENTITY unidExtension						"0xE3140003">
+
+	<!ENTITY rsCollectiveFighter						"0xE3140120">
+	<!ENTITY rsCollectiveBomb						"0xE3140121">
+	<!ENTITY rsCollectiveMiner						"0xE3140122">
+	<!ENTITY rsCollectiveCarrier						"0xE3140123">
+	<!ENTITY rsCollectiveFactory						"0xE3140124">
+	<!ENTITY snCollectiveNeutron						"0xE3140125">
+	<!ENTITY svCollective							"0xE3140126">
+
+	<!ENTITY itCollectiveNeutron						"0xE3141020">
+	<!ENTITY vtCollectiveBomb						"0xE3141021">
+	<!ENTITY vtCollectiveCarrier						"0xE3141023">
+
+	<!ENTITY scCollectiveFighter						"0xE3146020">
+	<!ENTITY scCollectiveBomb						"0xE3146021">
+	<!ENTITY scCollectiveMiner						"0xE3146022">
+	<!ENTITY scCollectiveCarrier						"0xE3146023">
+	<!ENTITY scCollectiveFactory						"0xE3146024">
+
+]>
+<TranscendenceModule> <!-- UNID="0xE314000#" version="1.0" -->
+
+	<Sovereign UNID="&svCollective;"
+			name="Commonwealth Autonomous Collective"
+			alignment="constructive chaos"
+			/>
+
+	<Image UNID="&rsCollectiveFighter;"	bitmap="resources/images/cwcollectivedrone.jpg" 	bitmask="resources/images/cwcollectivedronemask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsCollectiveBomb;"	bitmap="resources/images/cwcollectivebomb.jpg" 		bitmask="resources/images/cwcollectivebombmask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsCollectiveMiner;"	bitmap="resources/images/cwcollectiveminer.jpg" 	bitmask="resources/images/cwcollectiveminermask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsCollectiveCarrier;"	bitmap="resources/images/cwcollectivecarrier.jpg" 	bitmask="resources/images/cwcollectivecarriermask.bmp" loadOnUse="true"/>
+	<Image UNID="&rsCollectiveFactory;"	bitmap="resources/images/cwcollectivefactory.jpg" 	bitmask="resources/images/cwcollectivefactorymask.bmp" loadOnUse="true"/>
+
+	<Sound UNID="&snCollectiveNeutron;"			filename="resources\sounds\neutron.wav"/>
+
+	<ItemType UNID="&itCollectiveNeutron;"
+			name=				"Neutron Blaster"
+			level=				"5"
+			value=				"2000"
+			mass=				"500"
+			frequency=			"notRandom"
+			modifiers=			"Collective; EnergyWeapon; MajorItem; NotForSale;"
+
+			description=		"This is an extremely light, high-power, particle cannon firing packeted pulses of neutrons, designed specifically for the Collective Drones."
+			>
+
+		<Image imageID="&rsItems1;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				omnidirectional=	"false"
+				damage=				"particle:2d7+3"
+				fireRate=			"10"
+				missileSpeed=		"100"
+				interaction=		"0"
+				lifetime=			"12"
+				powerUse=			"160"
+
+				sound=				"&snCollectiveNeutron;"
+				>
+
+			<Effect>
+				<ImageAndTail 
+						imageID=			"&rsMissiles;" 
+						imageX=				"96" 
+						imageY=				"0" 
+						imageWidth=			"16" 
+						imageHeight=		"16"
+						imageFrameCount=	"2"
+						imageTicksPerFrame=	"2"
+
+						length=				"32"
+						width=				"3"
+						primaryColor=		"0x99, 0xff, 0x99"
+						secondaryColor=		"0x22, 0xff, 0x22"
+						/>
+			</Effect>
+
+		</Weapon>
+
+	</ItemType>
+
+	<ItemType UNID="&vtCollectiveBomb;"
+			name=				"collective bomb thermo explosion 1"
+			virtual=			"true"
+			>
+		<Events>
+			<onFireWeapon>
+				<!-- (sysObjKill gSource) -->
+			</onFireWeapon>
+		</Events>
+		<Weapon
+				type=				"radius"
+				hitEffect=		"&efFusionExplosion1;"
+				canHitSource=			"true"
+				damage=				"thermo:8d24; momentum1; WMD3"
+				minRadius=			"1"
+				maxRadius=			"5"
+				fireRate=			"10"
+				missileSpeed=		"0"
+				>
+
+			<Effect>
+				<Image imageID="&rsExplosionsAG128;"
+						imageX="0"
+						imageY="0"
+						imageWidth="128"
+						imageHeight="128"
+						imageFrameCount="16"
+						imageTicksPerFrame="2"/>
+
+				<Flare
+						style=				"fadingBlast"
+						radius=				"170"
+						lifetime=			"12" 
+						primaryColor=		"0xff, 0xff, 0xf0"
+						/>
+			</Effect>
+
+			<Fragment
+					count=			"1"
+					type=			"area"
+
+					damage=			"thermo:2d24; momentum3; WMD1"
+					expansionSpeed=	"25"
+					missileSpeed=	"0"
+					lifetime=		"18"
+					hitPoints=		"50"
+					>
+
+				<Effect>
+					<Shockwave
+							fadeStart=	"70"
+						>
+						<Image imageID=				"&rsShockwave3;"
+								imageX=				"0"
+								imageY=				"0"
+								imageWidth=			"512"
+								imageHeight=		"128"
+								imageFrameCount=	"1"
+								imageTicksPerFrame=	"1"/>
+					</Shockwave>
+				</Effect>
+			</Fragment>
+
+			<Fragment
+					count=			"1d8+12"
+					type=			"missile"
+
+					damage=			"blast:6d12; momentum2; WMD3"
+					missileSpeed=	"15-27"
+					lifetime=		"12-20"
+					hitPoints=		"50"
+					>
+
+				<Effect>
+					<Image imageID="&rsMissiles3;" imageX="0" imageY="0" imageWidth="16" imageHeight="16" rotationCount="20"/>
+
+					<SmokeTrail
+							spread=			"10-20"
+							particleLifetime="16"
+							emitDuration=	"80"
+							emitRate=		"16-20"
+							emitSpeed=		"20-25"
+							>
+						<ParticleEffect>
+							<Particle
+									style=			"flame"
+									maxWidth=		"2-6"
+									/>
+						</ParticleEffect>
+					</SmokeTrail>
+				</Effect>
+			</Fragment>
+
+		</Weapon>
+	</ItemType>
+	
+	<ItemType UNID="&vtCollectiveCarrier;"
+			name=				"collective carrier launch weapon"
+			virtual=			"true"
+			attributes=			"collectiveCarrierWeapon"
+			charges=			"1"
+			>
+		<Events>
+			<onFireWeapon>
+				(block (target)
+					;set its orders to return home
+					(switch
+						(eq (objGetData gSource 'creator) 'gate)
+						(block Nil
+							(shpCancelOrders gSource)
+							(shpOrder gSource 'gate)
+						)
+						(eq (objGetData gSource 'creator) 'carrier)
+						(block (carrier orders)
+							(setq carrier (sysFindObject gSource "sFN +collectiveFabricator; -shipwreck;"))
+							(shpCancelOrders gSource)
+							(shpOrder gSource 'dock carrier)
+							;(setq orders (shpGetOrder carrier))
+							;(shpCancelOrders gSource)
+							;(shpOrder gSource 'hold 120)
+							;(objSetData gSource 'Orders orders)
+						)
+						(eq (objGetData gSource 'creator) Nil) ;else
+						(block Nil) ; don't change orders just attack and die
+						
+						;else we got an error so we should kill the player
+						;(block (evil)
+						;	(setq evil (sysCreateShip &scIocrymCommandShip; (objGetPos gPlayership) &svAres;))
+						;	(shpOrder evil 'attack gPlayership)
+						;
+						; ... just kidding
+						;
+						;	(objDestroy evil)
+						;)
+						;give an error in debug log and justlet it keep attacking
+						;this should never happen
+						(dbgLog '(Collective Carrier Error: Incorrect setting for 'creator data))
+					)
+					;Find target orders if any
+					(setq target (objGetData gSource 'target))
+					;create ships
+					(switch
+						(geq (random 0 100) 20) ; create 8 fighter drones
+						(block (pos ship)
+							(setq pos (objGetPos gSource))
+							(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+							(if (not (eq target Nil)) (shpOrder ship 'attack target) (block (target2) (setq target2 (sysFindObject gSource "EA -shipwreck")) (shpOrder ship 'attack target2)))
+							(shpOrder ship 'gate)
+							(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+							(if (not (eq target Nil)) (shpOrder ship 'attack target) (block (target2) (setq target2 (sysFindObject gSource "EA -shipwreck")) (shpOrder ship 'attack target2)))
+							(shpOrder ship 'gate)
+							(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+							(if (not (eq target Nil)) (shpOrder ship 'attack target) (block (target2) (setq target2 (sysFindObject gSource "EA -shipwreck")) (shpOrder ship 'attack target2)))
+							(shpOrder ship 'gate)
+							(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+							(if (not (eq target Nil)) (shpOrder ship 'attack target) (block (target2) (setq target2 (sysFindObject gSource "EA -shipwreck")) (shpOrder ship 'attack target2)))
+							(shpOrder ship 'gate)
+							(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+							(if (not (eq target Nil)) (shpOrder ship 'attack target) (block (target2) (setq target2 (sysFindObject gSource "EA -shipwreck")) (shpOrder ship 'attack target2)))
+							(shpOrder ship 'gate)
+							(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+							(if (not (eq target Nil)) (shpOrder ship 'attack target) (block (target2) (setq target2 (sysFindObject gSource "EA -shipwreck")) (shpOrder ship 'attack target2)))
+							(shpOrder ship 'gate)
+							(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+							(if (not (eq target Nil)) (shpOrder ship 'attack target) (block (target2) (setq target2 (sysFindObject gSource "EA -shipwreck")) (shpOrder ship 'attack target2)))
+							(shpOrder ship 'gate)
+							(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+							(if (not (eq target Nil)) (shpOrder ship 'attack target) (block (target2) (setq target2 (sysFindObject gSource "EA -shipwreck")) (shpOrder ship 'attack target2)))
+							(shpOrder ship 'gate)
+						)
+						
+						
+						;else create a bomb drone
+						(block (pos ship)
+							(setq pos (objGetPos gSource))
+							(setq ship (sysCreateShip &scCollectiveBomb; pos &svCollective;))
+							(shpOrder ship 'attackNearestEnemy)
+						)
+					)
+				)
+			</onFireWeapon>
+			<onDamageArmor>
+				0
+			</onDamageArmor>
+			<onDamageShields>
+				0
+			</onDamageShields>
+		</Events>
+		<Weapon
+				type=				"radius"
+				canHitSource=			"true"
+				damage=				"generic:1"
+				minRadius=			"0"
+				maxRadius=			"0"
+				fireRate=			"10"
+				missileSpeed=		"100"
+				lifeTime=		"100"
+				charges=			"true"
+				>
+		</Weapon>
+	</ItemType>
+	
+	
+	<ShipClass UNID="&scCollectiveFighter;"
+			manufacturer=		"Commonwealth Autonomous Collective"
+			class=				"Collective Fighter Drone"
+			type=				""
+			score=				"80"
+
+			mass=				"1"
+			cargoSpace=			"0"
+			thrust=				"50"
+			maneuver=			"1"
+			maxSpeed=			"35"
+
+			rotationCount=			"20"
+
+			leavesWreck=		"10"
+
+			attributes=			"genericClass; collectiveFighter"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itCeralloyArmor;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itCollectiveNeutron;"/>
+		</Devices>
+
+		<Image imageID="&rsCollectiveFighter;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+
+	<ShipClass UNID="&scCollectiveBomb;"
+			manufacturer=		"Commonwealth Autonomous Collective"
+			class=				"Collective Bomb Drone"
+			type=				""
+			score=				"100"
+			
+			mass=				"100"
+			cargoSpace=			"0"
+			thrust=				"150"
+			maneuver=			"1"
+			maxSpeed=			"30"
+
+			rotationCount=			"20"
+
+			leavesWreck=		"0"
+
+			attributes=			"genericClass; collectiveBomb"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itBlastPlate;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&vtCollectiveBomb;"/>
+		</Devices>
+
+		<Events>
+			
+		</Events>
+
+		<Image imageID="&rsCollectiveBomb;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"3"
+			fireRangeAdj=		"3"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scCollectiveMiner;"
+			manufacturer=		"Commonwealth Autonomous Collective"
+			class=				"Collective Mining Drone"
+			type=				""
+			score=				"50"
+
+			mass=				"1"
+			cargoSpace=			"0"
+			thrust=				"50"
+			maneuver=			"1"
+			maxSpeed=			"30"
+
+			rotationCount=			"20"
+
+			leavesWreck=		"20"
+
+			attributes=			"genericClass; collectiveMiner"
+			>
+
+		<Armor>
+			<ArmorSection start="0" span="360" armorID="&itHeavyCeralloyArmor;" areaSet="0,2,3,7" />
+		</Armor>
+
+		<Devices>
+		</Devices>
+
+		<Image imageID="&rsCollectiveMiner;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+
+	<ShipClass UNID="&scCollectiveCarrier;"
+			manufacturer=		"Commonwealth Autonomous Collective"
+			class=				"Collective Drone Carrier"
+			type=				""
+			score=				"250"
+
+			mass=				"200"
+			cargoSpace=			"0"
+			thrust=				"400"
+			maneuver=			"2"
+			maxSpeed=			"25"
+
+			rotationCount=			"40"
+
+			leavesWreck=		"90"
+
+			attributes=			"genericClass; collectiveCarrier"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itAdvancedCeralloyArmor;"/>
+			<ArmorSection start="225" span="90" armorID="&itAdvancedCeralloyArmor;"/>
+			<ArmorSection start="135" span="90" armorID="&itAdvancedCeralloyArmor;"/>
+			<ArmorSection start="45"  span="90" armorID="&itAdvancedCeralloyArmor;"/>
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itCollectiveNeutron;" secondaryWeapon="true" omnidirectional="true"/>
+			<Device deviceID="&vtCollectiveCarrier;" omnidirectional="true"/>
+		</Devices>
+
+		<Events>
+			<onDestroy>
+				(block Nil
+					(objSetData gSource 'status 'dead)
+				)
+			</onDestroy>
+		</Events>
+		
+		<Image imageID="&rsCollectiveCarrier;" imageX="0" imageY="0" imageWidth="48" imageHeight="48" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scCollectiveFactory;"
+			manufacturer=		"Commonwealth Autonomous Collective"
+			class=				"Collective Drone Fabricator"
+			type=				""
+			score=				"500"
+
+			dockScreen=			"Main"
+			abandonedScreen=	"&dsAbandonedStation;"
+			
+			mass=				"200"
+			cargoSpace=			"0"
+			thrust=				"400"
+			maneuver=			"2"
+			maxSpeed=			"20"
+
+			rotationCount=			"40"
+
+			leavesWreck=		"100"
+
+			attributes=			"genericClass; collectiveFabricator"
+			>
+
+		<Armor>
+			<ArmorSection start="330" span="60" armorID="&itAdvancedCeralloyArmor;" />
+			<ArmorSection start="270" span="60" armorID="&itAdvancedCeralloyArmor;" />
+			<ArmorSection start="210" span="60" armorID="&itAdvancedCeralloyArmor;" />
+			<ArmorSection start="150" span="60" armorID="&itAdvancedCeralloyArmor;" />
+			<ArmorSection start="90"  span="60" armorID="&itAdvancedCeralloyArmor;" />
+			<ArmorSection start="30"  span="60" armorID="&itAdvancedCeralloyArmor;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itCollectiveNeutron;" omnidirectional="true"/>
+			<Device deviceID="&itCollectiveNeutron;" secondaryWeapon="true" omnidirectional="true" posAngle="0" posRadius="40" minFireAngle="260" maxFireAngle="100"/>
+			<Device deviceID="&itCollectiveNeutron;" secondaryWeapon="true" omnidirectional="true" posAngle="330" posRadius="45" minFireAngle="285" maxFireAngle="180"/>
+			<Device deviceID="&itCollectiveNeutron;" secondaryWeapon="true" omnidirectional="true" posAngle="30" posRadius="45" minFireAngle="180" maxFireAngle="75"/>
+			<Device deviceID="&itClass3Deflector;"/>
+		</Devices>
+		
+		<Events>
+			<onCreate>
+				(block (pos carrier1 carrier2)
+					(setq pos (objGetPos gSource))
+					(setq carrier1 (sysCreateShip &scCollectiveCarrier; pos &svCollective;))
+					(shpOrder carrier1 'dock gSource)
+					(objSetData carrier1 'creator 'carrier)
+					(setq carrier2 (sysCreateShip &scCollectiveCarrier; pos &svCollective;))
+					(shpOrder carrier2 'dock gSource)
+					(objSetData carrier1 'creator 'carrier)
+					(objSetData gSource 'carrierAlpha carrier1)
+					(objSetData gSource 'carrierBeta carrier2)
+					(objRegisterForEvents gSource carrier1)
+					(objRegisterForEvents gSource carrier2)
+					(sysAddObjRecurringTimerEvent 600 gSource "onCarrierCheck")
+					(sysAddObjRecurringTimerEvent 600 gSource "onProxCheck")
+					(sysAddObjTimerEvent 240 gSource "onCreateDelay")
+					(sysAddObjTimerEvent 1 gSource "onCreatePause")
+				)
+			</onCreate>
+			<onCreatePause>
+				(block (orders)
+					(setq orders (shpGetOrder gSource))
+					(shpCancelOrders gSource)
+					(shpOrder gSource "hold")
+					(objSetData gSource 'Orders orders)
+				)
+			</onCreatePause>
+			<onCreateDelay>
+				(block (orders)
+					(shpCancelOrders gSource)
+					(shpOrder gSource "wander")
+					(setq orders (shpGetOrder gSource))
+					(objSetData gSource 'Orders orders)
+				)
+			</onCreateDelay>
+			<onCarrierCheck>
+				(block (pos carrier1 carrier2)
+					(setq carrier1 (objGetData gSource 'carrierAlpha))
+					(setq carrier2 (objGetData gSource 'carrierBeta))
+					(if (eq (objGetData carrier1 'status) 'dead)
+						(setq carrier1 (sysCreateShip &scCollectiveCarrier; pos &svCollective;))
+						(shpOrder carrier1 'dock gSource)
+						(objSetData gSource 'carrierAlpha carrier1)
+						(objRegisterForEvents gSource carrier1)
+					)
+					(if (eq (objGetData carrier2 'status) 'dead)
+						(setq carrier2 (sysCreateShip &scCollectiveCarrier; pos &svCollective;))
+						(shpOrder carrier2 'dock gSource)
+						(objSetData gSource 'carrierBeta carrier2)
+						(objRegisterForEvents gSource carrier2)
+					)
+				)
+			</onCarrierCheck>
+			<onProxCheck>
+				(block (orders)
+					(if (not (eq Nil (sysFindObject gSource "sF N:5 +collectiveCarrier")))
+						(block Nil
+							(setq orders (shpGetOrder gSource))
+							(shpCancelOrders gSource)
+							(shpOrder gSource 'hold)
+							(objSetData gSource 'Orders orders)
+						)
+						(block Nil)
+					)
+				)
+			</onProxCheck>
+			<onObjDocked>
+				(block (target carrier armor)
+					;first we need to verify if this ship is a drone carrier
+					(if (eq (shpGetClass aObjDocked) &scCollectiveCarrier;)
+						(block Nil
+							(setq carrier aObjDocked)
+							;if this is true
+							;repair the ship
+							;(setq armor (objGetItems carrier "*aI")) ;;NOTE there are two things being used here just in case
+							;(enum armor theArmor
+							;	(itmRepairItem theArmor)
+							;)
+							(objRepairArmor carrier 0)
+							(objRepairArmor carrier 1)
+							(objRepairArmor carrier 2)
+							(objRepairArmor carrier 3)
+							(objRepairArmor carrier 4)
+							(objRepairArmor carrier 5)
+							;give it a fresh squadron of some sort of fighters or bombs
+							(setq carrierweapon (objGetItems carrier "*wV +collectiveCarrierWeapon"))
+							(enum carrierweapon theWeapon
+								(itmSetCharges theWeapon 1)
+							)
+							;send it off on a mission to attack nearest enemy ares station's gaurds
+							;(setq target (sysFindObject gSource "*NE T:ares; -shipwreck;"))
+							(setq target (sysFindObject gSource "*NEA T:ares; -shipwreck;"))
+							;(setq target (filter (sysFindObject gSource "*E T:ares; -shipwreck") obj (not (eq (objGetVisibleDamage obj) 100))))
+							;(if (gr (count target) 0) (setq target (item target 0)))
+							;now we cancel any standing orders
+							(shpCancelOrders carrier)
+							(if (eq target Nil)
+								;Find nearest enemy station
+								(block Nil
+									;(setq target (sysFindObject gSource "*NET -shipwreck;"))
+									(setq target (sysFindObject gSource "*NEAT -shipwreck;"))
+									;(setq target (filter (sysFindObject gSource "*ET -shipwreck") obj (not (eq (objGetVisibleDamage obj) 100))))
+									(if (gr (count target) 0) (setq target (item target 0)))
+									(if (eq target Nil)
+										(shpOrder carrier 'attackNearestEnemy)
+										(shpOrder carrier 'attack target)
+									)
+								)
+								;otherwise we just attack
+								(shpOrder carrier 'attack target)
+							)
+							(shpOrder gSource (objGetData gSource 'Orders))
+							;(objSetData carrier 'target target)
+						)
+						
+						;BUT
+						;else
+						;on fait rien
+						(block Nil)
+					)
+				)
+			</onObjDocked>
+			<onDestroy>
+			;swarm the killer with drones from the wreck
+			(block (ship carrier pos)
+				(setq pos (objGetPos gSource))
+				(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+				(shpCancelOrders ship)
+				(shpOrder ship 'attack aDestroyer)
+				(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+				(shpCancelOrders ship)
+				(shpOrder ship 'attack aDestroyer)
+				(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+				(shpCancelOrders ship)
+				(shpOrder ship 'attack aDestroyer)
+				(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+				(shpCancelOrders ship)
+				(shpOrder ship 'attack aDestroyer)
+				(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+				(shpCancelOrders ship)
+				(shpOrder ship 'attack aDestroyer)
+				(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+				(shpCancelOrders ship)
+				(shpOrder ship 'attack aDestroyer)
+				(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+				(shpCancelOrders ship)
+				(shpOrder ship 'attack aDestroyer)
+				(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+				(shpCancelOrders ship)
+				(shpOrder ship 'attack aDestroyer)
+				(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+				(shpCancelOrders ship)
+				(shpOrder ship 'attack aDestroyer)
+				(setq ship (sysCreateShip &scCollectiveFighter; pos &svCollective;))
+				(shpCancelOrders ship)
+				(shpOrder ship 'attack aDestroyer)
+				(setq carrier (sysCreateShip &scCollectiveCarrier; (objGetPos (sysFindObject gSource "*NG")) &svCollective;))
+				(objSetData carrier 'creator 'gate)
+				(shpCancelOrders carrier)
+				(shpOrder carrier 'attack aDestroyer)
+				(objSetData carrier 'target aDestroyer)
+				(setq carrier (sysCreateShip &scCollectiveCarrier; (objGetPos (sysFindObject gSource "*NG")) &svCollective;))
+				(objSetData carrier 'creator 'gate)
+				(shpCancelOrders carrier)
+				(shpOrder carrier 'attack aDestroyer)
+				(objSetData carrier 'target aDestroyer)
+				(setq carrier (sysCreateShip &scCollectiveCarrier; (objGetPos (sysFindObject gSource "*NG")) &svCollective;))
+				(objSetData carrier 'creator 'gate)
+				(shpCancelOrders carrier)
+				(shpOrder carrier 'attack aDestroyer)
+				(objSetData carrier 'target aDestroyer)
+				(setq carrier (sysCreateShip &scCollectiveCarrier; (objGetPos (sysFindObject gSource "*NG")) &svCollective;))
+				(objSetData carrier 'creator 'gate)
+				(shpCancelOrders carrier)
+				(shpOrder carrier 'attack aDestroyer)
+				(objSetData carrier 'target aDestroyer)
+			)
+			</onDestroy>
+		</Events>
+		
+		<Construction constructionRate="100" maxConstruction="20">
+			<Table>
+				<Ship chance="70"	count="1"	class="&scCollectiveFighter;"	 orders="escort"/>
+				<Ship chance="30"	count="3"	class="&scCollectiveMiner;"	orders="mine" controller="ferian"/>
+			</Table>
+		</Construction>
+		
+		<Image imageID="&rsCollectiveFactory;" imageX="0" imageY="0" imageWidth="92" imageHeight="92" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"90"
+			perception=			"4"
+			/>
+			
+		<DockScreens>
+			<Main
+				name=			"=(objGetName gSource)"
+				>
+
+				<Panes>
+					<Default>
+						<Initialize>
+							(scrSetDesc gScreen
+								"You attempt to dock at the Collective Fabricator, but the docking ports are "
+								"incompatable with your ship as they were designed for carrier and miner drones."
+								)
+						</Initialize>
+
+						<Actions>
+							<Action name="Leave" cancel="1" key="L">
+								<Exit/>
+							</Action>
+						</Actions>
+
+					</Default>
+				</Panes>
+			</Main>
+		</DockScreens>
+			
+		<DockingPorts>
+			<Port x="0"		y="50" />
+			<Port x="-50"		y="0" />
+			<Port x="50"		y="0" />
+			<Port x="0"		y="-50" />
+		</DockingPorts>
+	</ShipClass>
+
+</TranscendenceModule>

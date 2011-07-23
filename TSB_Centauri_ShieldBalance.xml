@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!ENTITY unidExtension						"0xE3140006">
+
+
+
+]>
+<TranscendenceModule> <!-- UNID="0xE314000#" version="1.0" -->
+
+	<ItemType UNID="&itHullPlateIonizer;"
+			name=				"hull plate ionizer"
+			level=				"2"
+			value=				"1500"
+			mass=				"1500"
+			frequency=			"uncommon"
+			modifiers=			"MajorItem; NAMI"
+			showReference=		"true"
+
+			description=		"This device ionizes a ship's hull, repelling kinetic and blast damage. The ionization field weakens as the ship's armor is damaged."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"60"
+				armorShield=	"20"
+				hpBonus=		"  -5,+100, -25, +25"
+				regen=			"16"
+				depletionDelay=	"360"
+				powerUse=		"40"
+				/>
+	</ItemType>
+
+</TranscendenceModule>

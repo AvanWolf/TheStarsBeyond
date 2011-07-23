@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!-- <!ENTITY unidExtension						"0xE3140004"> -->
+
+	<!ENTITY rsRasHeavyCruiser						"0xE31406B0">
+
+	<!ENTITY itHeavyTrenton							"0xE31415B0">
+	<!ENTITY itLightTrenton							"0xE31415B1">
+	<!ENTITY itAkan40Cannon							"0xE31415B2">
+	<!ENTITY vtSmartCannonMulti						"0xE31415B3">
+
+	<!ENTITY scRasHeavyCruiser						"0xE31465B0">
+
+]>
+<TranscendenceModule> <!-- UNID="0xE314000#" version="1.0" -->
+
+	<Image UNID="&rsRasHeavyCruiser;"	bitmap="resources/images/rasiermessercruiser.jpg" 		bitmask="resources/images/rasiermessercruiserMask.bmp" loadOnUse="true"/>
+
+	<ShipClass UNID="&scRasHeavyCruiser;"
+			manufacturer=		"Rasiermesser"
+			class=				"Broadsword"
+			type=				"Cruiser"
+			score=				"2300"
+			techOrder=			"mech"
+			
+			mass=				"20000"
+			cargoSpace=			"15000"
+			thrust=				"15000"
+			maneuver=			"10"
+			maxSpeed=			"10"
+			rotationCount=			"40"	
+			cyberDefenseLevel=	"10"
+
+			explosionType=		"&vtThermoExplosion1;"
+			leavesWreck=		"100"
+
+			attributes=			"genericClass,rasiermesser,corporate"
+			>
+
+		<Armor>
+			<ArmorSection start="345" span="15" armorID="&itV300PoweredArmor;" />
+			<ArmorSection start="330" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="315" span="15" armorID="&itV300PoweredArmor;" />
+			<ArmorSection start="300" span="15" armorID="&itV300PoweredArmor;" />
+			<ArmorSection start="285" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="270" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="255" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="240" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="225" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="210" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="195" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="180" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+
+			<ArmorSection start="165" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="150" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="135" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="120" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="105" span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="90"  span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="75"  span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="60"  span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="45"  span="15" armorID="&itV300PoweredArmor;" />
+			<ArmorSection start="30"  span="15" armorID="&itV300PoweredArmor;" />
+			<ArmorSection start="15"  span="15" armorID="&itV300PoweredArmor;" nonCritical="general"/>
+			<ArmorSection start="0"   span="15" armorID="&itV300PoweredArmor;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itRasiermesserLauncher;" omnidirectional="true" secondaryWeapon="true" posAngle="0" posRadius="50"/>
+			<Device deviceID="&itRasiermesserLauncher;" omnidirectional="true" secondaryWeapon="true" posAngle="180" posRadius="50"/>
+			<Device deviceID="&itAkan40Cannon;" posAngle="0" secondaryWeapon="true" posRadius="60"/>
+			<Device deviceID="&vtSmartCannonMulti;" />
+			<!--
+			<Device deviceID="&itRasiermesserLauncher;" minFireArc="357" maxFireArc="3" posAngle="10" posRadius="60"/>
+			<Device deviceID="&itRasiermesserLauncher;" minFireArc="357" maxFireArc="3" posAngle="350" posRadius="60"/>
+			<Device deviceID="&itAkan600Turret;"  omnidirectional="true" secondaryWeapon="true" posAngle="0" posRadius="50"/>
+			<Device deviceID="&itAkan600Turret;"  omnidirectional="true" secondaryWeapon="true" posAngle="180" posRadius="50"/>
+			<Device deviceID="&itSmartCannon;"  secondaryWeapon="true" posAngle="155" posRadius="64" minFireArc="177" maxFireArc="183"/>
+			<Device deviceID="&itSmartCannon;"  secondaryWeapon="true" posAngle="205" posRadius="64" minFireArc="177" maxFireArc="183"/>
+			<Device deviceID="&itSmartCannon;"  secondaryWeapon="true" posAngle="130" posRadius="45" minFireArc="357" maxFireArc="3"/>
+			<Device deviceID="&itSmartCannon;"  secondaryWeapon="true" posAngle="220" posRadius="45" minFireArc="357" maxFireArc="3"/>
+			-->
+			<Device deviceID="&itHeavyTrenton;"/>
+		</Devices>
+
+		<Items>
+			<Item				count="2d12"	item="&itPteracniumFuelRod;"/>
+			<Item				count="1000d5"	item="&itAkan30CannonShell;"/>
+			<Item				count="500d10"	item="&itGotha400Seeker;"/>
+			<Item				count="2000d5"	item="&itSmartCannonShell;"/>
+			<Lookup		count="1"		table="&trMajorItem8;"/>
+			<Table>
+				<Lookup	chance="40"	count="1d4"		table="&trConsumables8;"/>
+				<Lookup	chance="30"	count="1d2"		table="&trMinorItem8;"/>
+				<Lookup	chance="30"	count="1"		table="&trMajorItem7;"/>
+			</Table>
+		</Items>
+
+		<Image imageID="&rsRasHeavyCruiser;" imageX="0" imageY="0" imageWidth="208" imageHeight="208" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"20"
+			fireAccuracy=		"0"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+
+<!--
+fighter:dagger
+gunship:shortsword
+destroyer:longsword
+battleship:broadsword
+missileboat:arrow
+missilebarge:ballista
+dreadnought:claymore
+dragon
+-->
+
+	<ItemType UNID="&itLightTrenton;"
+			name=				"light Trenton field generator"
+			level=				"6"
+			value=				"80000"
+			mass=				"1500"
+			frequency=			"rare"
+			attributes=			"MajorItem; Specialty; Rasiermesser"
+
+			description=		"Trenton shields regenerate much faster than others, but at the cost of allowing some damage to leak through."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"110"
+				absorbAdj=		"95,95, 90, 90,  85, 85, 70, 70,  60, 60, 50, 50,  20, 20, 10, 10"
+				regen=			"100"
+				depletionDelay=	"180"
+				powerUse=		"850"
+				/>
+
+	</ItemType>
+
+	<ItemType UNID="&itHeavyTrenton;"
+			name=				"heavy Trenton field generator"
+			level=				"8"
+			value=				"80000"
+			mass=				"3500"
+			frequency=			"rare"
+			attributes=			"MajorItem; Specialty; Rasiermesser"
+
+			description=		"Trenton shields regenerate much faster than others, but at the cost of allowing some damage to leak through."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"200"
+				absorbAdj=		"100,100, 100, 100,  95, 95, 90, 90,  85, 85, 80, 80,  30, 30, 30, 30"
+				regen=			"140"
+				depletionDelay=	"150"
+				powerUse=		"850"
+				/>
+
+	</ItemType>
+
+	<!-- Akan 30 Cannon -->
+
+	<ItemType UNID="&itAkan40Cannon;"
+			name=				"Akan 40 cannon"
+			level=				"6"
+			value=				"13000"
+			mass=				"13000"
+			frequency=			"common"
+			attributes=			"MajorItem; Specialty; Rasiermesser"
+
+			description=		"The Akan 40 is a powerful cannon designed by the Rasiermesser Corporation, using a pair of Akan 30 cannons in a linked configuration. This weapon requires Akan 30 cannon shells."
+			>
+
+		<Image imageID="&rsItemsRasiermesser3;" imageX="96" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				fireRate=			"5"
+				powerUse=			"90"
+				>
+
+			<Missiles>
+				<Missile ammoID="&itAkan30CannonShell;"
+						type=			"missile"
+						configuration=		"alternating"
+						damage=			"blast:3d12; momentum2; WMD2"
+						missileSpeed=	"50"
+						lifetime=		"120"
+						hitPoints=		"4"
+						directional=	"true"
+						sound=			"&snRecoillessCannon;"
+						>
+
+					<Effect>
+						<MoltenBolt
+								width=				"4"
+								length=				"16"
+								growth=				"3"
+								primaryColor=		"0xea, 0xed, 0xae"
+								secondaryColor=		"0xc0, 0xc2, 0x85"
+								/>
+					</Effect>
+
+					<HitEffect
+							sound="&snArmorHit1;"
+							>
+						<Image imageID="&rsExplosionsAG48;"
+								imageX="0"
+								imageY="0"
+								imageWidth="48"
+								imageHeight="48"
+								imageFrameCount="16"
+								imageTicksPerFrame="2"/>
+					</HitEffect>
+				</Missile>
+			</Missiles>
+
+		</Weapon>
+
+	</ItemType>
+
+	<ItemType UNID="&vtSmartCannonMulti;"
+			name=				"(Rasiermesser SmartCannon Multi)"
+			attributes=			"Virtual; Rasiermesser"
+			virtual=		"true"
+			>
+
+		<Image imageID="&rsItemsRasiermesser1;" imageX="288" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon UNID="&itSmartCannon;" itemID="&itSmartCannon;"
+				fireRate=			"4"
+				powerUse=			"10"
+				>
+
+			<Missiles>
+				<Missile ammoID="&itSmartCannonShell;"
+						type=			"missile"
+
+						damage=			"kinetic:2d8+1; WMD1"
+						missileSpeed=	"50"
+						lifetime=		"60"
+						interaction=	"50"
+						maneuverability="2"
+						sound=			"&snRecoillessCannon;"
+						vaporTrailLength="5"
+						vaporTrailWidth="350"
+						vaporTrailWidthInc="-5"
+						vaporTrailColor="0xd0, 0xd0, 0xd0"
+						multiTarget=		"true"
+						>
+					<Configuration aimTolerance="180" alternating="true">
+						<Shot posAngle="155" posRadius="64" angle="180"/>
+						<Shot posAngle="205" posRadius="64" angle="180"/>
+						<Shot posAngle="130" posRadius="45"/>
+						<Shot posAngle="220" posRadius="45"/>
+					</Configuration>
+					<Effect>
+						<Bolt
+								length=				"16"
+								width=				"3"
+								primaryColor=		"0xcd, 0xf3, 0xff"
+								secondaryColor=		"0x8f, 0xa9, 0xb2"
+								/>
+					</Effect>
+
+				</Missile>
+			</Missiles>
+
+		</Weapon>
+
+	</ItemType>
+	
+	
+	
+<!-- overwrite-->
+
+
+
+	<!--<ItemType UNID="&itTrentonFieldGenerator;"
+			name=				"Trenton field generator"
+			level=				"7"
+			value=				"40000"
+			mass=				"2300"
+			frequency=			"rare"
+			attributes=			"MajorItem; Specialty; Rasiermesser"
+
+			description=		"Trenton shields regenerate much faster than others, but at the cost of allowing some damage to leak through."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"160"
+				absorbAdj=		"100,100, 95, 95,  90, 90, 85, 85,  75, 75, 75, 75,  25, 25, 25, 25"
+				regen=			"120"
+				depletionDelay=	"180"
+				powerUse=		"500"
+				/>
+
+	</ItemType>-->
+
+	<!-- Lazarus Shield Generator -->
+
+	<!--<ItemType UNID="&itLazarusShieldGenerator;"
+			name=				"Lazarus shield generator"
+			level=				"10"
+			value=				"250000"
+			mass=				"2500"
+			frequency=			"notRandom"
+			attributes=			"MajorItem; Military; Dvalin; Specialty; Rasiermesser;"
+
+			description=		"The Lazarus is an experimental shield generator based on the Trenton shield line. It has a phenomenal generation rate and does not leak damage, but it consumes large amounts of power."
+			>
+
+		<Image imageID="&rsItems1;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Shields
+				hitPoints=		"72"
+				regenTime=		"10"
+				regenHP=		"12"
+				depletionDelay=	"5"
+				powerUse=		"4000"
+				/>
+
+	</ItemType>-->
+
+	<ItemType UNID="&itSmartCannon;"
+			name=				"Rasiermesser SmartCannon"
+			level=				"3"
+			value=				"1300"
+			mass=				"3000"
+			attributes=			"MajorItem; Specialty; Rasiermesser"
+			frequency=			"uncommon"
+
+			description=		"Rasiermesser brought the SmartCannon to market despite opposition from law enforcement. The weapon requires SmartCannon rounds."
+			>
+
+		<Image imageID="&rsItemsRasiermesser1;" imageX="288" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon UNID="&itSmartCannon;" itemID="&itSmartCannon;"
+				fireRate=			"15"
+				powerUse=			"10"
+				>
+
+			<Missiles>
+				<Missile ammoID="&itSmartCannonShell;"
+						type=			"missile"
+
+						damage=			"kinetic:2d8+1; WMD1"
+						missileSpeed=	"50"
+						lifetime=		"60"
+						interaction=	"50"
+						maneuverability="2"
+						aimTolerance="180"
+						sound=			"&snRecoillessCannon;"
+						vaporTrailLength="5"
+						vaporTrailWidth="350"
+						vaporTrailWidthInc="-5"
+						vaporTrailColor="0xd0, 0xd0, 0xd0"
+						>
+
+					<Effect>
+						<Bolt
+								length=				"16"
+								width=				"3"
+								primaryColor=		"0xcd, 0xf3, 0xff"
+								secondaryColor=		"0x8f, 0xa9, 0xb2"
+								/>
+					</Effect>
+
+				</Missile>
+			</Missiles>
+
+		</Weapon>
+
+	</ItemType>
+	
+	<!-- Kiloton Cannon -->
+
+	<ItemType UNID="&itKilotonCannon;"
+			name=				"kiloton cannon"
+			level=				"7"
+			value=				"50000"
+			mass=				"4000"
+			frequency=			"uncommon"
+			attributes=			"Rasiermesser; MajorItem; Military; Specialty"
+
+			description=		"This heavy nuclear cannon requires kiloton cannon shells."
+			>
+
+		<Image imageID="&rsItemsEI3;" imageX="96" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				fireRate=			"20"
+				powerUse=			"100"
+				>
+
+			<Missiles>
+				<Missile ammoID="&itKilotonCannonShell;"
+						type=			"missile"
+
+						damage=			"thermo:1d8+1; WMD4"
+						missileSpeed=	"50"
+						lifetime=		"120"
+						hitPoints=		"15"
+
+						failsafe=		"10"
+
+						hitEffect=		"&efFragmentationExplosion;"
+						sound=			"&snMissileLauncher;"
+						>
+
+					<Effect>
+						<Image imageID="&rsMissiles;" imageX="0" imageY="48" imageWidth="16" imageHeight="16" imageFrameCount="12" imageTicksPerFrame="3"/>
+					</Effect>
+
+					<Fragment 
+							count=				"48"
+							type=				"beam"
+
+							damage=				"thermo:1d8+1; WMD4"
+							lifetime=			"5"
+
+							beamType=			"heavyblaster"
+							primaryColor=		"0xe6, 0xff, 0x6f"
+							secondaryColor=		"0xff, 0x8c, 0x00"
+							intensity=			"10"
+							/>
+				</Missile>
+			</Missiles>
+
+		</Weapon>
+
+	</ItemType>
+	
+</TranscendenceModule>

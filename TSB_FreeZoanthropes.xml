@@ -1,0 +1,1022 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+<!DOCTYPE TranscendenceModule
+	[
+<!-- UID Codes:
+E314****- Trans X
+E31400**- TX2 modules
+E31401**- Soveriengs, Images, Sounds, Res.
+E3141*** to E3145***- objects/items
+E3146*** to E314D***- space objects
+E314E***- other
+E314F***- reserved for mini-extentions
+-->
+
+
+	<!ENTITY rsFZgrowerstation						"0xE3140690">
+	<!ENTITY rsFZpredatorcolony						"0xE3140691">
+	<!ENTITY rsFZpredatorraider						"0xE3140692">
+	<!ENTITY rsFZpredatorgunship						"0xE3140693">
+	<!ENTITY rsFZpredatorcruiser						"0xE3140694">
+	<!ENTITY rsFZpredatorcolonyship						"0xE3140695">
+	<!ENTITY rsFZpredatorcannon						"0xE3140696">
+	<!ENTITY rsFZpredatorheavyblaster					"0xE3140697">
+	<!ENTITY rsFZpredatorblaster						"0xE3140698">
+	<!ENTITY snFZpredatorcannon						"0xE3140699">
+	<!ENTITY snFZpredatorheavyblaster					"0xE314069A">
+	<!ENTITY snFZpredatorblaster						"0xE314069B">
+	<!ENTITY svFZpredators							"0xE314069C">
+	<!ENTITY svFZgrowers							"0xE314069D">
+	<!ENTITY rsFZpredatorshockwave						"0xE314069E">
+	
+	<!ENTITY itFZgrowerfood1						"0xE3141590">
+	<!ENTITY itFZgrowerfood2						"0xE3141591">
+	<!ENTITY itFZgrowerfood3						"0xE3141592">
+	<!ENTITY itFZgrowerfood4						"0xE3141593">
+	<!ENTITY itFZpredatorcannon						"0xE3141594">
+	<!ENTITY itFZpredatorheavyblaster					"0xE3141595">
+	<!ENTITY itFZpredatorblaster						"0xE3141596">
+	<!ENTITY itFZpredatorblasterdual					"0xE3141597">
+	<!ENTITY itFZpredatorlightarmor						"0xE3141598">
+	<!ENTITY itFZpredatormedarmor						"0xE3141599">
+	<!ENTITY itFZpredatorheavyarmor						"0xE314159A">
+	<!ENTITY itFZpredatorregenerator					"0xE314159B">
+
+	<!ENTITY stFZgrowerstation						"0xE3146590">
+	<!ENTITY stFZpredatorcolony						"0xE3146591">
+	<!ENTITY scFZpredatorraider						"0xE3146592">
+	<!ENTITY scFZpredatorgunship						"0xE3146593">
+	<!ENTITY scFZpredatorcruiser						"0xE3146594">
+	<!ENTITY scFZpredatorcolonyship						"0xE3146595">
+	<!ENTITY stFZpredatorcolonyship						"0xE3146596">
+
+	<!ENTITY tbFZPredatorEncounters						"0xE314E590">
+	
+]>
+<TranscendenceModule>
+
+<Image UNID="&rsFZgrowerstation;"		bitmap="resources/images/FZgrowerstation.jpg" 		bitmask="resources/images/FZgrowerstationMask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsFZpredatorcolony;"		bitmap="resources/images/FZpredatorcolony.jpg" 		bitmask="resources/images/FZpredatorcolonyMask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsFZpredatorraider;"		bitmap="resources/images/FZpredatorlightgunship.jpg" 	bitmask="resources/images/FZpredatorlightgunshipMask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsFZpredatorgunship;"		bitmap="resources/images/FZpredatorgunship.jpg" 	bitmask="resources/images/FZpredatorgunshipMask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsFZpredatorcruiser;"		bitmap="resources/images/FZpredatorcruiser.jpg" 	bitmask="resources/images/FZpredatorcruiserMask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsFZpredatorcolonyship;"		bitmap="resources/images/FZpredatorcolonyship.jpg" 	bitmask="resources/images/FZpredatorcolonyshipMask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsFZpredatorcannon;"		bitmap="resources/images/FZpredatorbigcannon.jpg" 	bitmask="resources/images/FZpredatorbigcannonMask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsFZpredatorheavyblaster;"	bitmap="resources/images/FZpredator1cannon.jpg" 	bitmask="resources/images/FZpredator1cannonMask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsFZpredatorblaster;"		bitmap="resources/images/FZpredatorblaster.jpg" 	bitmask="resources/images/FZpredatorblasterMask.bmp"   loadOnUse="true"/>
+<Image UNID="&rsFZpredatorshockwave;"		bitmap="resources/images/FZpredatorplasmashockwave.jpg" bitmask="resources/images/FZpredatorplasmashockwaveMask.bmp"   loadOnUse="true"/>
+
+<Sound UNID="&snFZpredatorcannon;"				filename="resources/sounds/FZpredcannon3.wav"/>
+<Sound UNID="&snFZpredatorheavyblaster;"			filename="resources/sounds/FZpredcannon2.wav"/>
+<Sound UNID="&snFZpredatorblaster;"				filename="resources/sounds/FZpredcannon.wav"/>
+
+	<Sovereign UNID="&svFZPredators;"
+			name="Predators"
+			alignment="constructive chaos"
+			>
+		<Relationships>
+			<Relationship sovereign="&svAres;" disposition="enemy" mutual="true"/>
+			<!-- <Relationship sovereign="&svTeraton1;" disposition="enemy" mutual="true"/>
+			<Relationship sovereign="&svTeraton2;" disposition="enemy" mutual="true"/>
+			<Relationship sovereign="&svTeraton3;" disposition="enemy" mutual="true"/>
+			<Relationship sovereign="&svTeraton4;" disposition="enemy" mutual="true"/>
+			<Relationship sovereign="&svTeraton5;" disposition="enemy" mutual="true"/> -->
+			<Relationship sovereign="&svRingers;" disposition="enemy" mutual="true"/>
+			<!-- <Relationship sovereign="&svIndependent;" disposition="enemy" mutual="true"/> -->
+			<Relationship sovereign="&svIndependentTrader;" disposition="enemy" mutual="true"/>
+		</Relationships>
+	</Sovereign>
+	<Sovereign UNID="&svFZGrowers;"
+			name="Growers"
+			alignment="neutral"
+			>
+	</Sovereign>
+
+<!-- items -->
+
+	<ItemType UNID="&itFZpredatorlightarmor;"
+			name=				"[segment(s) of ]light Polycerranite armor"
+			level=				"8"
+			value=				"10000"
+			mass=				"1000"
+			attributes=			"MinorItem; Military; Predator; NotForSale;"
+			frequency=			"rare"
+			numberAppearing=	"1d4"
+
+			description=		"Polycerranite is a remarkably resistant and regenerative armor used by the Predators. If unpowered however, quickly decays, and it also disrupts shields. Only the Predators can repair Polycerranite. This segment uses 6MW."
+
+			sortName=			"Polycerranite light armor"
+			>
+
+		<Image imageID="&rsItemsRasiermesser4;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=		"200"
+				hpBonus=		" ***, ***, +1000, +1000,+325,+325,+125,+125"
+				
+				installCostAdj=		"150"
+				repairTech=		"14"
+				
+				regen=			"18"
+				powerUse=		"60"
+				decay=			"0.4"
+				
+				shieldInterference=	"true"
+				blindingDamageAdj=	"0"
+				radiationImmune=	"true"
+				deviceDamageAdj=	"0"
+				EMPDamageAdj=		"0"
+				disintegrationImmune=	"true"
+				/>
+
+	</ItemType>
+	<ItemType UNID="&itFZpredatormedarmor;"
+			name=				"[segment(s) of ]Polycerranite armor"
+			level=				"9"
+			value=				"20000"
+			mass=				"2000"
+			attributes=			"MinorItem; Military; Predator; NotForSale;"
+			frequency=			"rare"
+			numberAppearing=	"1d4"
+
+			description=		"Polycerranite is a remarkably resistant and regenerative armor used by the Predators. If unpowered however, quickly decays, and it also disrupts shields. Only the Predators can repair Polycerranite. This segment uses 13MW."
+
+			sortName=			"Polycerranite armor"
+			>
+
+		<Image imageID="&rsItemsRasiermesser4;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=		"255"
+				hpBonus=		" ***, ***, ***, ***,+400,+400,+175,+175,+25,+25"
+				
+				installCostAdj=		"150"
+				repairTech=		"15"
+				
+				regen=			"25"
+				powerUse=		"130"
+				decay=			".48"
+				
+				shieldInterference=	"true"
+				blindingDamageAdj=	"0"
+				radiationImmune=	"true"
+				deviceDamageAdj=	"0"
+				EMPDamageAdj=		"0"
+				disintegrationImmune=	"true"
+				/>
+
+	</ItemType>
+	<ItemType UNID="&itFZpredatorheavyarmor;"
+			name=				"[segment(s) of ]heavy Polycerranite armor"
+			level=				"10"
+			value=				"45000"
+			mass=				"4000"
+			attributes=			"MinorItem; Military; Predator; NotForSale;"
+			frequency=			"rare"
+			numberAppearing=	"1d4"
+
+			description=		"Polycerranite is a remarkably resistant and regenerative armor used by the Predators. If unpowered however, quickly decays, and it also disrupts shields. Only the Predators can repair Polycerranite. This segment uses 20MW."
+
+			sortName=			"Polycerranite heavy armor"
+			>
+
+		<Image imageID="&rsItemsRasiermesser4;" imageX="192" imageY="0" imageWidth="96" imageHeight="96"/>
+
+		<Armor
+				hitPoints=		"320"
+				hpBonus=		" ***, ***, ***, ***,+500,+500,+250,+250,+75,+75"
+				
+				installCostAdj=		"150"
+				repairTech=		"16"
+				
+				regen=			"33"
+				powerUse=		"200"
+				decay=			".6"
+				
+				shieldInterference=	"true"
+				blindingDamageAdj=	"0"
+				radiationImmune=	"true"
+				deviceDamageAdj=	"0"
+				EMPDamageAdj=		"0"
+				disintegrationImmune=	"true"
+				/>
+
+	</ItemType>
+
+
+	<ItemType UNID="&itFZpredatorblaster;"
+			name=				"Predator blaster"
+			level=				"7"
+			value=				"45000"
+			mass=				"2000"
+			frequency=			"rare"
+			numberAppearing=	"1"
+			attributes=			"MajorItem; Military; Predator"
+
+			description=		"The tritium shells fired by this cannon detonate on contact in a thermonuclear explosion."
+			>
+
+		<Image imageID="&rsItemsNAMI3;" imageX="0" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"plasma:4d8; WMD3"
+				fireRate=			"15"
+				missileSpeed=		"80"
+				lifetime=			"60"
+				powerUse=			"650"
+				failsafe=		"0"
+				interaction=		"0"
+				hitPoints=		"20"
+				sound=				"&snFZpredatorblaster;"
+				>
+
+			<Effect>
+				<Image imageID="&rsFZpredatorblaster;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" rotationCount="40" imageFrameCount="1" imageTicksPerFrame="60"/>
+			</Effect>
+
+			<!--<HitEffect
+					sound="&snArmorHit1;"
+					>
+				<Flare
+							style=			"fadingBlast"
+							radius=			"90"
+							primaryColor=	"0x40, 0xf0, 0xe0"
+							lifetime=		"6"
+							/>
+			</HitEffect>
+			
+			<Fragment 
+					count=			"1"
+					type=			"radius"
+					damage=			"plasma:3d8; momentum1; WMD3"
+					minRadius=		"0"
+					maxRadius=		"2"
+					missileSpeed=	"0"
+					>
+
+				<Effect>
+					<Flare
+							style=			"fadingBlast"
+							radius=			"90"
+							primaryColor=	"0x40, 0xf0, 0xe0"
+							lifetime=		"6"
+							/>
+				</Effect>
+			
+			</Fragment>
+			<Fragment
+					type=				"area"	
+					count=			"1"
+					damage=				"plasma:1d2"
+					fireRate=			"30"
+					expansionSpeed=		"25"
+					missileSpeed=		"0"
+					lifetime=			"7"
+					>
+
+				<Effect>
+					<Shockwave>
+						<Image imageID=				"&rsFZPredatorshockwave;"
+								imageX=				"0" 
+								imageY=				"0" 
+								imageWidth=			"512" 
+								imageHeight=		"100"
+								imageFrameCount=	"1"
+								imageTicksPerFrame=	"1"/>
+					</Shockwave>
+				</Effect>
+
+			</Fragment>-->
+			
+		</Weapon>
+
+	</ItemType>
+	
+	<ItemType UNID="&itFZpredatorblasterdual;"
+			name=				"dual Predator blaster"
+			level=				"8"
+			value=				"98000"
+			mass=				"3500"
+			frequency=			"rare"
+			numberAppearing=	"1"
+			attributes=			"MajorItem; Military; Predator"
+
+			description=		"The tritium shells fired by this cannon detonate on contact in a thermonuclear explosion."
+			>
+
+		<Image imageID="&rsItemsNAMI3;" imageX="0" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+				configuration=			"dual"
+				damage=				"plasma:4d8; WMD3"
+				fireRate=			"15"
+				missileSpeed=		"80"
+				lifetime=			"60"
+				powerUse=			"1250"
+				failsafe=		"0"
+				interaction=		"0"
+				hitPoints=		"20"
+				sound=				"&snFZpredatorblaster;"
+				>
+
+			<Effect>
+				<Image imageID="&rsFZpredatorblaster;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" rotationCount="40" imageFrameCount="1" imageTicksPerFrame="60"/>
+			</Effect>
+
+			<!--<HitEffect
+					sound="&snArmorHit1;"
+					>
+				<Flare
+							style=			"fadingBlast"
+							radius=			"90"
+							primaryColor=	"0x40, 0xf0, 0xe0"
+							lifetime=		"6"
+							/>
+			</HitEffect>
+			
+			<Fragment 
+					count=			"1"
+					type=			"radius"
+					damage=			"plasma:3d8; momentum1; WMD3"
+					minRadius=		"0"
+					maxRadius=		"2"
+					missileSpeed=	"0"
+					>
+
+				<Effect>
+					<Flare
+							style=			"fadingBlast"
+							radius=			"90"
+							primaryColor=	"0x40, 0xf0, 0xe0"
+							lifetime=		"6"
+							/>
+				</Effect>
+			
+			</Fragment>
+			<Fragment
+					type=				"area"	
+					count=			"1"
+					damage=				"plasma:1d2"
+					fireRate=			"30"
+					expansionSpeed=		"25"
+					missileSpeed=		"0"
+					lifetime=			"7"
+					>
+
+				<Effect>
+					<Shockwave>
+						<Image imageID=				"&rsFZPredatorshockwave;"
+								imageX=				"0" 
+								imageY=				"0" 
+								imageWidth=			"512" 
+								imageHeight=		"100"
+								imageFrameCount=	"1"
+								imageTicksPerFrame=	"1"/>
+					</Shockwave>
+				</Effect>
+
+			</Fragment>-->
+			
+		</Weapon>
+
+	</ItemType>
+
+	<ItemType UNID="&itFZpredatorheavyblaster;"
+			name=				"heavy Predator blaster"
+			level=				"9"
+			value=				"170000"
+			mass=				"5000"
+			frequency=			"rare"
+			numberAppearing=	"1"
+			attributes=			"MajorItem; Military; Predator"
+
+			description=		"The tritium shells fired by this cannon detonate on contact in a thermonuclear explosion."
+			>
+
+		<Image imageID="&rsItemsNAMI3;" imageX="0" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"plasma:4d12; WMD5"
+				fireRate=			"20"
+				missileSpeed=		"80"
+				lifetime=			"60"
+				powerUse=			"1750"
+				failsafe=		"0"
+				interaction=		"0"
+				hitPoints=		"30"
+				sound=				"&snFZpredatorheavyblaster;"
+				>
+
+			<Effect>
+				<Image imageID="&rsFZpredatorheavyblaster;" imageX="0" imageY="0" imageWidth="32" imageHeight="32" rotationCount="40" imageFrameCount="4" imageTicksPerFrame="2"/>
+			</Effect>
+
+			<HitEffect
+					sound="&snArmorHit1;"
+					>
+				<Flare
+							style=			"fadingBlast"
+							radius=			"210"
+							primaryColor=	"0x40, 0xf0, 0xe0"
+							lifetime=		"8"
+							/>
+			</HitEffect>
+			
+			<Fragment 
+					count=			"1"
+					type=			"radius"
+					damage=			"plasma:4d12; WMD5"
+					minRadius=		"0"
+					maxRadius=		"5"
+					missileSpeed=	"0"
+					>
+
+				<Effect>
+					<Flare
+							style=			"fadingBlast"
+							radius=			"210"
+							primaryColor=	"0x40, 0xf0, 0xe0"
+							lifetime=		"8"
+							/>
+				</Effect>
+			
+			</Fragment>
+			<Fragment
+					type=				"area"	
+					count=			"1"
+					damage=				"plasma:2d3; WMD1"
+					fireRate=			"30"
+					expansionSpeed=		"30"
+					missileSpeed=		"0"
+					lifetime=			"10"
+					>
+
+				<Effect>
+					<Shockwave>
+						<Image imageID=				"&rsFZPredatorshockwave;"
+								imageX=				"0" 
+								imageY=				"0" 
+								imageWidth=			"512" 
+								imageHeight=		"100"
+								imageFrameCount=	"1"
+								imageTicksPerFrame=	"1"/>
+					</Shockwave>
+				</Effect>
+
+			</Fragment>
+			
+		</Weapon>
+
+	</ItemType>
+	
+	<ItemType UNID="&itFZpredatorcannon;"
+			name=				"Predator cannon"
+			level=				"10"
+			value=				"250000"
+			mass=				"7000"
+			frequency=			"veryrare"
+			numberAppearing=	"1"
+			attributes=			"MajorItem; Military; Predator"
+
+			description=		"The tritium shells fired by this cannon detonate on contact in a thermonuclear explosion."
+			>
+
+		<Image imageID="&rsItemsNAMI3;" imageX="0" imageY="96" imageWidth="96" imageHeight="96"/>
+
+		<Weapon
+				type=				"missile"
+
+				damage=				"plasma:8d12; WMD7"
+				fireRate=			"20"
+				missileSpeed=		"80"
+				lifetime=			"60"
+				powerUse=			"2500"
+				failsafe=		"0"
+				interaction=		"0"
+				hitPoints=		"50"
+				sound=				"&snFZpredatorcannon;"
+				>
+
+			<Effect>
+				<Image imageID="&rsFZpredatorcannon;" imageX="0" imageY="0" imageWidth="80" imageHeight="80" rotationCount="40" imageFrameCount="8" imageTicksPerFrame="2"/>
+			</Effect>
+
+			<HitEffect
+					sound="&snArmorHit1;"
+					>
+				<Flare
+							style=			"fadingBlast"
+							radius=			"210"
+							primaryColor=	"0x40, 0xf0, 0xe0"
+							lifetime=		"8"
+							/>
+			</HitEffect>
+			
+			<Fragment 
+					count=			"1"
+					type=			"radius"
+					damage=			"plasma:8d12; WMD7"
+					minRadius=		"0"
+					maxRadius=		"6"
+					missileSpeed=	"0"
+					>
+
+				<Effect>
+					<Flare
+							style=			"fadingBlast"
+							radius=			"280"
+							primaryColor=	"0x40, 0xf0, 0xe0"
+							lifetime=		"8"
+							/>
+				</Effect>
+			</Fragment>
+			<Fragment
+					type=				"area"	
+					count=			"1"
+					damage=				"plasma:2d6; WMD2"
+					fireRate=			"30"
+					expansionSpeed=		"40"
+					missileSpeed=		"0"
+					lifetime=			"15"
+					>
+
+				<Effect>
+					<Shockwave>
+						<Image imageID=				"&rsFZPredatorshockwave;"
+								imageX=				"0" 
+								imageY=				"0" 
+								imageWidth=			"512" 
+								imageHeight=		"100"
+								imageFrameCount=	"1"
+								imageTicksPerFrame=	"1"/>
+					</Shockwave>
+				</Effect>
+
+			</Fragment>
+			
+		</Weapon>
+
+	</ItemType>
+	
+<!-- ships -->
+	
+	<ShipClass UNID="&scFZpredatorcruiser;"
+			manufacturer=			"Predator colony"
+			class=				""
+			type=				"cruiser"
+			score=				"1900"
+
+			mass=				"8000"
+			cargoSpace=			"1000"
+			thrust=				"8000"
+			maneuver=			"4"
+			maxSpeed=			"16"
+
+			explosionType=		"&vtThermoExplosion1;"
+			leavesWreck=		"100"
+			rotationCount=		"40"
+			attributes=			"predator,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="348" span="24" armorID="&itFZpredatormedarmor;" />
+			<ArmorSection start="324" span="24" armorID="&itFZpredatormedarmor;" />
+			<ArmorSection start="300" span="24" armorID="&itFZpredatormedarmor;" nonCritical="general" />
+			<ArmorSection start="276" span="24" armorID="&itFZpredatormedarmor;" nonCritical="general" />
+			<ArmorSection start="252" span="24" armorID="&itFZpredatormedarmor;" nonCritical="general" />
+			<ArmorSection start="228" span="24" armorID="&itFZpredatormedarmor;" nonCritical="general" />
+			<ArmorSection start="204" span="24" armorID="&itFZpredatormedarmor;" nonCritical="general" />
+			<ArmorSection start="180" span="24" armorID="&itFZpredatormedarmor;" />
+			<ArmorSection start="156" span="24" armorID="&itFZpredatormedarmor;" />
+			<ArmorSection start="132" span="24" armorID="&itFZpredatormedarmor;" nonCritical="general" />
+			<ArmorSection start="108" span="24" armorID="&itFZpredatormedarmor;" nonCritical="general" />
+			<ArmorSection start="84"  span="24" armorID="&itFZpredatormedarmor;" nonCritical="general" />
+			<ArmorSection start="60"  span="24" armorID="&itFZpredatormedarmor;" nonCritical="general" />
+			<ArmorSection start="36"  span="24" armorID="&itFZpredatormedarmor;" nonCritical="general" />
+			<ArmorSection start="12"  span="24" armorID="&itFZpredatormedarmor;" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itFZpredatorheavyblaster;" posAngle="0" posRadius="-20"/>
+			<Device deviceID="&itFZpredatorblaster;" minFireArc="340" maxFireArc="200" secondaryWeapon="true" posAngle="135" posRadius="40"/>
+			<Device deviceID="&itFZpredatorblaster;" minFireArc="160" maxFireArc="20" secondaryWeapon="true" posAngle="225" posRadius="40"/>
+			<Device deviceID="&it250MWReactor;"/>
+		</Devices>
+
+		<Items>
+			<Item count="2d12"	item="&itPteracniumFuelRod;"/>
+		</Items>
+
+		<Image imageID="&rsFZpredatorcruiser;" imageX="0" imageY="0" imageWidth="128" imageHeight="128" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"90"
+			
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scFZpredatorraider;"
+			manufacturer=		"Predatory colony"
+			class=				""
+			type=				"raider"
+			score=				"400"
+
+			mass=				"200"
+			cargoSpace=			"50"
+			thrust=				"350"
+			maneuver=			"2"
+			maxSpeed=			"30"
+
+			leavesWreck=		"80"
+			rotationCount=		"40"
+			attributes=			"predator,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itFZpredatorlightarmor;"/>
+			<ArmorSection start="225" span="90" armorID="&itFZpredatorlightarmor;"/>
+			<ArmorSection start="135" span="90" armorID="&itFZpredatorlightarmor;"/>
+			<ArmorSection start="45"  span="90" armorID="&itFZpredatorlightarmor;"/>
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itFZpredatorblaster;"/>
+		</Devices>
+
+		<Image imageID="&rsFZpredatorraider;" imageX="0" imageY="0" imageWidth="48" imageHeight="48" rotationOffset="0" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scFZpredatorgunship;"
+			manufacturer=		"Predator colony"
+			class=				""
+			type=				"gunship"
+			score=				"800"
+
+			mass=				"200"
+			cargoSpace=			"50"
+			thrust=				"350"
+			maneuver=			"2"
+			maxSpeed=			"25"
+
+			leavesWreck=		"90"
+			rotationCount=		"40"
+			attributes=			"predator,genericClass"
+			>
+
+		<Armor>
+			<ArmorSection start="315" span="90" armorID="&itFZpredatormedarmor;"/>
+			<ArmorSection start="225" span="90" armorID="&itFZpredatormedarmor;"/>
+			<ArmorSection start="135" span="90" armorID="&itFZpredatormedarmor;"/>
+			<ArmorSection start="45"  span="90" armorID="&itFZpredatormedarmor;"/>
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itFZpredatorblasterdual;"/>
+		</Devices>
+
+		<Image imageID="&rsFZpredatorgunship;" imageX="0" imageY="0" imageWidth="64" imageHeight="64" rotationOffset="0" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+		</Items>
+
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			perception=			"6"
+			/>
+
+	</ShipClass>
+	
+	<ShipClass UNID="&scFZpredatorcolonyship;"
+			manufacturer=		"Predator colony"
+			class=				""
+			type=				"colony ship"
+			score=				"10000"
+
+			mass=				"16000"
+			cargoSpace=			"10000"
+			thrust=				"40000"
+			maneuver=			"8"
+			maxSpeed=			"12"
+			rotationCount=		"40"
+			leavesWreck=		"100"
+			explosionType=		"&vtThermoExplosion4;"
+			attributes=			"predator,genericClass"
+			>
+
+		<Armor>
+
+			<ArmorSection start="350" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" />
+			<ArmorSection start="340" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="330" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="320" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="310" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="300" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="290" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="280" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="270" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="260" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="250" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="240" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+
+			<ArmorSection start="230" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="220" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="210" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="200" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="190" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="180" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" />
+			<ArmorSection start="170" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" />
+			<ArmorSection start="160" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="150" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="140" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="130" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="120" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+
+			<ArmorSection start="110" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="100" span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="90"  span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="80"  span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="70"  span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="60"  span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="50"  span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="40"  span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="30"  span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="20"  span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="10"  span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" nonCritical="general" />
+			<ArmorSection start="0"   span="10" armorID="&itFZpredatorheavyarmor;" areaSet="7,13" />
+		</Armor>
+
+		<Devices>
+			<Device deviceID="&itFZpredatorcannon;" posAngle="0" posRadius="-30"/>
+			<Device deviceID="&itFZpredatorblaster;" minFireArc="340" maxFireArc="200" secondaryWeapon="true" posAngle="135" posRadius="40"/>
+			<Device deviceID="&itFZpredatorblaster;" minFireArc="160" maxFireArc="20" secondaryWeapon="true" posAngle="225" posRadius="40"/>
+			<Device deviceID="&itFZpredatorblaster;" minFireArc="340" maxFireArc="200" secondaryWeapon="true" posAngle="45" posRadius="40"/>
+			<Device deviceID="&itFZpredatorblaster;" minFireArc="160" maxFireArc="20" secondaryWeapon="true" posAngle="315" posRadius="40"/>
+			<Device deviceID="&itFZpredatorheavyblaster;" minFireArc="340" maxFireArc="200" secondaryWeapon="true" posAngle="155" posRadius="60"/>
+			<Device deviceID="&itFZpredatorheavyblaster;" minFireArc="160" maxFireArc="20" secondaryWeapon="true" posAngle="205" posRadius="60"/>
+		</Devices>
+
+		<Image imageID="&rsFZpredatorcolonyship;" imageX="0" imageY="0" imageWidth="288" imageHeight="288" rotationOffset="0" imageFrameCount="0" imageTicksPerFrame="0"/>
+
+		<Items>
+		</Items>
+
+		<Reinforcements minShips="2">
+			<Table>
+				<Ship chance="20"	count="1d4+1"	class="&scFZpredatorraider;"	orders="escort"/>
+				<Group chance="45">
+					<Ship			count="1d4"	class="&scFZpredatorraider;"			orders="escort"/>
+					<Ship			count="1d2"	class="&scFZpredatorgunship;"			orders="escort"/>
+				</Group>
+				<Ship chance="20"	count="1d3+2"	class="&scFZpredatorgunship;"			orders="escort"/>
+				<Group chance="10">
+					<Ship			count="1d4"	class="&scFZpredatorraider;"			orders="escort"/>
+					<Ship			count="1d2-1"	class="&scFZpredatorcruiser;"		orders="escort"/>
+				</Group>
+				<Ship chance="5"	count="1"	class="&scFZpredatorcruiser;"			orders="escort"/>
+			</Table>
+		</Reinforcements>
+		
+		<AISettings
+			fireRateAdj=		"10"
+			fireAccuracy=		"95"
+			perception=			"6"
+			combatStyle=		"noRetreat"
+			/>
+
+	</ShipClass>
+	
+<!-- stations -->
+
+	<StationType UNID="&stFZgrowerstation;"
+			name=				"Grower station"
+			sovereign=			"&svFZGrowers;"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockScreen=			"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+			multiHull=			"true"
+			armorID=			"&itBlastPlate;"
+			maxHitPoints=		"200"
+			hitPoints=			"200"
+			fireRateAdj=		"5"
+			explosionType=		"&vtThermoExplosion4;"
+			ejectaType=			"&vtWreckEjecta;"
+			repairRate=			"1"
+			attributes=			"Grower,envWater,envAvoidsEarth,populated"
+			levelFrequency=		"uurv- ----- ----- ----- -----"
+			locationCriteria=	"+asteroids,-void"
+			>
+
+		<Image imageID="&rsFZgrowerstation;" imageX="0" imageY="0" imageWidth="128" imageHeight="128"/>
+
+		<Devices>
+			<Device deviceID="&itTurbolaserCannon;" posAngle="45" posRadius="64" omnidirectional="true"/>
+			<Device deviceID="&itTurbolaserCannon;" posAngle="202" posRadius="39" omnidirectional="true"/>
+		</Devices>
+
+		<Ships>
+			<Lookup count="1" table="&tbCorpDefenders;"/>
+			<Lookup count="1d4" table="&tbCommPrivateCrafts;"/>
+		</Ships>
+
+		<Reinforcements minShips="2">
+			<Table>
+				<Lookup chance="75" table="&tbCorpDefenders;"/>
+				<Lookup chance="25" table="&tbCommPrivateCrafts;"/>
+			</Table>
+		</Reinforcements>
+
+		<Items>
+			<Table>
+			<Item		chance="80" count="1d6" item="&itCentauriRice;"/>
+			<Item		chance="20" count="1" item="&itCentauriRice;"/>
+			</Table>
+			<Table chance="50">
+				<Lookup chance="40" count="1" table="&trConsumables2;"/>
+				<Lookup chance="40" count="1" table="&trMinorItem2;"/>
+				<Lookup chance="20" count="1" table="&trMajorItem2;"/>
+			</Table>
+		</Items>
+
+	</StationType>
+	
+	<StationType UNID="&stFZpredatorcolony;"
+			name=				"Predator colony"
+			sovereign=			"&svFZpredators;"
+			abandonedScreen=	"&dsAbandonedStation;"
+			dockScreen=			"&dsAbandonedStation;"
+			dockingPorts=		"8"
+			canAttack=			"true"
+			repairRate=			"3"
+			armorID=			"&itFZpredatorheavyarmor;"
+			maxHitPoints=		"800"
+			hitPoints=			"800"
+			fireRateAdj=		"30"
+			explosionType=		"&vtThermoExplosion4;"
+			ejectaType=			"&vtWreckEjecta;"
+			multiHull=			"true"
+			attributes=			"Predator,enemy,envWater,envAvoidsEarth,populated"
+			levelFrequency=		"----- -vruu ----- ----- -----"
+			locationCriteria=	"+asteroids,-void"
+			>
+
+		<Image imageID="&rsFZpredatorcolony;" imageX="0" imageY="0" imageWidth="192" imageHeight="192"/>
+
+		<Devices>
+			<Device deviceID="&itFZpredatorcannon;" posAngle="145" posRadius="50" omnidirectional="true"/>
+		</Devices>
+
+		<Ships>
+			<Table>
+				<Ship chance="20"	count="1d4+1"	class="&scFZpredatorraider;"	orders="guard"/>
+				<Group chance="45">
+					<Ship			count="1d4"	class="&scFZpredatorraider;"			orders="guard"/>
+					<Ship			count="1d2"	class="&scFZpredatorgunship;"			orders="guard"/>
+				</Group>
+				<Ship chance="20"	count="1d3+2"	class="&scFZpredatorgunship;"			orders="guard"/>
+				<Group chance="10">
+					<Ship			count="1d4"	class="&scFZpredatorraider;"			orders="guard"/>
+					<Ship			count="1d2-1"	class="&scFZpredatorcruiser;"		orders="guard"/>
+				</Group>
+				<Ship chance="5"	count="1"	class="&scFZpredatorcruiser;"			orders="patrol" patrolDist="50+2d50"/>
+			</Table>
+		</Ships>
+
+		<Reinforcements minShips="3">
+			<Table>
+				<Ship chance="20"	count="1d4+1"	class="&scFZpredatorraider;"	orders="guard"/>
+				<Group chance="45">
+					<Ship			count="1d4"	class="&scFZpredatorraider;"			orders="guard"/>
+					<Ship			count="1d2"	class="&scFZpredatorgunship;"			orders="guard"/>
+				</Group>
+				<Ship chance="20"	count="1d3+2"	class="&scFZpredatorgunship;"			orders="guard"/>
+				<Group chance="10">
+					<Ship			count="1d4"	class="&scFZpredatorraider;"			orders="guard"/>
+					<Ship			count="1d2-1"	class="&scFZpredatorcruiser;"		orders="guard"/>
+				</Group>
+				<Ship chance="5"	count="1"	class="&scFZpredatorcruiser;"			orders="patrol" patrolDist="50+2d50"/>
+			</Table>
+		</Reinforcements>
+		
+		<Items>
+			<Table>
+			<Item		chance="80" count="1d6" item="&itCentauriRice;"/>
+			<Item		chance="20" count="1" item="&itCentauriRice;"/>
+			</Table>
+			<Table chance="50">
+				<Lookup chance="40" count="1" table="&trConsumables2;"/>
+				<Lookup chance="40" count="1" table="&trMinorItem2;"/>
+				<Lookup chance="20" count="1" table="&trMajorItem2;"/>
+			</Table>
+		</Items>
+
+		<Encounters frequency="rare">
+			<Lookup table="&tbFZPredatorEncounters;"/>
+		</Encounters>
+
+	</StationType>
+	
+	<StationType UNID="&stFZpredatorcolonyship;"
+			name=				"(predator colony ship)"
+			scale=				"world"
+			sovereign=			"&svIndependent;"
+			controllingSovereign=		"&svFZpredators;"
+
+			ejectaType=			"&vtStoneAsteroidEjecta;"
+
+			attributes=			"asteroid,enemy,envFire,envAvoidsWater"
+			levelFrequency=		"----- ---vr ----- ----- -----"
+			locationCriteria=	"*"
+			>
+
+		<ImageVariants>
+			<Image imageID="&rsWorlds1;" imageX="128" imageY="0"   imageWidth="64" imageHeight="64"/>
+			<Image imageID="&rsWorlds1;" imageX="128" imageY="64"  imageWidth="64" imageHeight="64"/>
+			<Image imageID="&rsWorlds1;" imageX="128" imageY="128" imageWidth="64" imageHeight="64"/>
+			<Image imageID="&rsWorlds1;" imageX="128" imageY="192" imageWidth="64" imageHeight="64"/>
+			<Image imageID="&rsWorlds1;" imageX="128" imageY="256" imageWidth="64" imageHeight="64"/>
+
+			<Image imageID="&rsWorlds1;" imageX="128" imageY="320" imageWidth="64" imageHeight="64"/>
+			<Image imageID="&rsWorlds1;" imageX="128" imageY="384" imageWidth="64" imageHeight="64"/>
+			<Image imageID="&rsWorlds1;" imageX="128" imageY="448" imageWidth="64" imageHeight="64"/>
+		</ImageVariants>
+
+		<Ships>
+			<Ship count="1"	 class="&scFZpredatorcolonyship;" orders="wander" sovereign="&svFZpredators;">
+				<Escorts>
+					<Ship					   count="2" class="&scFZpredatorcruiser;" orders="escort">
+						<Escorts>
+							<Ship					   count="3d3" class="&scFZpredatorraider;" orders="escort"/>
+						</Escorts>
+					</Ship>
+				</Escorts>
+			</Ship>
+		</Ships>
+
+		<Events>
+			<OnMining>
+				(intAsteroidOnMining 100)
+			</OnMining>
+		</Events>
+
+	</StationType>
+	
+<!-- encounter table -->
+
+	<ShipTable unid="&tbFZPredatorEncounters;">
+		<LevelTable>
+		
+			<Ship levelFrequency="----- --ucu" count="3d4"	 class="&scFZpredatorraider;"  sovereign="&svFZpredators;" orders="wander">
+			</Ship>
+			<Ship levelFrequency="----- --ruc" count="2d3"	 class="&scFZpredatorgunship;" orders="wander" sovereign="&svFZpredators;">
+			</Ship>
+			<Ship levelFrequency="----- ---rr" count="1"	 class="&scFZpredatorcruiser;" orders="wander" sovereign="&svFZpredators;">
+				<Escorts>
+					<Ship					   count="3d3" class="&scFZpredatorraider;" orders="escort"/>
+				</Escorts>
+			</Ship>
+			<Ship levelFrequency="----- ---vr" count="1"	 class="&scFZpredatorcruiser;" orders="wander" sovereign="&svFZpredators;">
+				<Escorts>
+					<Ship					   count="2d2" class="&scFZpredatorgunship;" orders="escort"/>
+				</Escorts>
+			</Ship>
+			
+			<Ship levelFrequency="----- ---rr" count="1d2"	 class="&scFZpredatorcruiser;" orders="wander" sovereign="&svFZpredators;">
+			</Ship>
+			<Ship levelFrequency="----- ----v" count="1"	 class="&scFZpredatorcolonyship;" orders="wander" sovereign="&svFZpredators;" maxShips="1">
+				<Escorts>
+					<Ship					   count="2" class="&scFZpredatorcruiser;" orders="escort">
+						<Escorts>
+							<Ship					   count="3d3" class="&scFZpredatorraider;" orders="escort"/>
+						</Escorts>
+					</Ship>
+				</Escorts>
+			</Ship>
+			
+		</LevelTable>
+	</ShipTable>
+
+</TranscendenceModule>
